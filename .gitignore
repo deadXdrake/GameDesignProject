@@ -58,3 +58,10 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+# Manual gitignore shiet
+GameDesignDraft/.vscode
+GameDesignDraft/Library
+GameDesignDraft/Logs
+GameDesignDraft/Temp
+GameDesignDraft/UserSettings
+
