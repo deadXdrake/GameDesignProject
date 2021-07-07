@@ -49,8 +49,9 @@ public class NezukoController : MonoBehaviour
       onGroundState = false;
     }
 
-    if (Input.GetKeyDown("s") && onGroundState) {
-        
+    if (Input.GetKeyDown("s") && onGroundState)
+    {
+
     }
   }
 
