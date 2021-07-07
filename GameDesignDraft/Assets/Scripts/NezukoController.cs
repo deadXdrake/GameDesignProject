@@ -9,6 +9,7 @@ public class NezukoController : MonoBehaviour
   public float upSpeed;
   private Rigidbody2D nezukoBody;
   private bool onGroundState = true;
+  public Camera cam; // Camera's Transform
 
   private SpriteRenderer nezukoSprite;
 
@@ -17,6 +18,7 @@ public class NezukoController : MonoBehaviour
   {
     nezukoBody = GetComponent<Rigidbody2D>();
     nezukoSprite = GetComponent<SpriteRenderer>();
+    cam = Camera.main;
   }
 
   void FixedUpdate()
@@ -53,6 +55,15 @@ public class NezukoController : MonoBehaviour
     {
 
     }
+    float leftCameraX = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0))[0];
+    //print(leftCameraX);
+    if (leftCameraX >= this.transform.position.x)
+    {
+        print("died");
+        Time.timeScale = 0;
+
+    }
+
   }
 
   //============================================================
