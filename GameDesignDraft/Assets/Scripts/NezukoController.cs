@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class NezukoController : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class NezukoController : MonoBehaviour
   private Rigidbody2D nezukoBody;
   private bool onGroundState = true;
   public Camera cam; // Camera's Transform
+  public UnityEvent onPlayerFast;
+  public UnityEvent onPlayerDeath;
+  public UnityEvent onLevelComplete;
 
   private SpriteRenderer nezukoSprite;
 
@@ -55,15 +59,22 @@ public class NezukoController : MonoBehaviour
     {
 
     }
-    float leftCameraX = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0))[0];
-    //print(leftCameraX);
-    if (leftCameraX >= this.transform.position.x)
-    {
-        print("died");
-        Time.timeScale = 0;
 
+    //x of the left edge of the camera
+    Vector3 leftCamera = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0));
+    //print(leftCameraX); 
+    Vector3 middleCam = Camera.main.ViewportToWorldPoint(new Vector3((float)0.5, (float)0.5, 0));
+    //print(middleCam);
+
+    if (leftCamera.x >= this.transform.position.x) //If Nezuko hits or go past the left edge of camera
+    {
+        onPlayerDeath.Invoke();
     }
 
+    if (this.transform.position.x >= middleCam.x) //If Nezuko is on right 
+    {
+        onPlayerFast.Invoke();
+    }
   }
 
   //============================================================
@@ -75,4 +86,13 @@ public class NezukoController : MonoBehaviour
       onGroundState = true;
     }
   }
+
+    public void PlayerDeathResponse()
+    {
+        //Death sequence
+        print("died");
+        Time.timeScale = 0;
+    }
+
+    
 }

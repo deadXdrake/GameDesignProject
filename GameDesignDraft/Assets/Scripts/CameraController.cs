@@ -42,4 +42,10 @@ public class CameraController : MonoBehaviour
             this.transform.position = new Vector3(desiredX, this.transform.position.y, this.transform.position.z);
         }
     }
+
+    public void PlayerFastResponse()
+    {
+        //Fast sequence
+        print("onplayerfast");
+    }
 }
