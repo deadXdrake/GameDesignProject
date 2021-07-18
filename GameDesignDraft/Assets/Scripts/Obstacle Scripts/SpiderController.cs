@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpiderController : MonoBehaviour
+public class SpiderController : MonoBehaviour, ObstacleInterface
 {
     // Start is called before the first frame update
     private float originalX;
@@ -20,6 +20,18 @@ public class SpiderController : MonoBehaviour
         // get the starting position
         originalX = transform.position.x;
         ComputeVelocity();
+    }
+
+    public void affectPlayer(GameObject player) {
+        player.GetComponent<NezukoController>().speed -= 100;   //TODO: Hardcoded time. Put in scriptable constants? HOW TO STOP STACKING OR SET NEZUKO MIN SPEED.
+        // Debug.Log("Player speed decreased!");
+        StartCoroutine(removeEffect(player));
+    }
+
+    IEnumerator removeEffect(GameObject player) {
+        yield return new WaitForSeconds(5.0f);  //TODO: Hardcoded time. Put in scriptable constants?
+        player.GetComponent<NezukoController>().speed += 100;
+        // Debug.Log("Player speed resumes!");
     }
 
     void ComputeVelocity(){

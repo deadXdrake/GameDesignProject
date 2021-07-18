@@ -14,8 +14,8 @@ public class NezukoController : MonoBehaviour
   public UnityEvent onPlayerFast;
   public UnityEvent onPlayerDeath;
   public UnityEvent onLevelComplete;
-
   private SpriteRenderer nezukoSprite;
+  public UnityEvent onObstaclesCollided;
 
   // Start is called before the first frame update
   void Start()
@@ -85,14 +85,24 @@ public class NezukoController : MonoBehaviour
     {
       onGroundState = true;
     }
+
+    if (col.gameObject.CompareTag("Enemy")) {
+      // Debug.Log("Collided with enemy!");
+      onObstaclesCollided.Invoke();
+    }
   }
 
-    public void PlayerDeathResponse()
-    {
-        //Death sequence
-        print("died");
-        Time.timeScale = 0;
-    }
+  public float getNezukoSpeed() {
+    Debug.Log(nezukoBody.velocity.magnitude);
+    return nezukoBody.velocity.magnitude;
+  }
+
+  public void PlayerDeathResponse()
+  {
+      //Death sequence
+      print("died");
+      Time.timeScale = 0;
+  }
 
     
 }
