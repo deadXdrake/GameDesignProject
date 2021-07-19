@@ -8,32 +8,34 @@ public class NezukoController : MonoBehaviour
   public float speed;
   public float maxSpeed = 10; //set the maximum speed
   public float upSpeed;
-  private Rigidbody2D nezukoBody;
+  public float groundDistance = -4.3f;
   private bool onGroundState = true;
+  private bool onShrinkState = false;
+
   public Camera cam; // Camera's Transform
+
   public UnityEvent onPlayerFast;
   public UnityEvent onPlayerDeath;
   public UnityEvent onLevelComplete;
 
+  private Rigidbody2D nezukoBody;
   private SpriteRenderer nezukoSprite;
+  private Animator nezukoAnimator;
+
 
   // Start is called before the first frame update
   void Start()
   {
+    // Application.targetFrameRate = 30;
     nezukoBody = GetComponent<Rigidbody2D>();
     nezukoSprite = GetComponent<SpriteRenderer>();
+    nezukoAnimator = GetComponent<Animator>();
     cam = Camera.main;
   }
 
   void FixedUpdate()
   {
-
-  }
-
-  // Update is called once per frame
-  void Update()
-  {
-    //dynamic rigidbody
+    //apply force to move horizontally when a/d pressed
     float moveHorizontal = Input.GetAxis("Horizontal");
     if (Mathf.Abs(moveHorizontal) > 0)
     {
@@ -42,22 +44,41 @@ public class NezukoController : MonoBehaviour
         nezukoBody.AddForce(movement * speed);
     }
 
+    //nezuko jumps when spacebar is presssed and she is on ground
+    if (Input.GetKeyDown(KeyCode.Space) && onGroundState)
+    {
+      nezukoBody.AddForce(Vector2.up * upSpeed, ForceMode2D.Impulse);
+      onGroundState = false;
+      nezukoAnimator.SetBool("onGround", onGroundState);
+    }
+
+  }
+
+  // Update is called once per frame
+  void Update()
+  {
+    nezukoAnimator.SetFloat("xSpeed", Mathf.Abs(nezukoBody.velocity.x));
+
+
     //stop, set velocity to zero when "a" or "d" is lifted up
     if (Input.GetKeyUp("a") || Input.GetKeyUp("d"))
     {
       nezukoBody.velocity = Vector2.zero;
     }
 
-    //nezuko jumps when spacebar is presssed and she is on ground
-    if (Input.GetKeyDown("space") && onGroundState)
+    //shrink when s is pressed
+    if (Input.GetKeyDown("s") && !onShrinkState)
     {
-      nezukoBody.AddForce(Vector2.up * upSpeed, ForceMode2D.Impulse);
-      onGroundState = false;
+      onShrinkState = true;
+      nezukoAnimator.SetBool("onShrink", onShrinkState);
+      transform.position = new Vector3(transform.position.x, groundDistance + nezukoSprite.bounds.extents.y, 0.0f);
     }
 
-    if (Input.GetKeyDown("s") && onGroundState)
+    if (Input.GetKeyDown("w") && onShrinkState)
     {
-
+      onShrinkState = false;
+      nezukoAnimator.SetBool("onShrink", onShrinkState);
+      transform.position = new Vector3(transform.position.x, groundDistance + nezukoSprite.bounds.extents.y, 0.0f);
     }
 
     //x of the left edge of the camera
@@ -68,12 +89,12 @@ public class NezukoController : MonoBehaviour
 
     if (leftCamera.x >= this.transform.position.x) //If Nezuko hits or go past the left edge of camera
     {
-        onPlayerDeath.Invoke();
+      onPlayerDeath.Invoke();
     }
 
     if (this.transform.position.x >= middleCam.x) //If Nezuko is on right 
     {
-        onPlayerFast.Invoke();
+      onPlayerFast.Invoke();
     }
   }
 
@@ -81,18 +102,19 @@ public class NezukoController : MonoBehaviour
   //called when the cube hits the floor, resets ground state to true
   void OnCollisionEnter2D(Collision2D col)
   {
-    if (col.gameObject.CompareTag("Ground"))
+    if (col.gameObject.CompareTag("Ground") && !onGroundState)
     {
       onGroundState = true;
+      nezukoAnimator.SetBool("onGround", onGroundState);
     }
   }
 
-    public void PlayerDeathResponse()
-    {
-        //Death sequence
-        print("died");
-        Time.timeScale = 0;
-    }
+  public void PlayerDeathResponse()
+  {
+    //Death sequence
+    print("died");
+    Time.timeScale = 0;
+  }
 
-    
+
 }

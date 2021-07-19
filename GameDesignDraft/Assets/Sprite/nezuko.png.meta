@@ -1,43 +1,76 @@
 fileFormatVersion: 2
-guid: d848601df27472340a1190b5e7f921be
+guid: c044defdd80372a44a45e98c450bce41
 TextureImporter:
   internalIDToNameTable:
   - first:
       213: 7522926296993474119
-    second: nezuko_0
+    second: nezuko_stand0
   - first:
       213: -7166442909692867047
-    second: nezuko_1
+    second: nezuko_stand1
   - first:
       213: 6189044923255807603
-    second: nezuko_2
+    second: nezuko_stand2
   - first:
       213: 5714233622938069154
-    second: nezuko_3
+    second: nezuko_run0
   - first:
       213: -4511248838684004290
-    second: nezuko_4
+    second: nezuko_run1
   - first:
       213: -4189911398670265274
-    second: nezuko_5
+    second: nezuko_run2
   - first:
       213: -5274321026903307730
-    second: nezuko_6
+    second: nezuko_run3
   - first:
       213: 3560239209911948523
-    second: nezuko_7
+    second: nezuko_smallrun0
   - first:
       213: -1979429074543668567
-    second: nezuko_8
+    second: nezuko_smallrun1
   - first:
       213: -1028017356421157898
-    second: nezuko_9
+    second: nezuko_smallrun2
   - first:
       213: -6584068627005578368
-    second: nezuko_10
+    second: nezuko_smallrun3
   - first:
       213: -810725981805854184
-    second: nezuko_11
+    second: nezuko_crouch
+  - first:
+      213: -421828970550522528
+    second: nezuko_jump
+  - first:
+      213: 7378447616942379879
+    second: nezuko_hit0
+  - first:
+      213: 7785322922110290682
+    second: nezuko_hit1
+  - first:
+      213: -6717369176343873750
+    second: nezuko_hit2
+  - first:
+      213: -3787959203800660097
+    second: nezuko_hit3
+  - first:
+      213: 6733029252864248486
+    second: nezuko_angrybox0
+  - first:
+      213: -7729570980522507223
+    second: nezuko_angrybox1
+  - first:
+      213: 3250294573004546923
+    second: nezuko_angrybox2
+  - first:
+      213: 2636993473413333617
+    second: nezuko_blank
+  - first:
+      213: 9029612300870481863
+    second: nezuko_shrink
+  - first:
+      213: -5043044691802703554
+    second: nezuko_smalljump
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -151,15 +184,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: nezuko_0
+      name: nezuko_stand0
       rect:
         serializedVersion: 2
-        x: 41
-        y: 747
-        width: 20
-        height: 45
+        x: 82
+        y: 1490
+        width: 40
+        height: 94
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -172,15 +205,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nezuko_1
+      name: nezuko_stand1
       rect:
         serializedVersion: 2
-        x: 96
-        y: 747
-        width: 20
-        height: 45
+        x: 192
+        y: 1490
+        width: 42
+        height: 94
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -193,15 +226,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nezuko_2
+      name: nezuko_stand2
       rect:
         serializedVersion: 2
-        x: 152
-        y: 747
-        width: 21
-        height: 45
+        x: 304
+        y: 1490
+        width: 42
+        height: 94
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -214,15 +247,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nezuko_3
+      name: nezuko_run0
       rect:
         serializedVersion: 2
-        x: 40
-        y: 680
-        width: 34
-        height: 45
+        x: 80
+        y: 1360
+        width: 68
+        height: 90
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -235,15 +268,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nezuko_4
+      name: nezuko_run1
       rect:
         serializedVersion: 2
-        x: 89
-        y: 679
-        width: 37
-        height: 46
+        x: 178
+        y: 1358
+        width: 74
+        height: 92
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -256,15 +289,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nezuko_5
+      name: nezuko_run2
       rect:
         serializedVersion: 2
-        x: 147
-        y: 679
-        width: 35
-        height: 45
+        x: 294
+        y: 1358
+        width: 70
+        height: 90
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -277,15 +310,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nezuko_6
+      name: nezuko_run3
       rect:
         serializedVersion: 2
-        x: 208
-        y: 679
-        width: 30
-        height: 45
+        x: 416
+        y: 1358
+        width: 60
+        height: 90
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -298,15 +331,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nezuko_7
+      name: nezuko_smallrun0
       rect:
         serializedVersion: 2
-        x: 36
-        y: 612
-        width: 32
-        height: 36
+        x: 72
+        y: 1224
+        width: 64
+        height: 72
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -319,15 +352,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nezuko_8
+      name: nezuko_smallrun1
       rect:
         serializedVersion: 2
-        x: 93
-        y: 612
-        width: 31
-        height: 36
+        x: 186
+        y: 1224
+        width: 62
+        height: 72
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -340,15 +373,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nezuko_9
+      name: nezuko_smallrun2
       rect:
         serializedVersion: 2
-        x: 148
-        y: 612
-        width: 33
-        height: 36
+        x: 296
+        y: 1224
+        width: 66
+        height: 72
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -361,15 +394,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nezuko_10
+      name: nezuko_smallrun3
       rect:
         serializedVersion: 2
-        x: 204
-        y: 612
-        width: 32
-        height: 36
+        x: 408
+        y: 1224
+        width: 64
+        height: 72
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -382,15 +415,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nezuko_11
+      name: nezuko_crouch
       rect:
         serializedVersion: 2
-        x: 39
-        y: 538
-        width: 21
-        height: 36
+        x: 78
+        y: 1076
+        width: 42
+        height: 72
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -398,6 +431,237 @@ TextureImporter:
       bones: []
       spriteID: 8124844d309bfb4f0800000000000000
       internalID: -810725981805854184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nezuko_jump
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 642
+        width: 50
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06d0e5649cc552af0800000000000000
+      internalID: -421828970550522528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nezuko_hit0
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 1022
+        width: 50
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7639da1d303856660800000000000000
+      internalID: 7378447616942379879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nezuko_hit1
+      rect:
+        serializedVersion: 2
+        x: 1044
+        y: 1022
+        width: 78
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afa071203f50b0c60800000000000000
+      internalID: 7785322922110290682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nezuko_hit2
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 1018
+        width: 40
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a277dd2035c17c2a0800000000000000
+      internalID: -6717369176343873750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nezuko_hit3
+      rect:
+        serializedVersion: 2
+        x: 1266
+        y: 1026
+        width: 78
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f774ac17c277e6bc0800000000000000
+      internalID: -3787959203800660097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nezuko_angrybox0
+      rect:
+        serializedVersion: 2
+        x: 1064
+        y: 1226
+        width: 54
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6aa894fae66807d50800000000000000
+      internalID: 6733029252864248486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nezuko_angrybox1
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 1226
+        width: 54
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 924c9cf652c0bb490800000000000000
+      internalID: -7729570980522507223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nezuko_angrybox2
+      rect:
+        serializedVersion: 2
+        x: 1288
+        y: 1226
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b63e05f71bd5b1d20800000000000000
+      internalID: 3250294573004546923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nezuko_blank
+      rect:
+        serializedVersion: 2
+        x: 1158
+        y: 1412
+        width: 40
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17243d9b79b789420800000000000000
+      internalID: 2636993473413333617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nezuko_shrink
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 1082
+        width: 46
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c7f1e4fb80af4d70800000000000000
+      internalID: 9029612300870481863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nezuko_smalljump
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 1080
+        width: 64
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e393eae6291830ab0800000000000000
+      internalID: -5043044691802703554
       vertices: []
       indices: 
       edges: []
