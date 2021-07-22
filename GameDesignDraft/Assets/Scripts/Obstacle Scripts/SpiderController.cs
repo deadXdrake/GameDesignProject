@@ -6,9 +6,9 @@ public class SpiderController : MonoBehaviour, ObstacleInterface
 {
     // Start is called before the first frame update
     private float originalX;
-    private float maxOffset = 5.0f;
+    private float maxOffset = 3.0f;
     private float enemyPatroltime = 2.0f;
-    private int moveRight = -1;
+    private float moveRight = -1.0f;
     private Vector2 velocity;
 
     private Rigidbody2D enemyBody;
@@ -24,7 +24,7 @@ public class SpiderController : MonoBehaviour, ObstacleInterface
 
     public void affectPlayer(GameObject player) {
         player.GetComponent<NezukoController>().speed -= 100;   //TODO: Hardcoded time. Put in scriptable constants? HOW TO STOP STACKING OR SET NEZUKO MIN SPEED.
-        // Debug.Log("Player speed decreased!");
+        Debug.Log("Player speed decreased!");
         StartCoroutine(removeEffect(player));
     }
 
@@ -40,7 +40,6 @@ public class SpiderController : MonoBehaviour, ObstacleInterface
     void MoveSpider(){
         enemyBody.MovePosition(enemyBody.position + velocity * Time.fixedDeltaTime);
     }
-
 
     // Update is called once per frame
     void Update()

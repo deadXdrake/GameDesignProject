@@ -25,7 +25,22 @@ public class RandomSpawner : MonoBehaviour
             int randSpawnPoint = Random.Range(0, spawnPoints.Length);
 
             GameObject obstacle = Instantiate(obstaclePrefabs[randObstacle]);
-            obstacle.transform.position = new Vector3(spawnPoints[randSpawnPoint].position.x + Random.Range(-4.5f, 4.5f), spawnPoints[randSpawnPoint].position.y, 0);
+            if (obstaclePrefabs[randObstacle].name.Equals("Spider")) {
+                Debug.Log("Instantiating spider!");
+                //TODO: y-position hardcoded. Add to scriptableObj constants
+                obstacle.transform.position = new Vector3(spawnPoints[randSpawnPoint].position.x + Random.Range(-1.0f, 1.0f), -3.12f, 0);
+            }
+
+            if (obstaclePrefabs[randObstacle].name.Equals("Rock")) {
+                Debug.Log("Instantiating rock!");
+                obstacle.transform.position = new Vector3(spawnPoints[randSpawnPoint].position.x + Random.Range(-1.0f, 1.0f), -2.69f, 0);
+            }
+
+            if (obstaclePrefabs[randObstacle].name.Equals("TreeSnow")) {
+                Debug.Log("Instantiating TreeSnow!");
+                obstacle.transform.position = new Vector3(spawnPoints[randSpawnPoint].position.x + Random.Range(-1.0f, 1.0f), 0.89f, 0);
+            }
+            
         }
     }
 
