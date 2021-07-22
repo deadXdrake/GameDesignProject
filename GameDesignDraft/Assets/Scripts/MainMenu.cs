@@ -18,6 +18,6 @@ public class MainMenu : MonoBehaviour
     }
 
     public void PlayGame() {
-        SceneManager.LoadScene("NezukoTest");
+        SceneManager.LoadScene("Level1");
     }
 }
