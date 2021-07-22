@@ -489,9 +489,9 @@ GameObject:
   - component: {fileID: 573182387}
   - component: {fileID: 573182390}
   - component: {fileID: 573182389}
-  - component: {fileID: 573182391}
-  - component: {fileID: 573182392}
   - component: {fileID: 573182393}
+  - component: {fileID: 573182392}
+  - component: {fileID: 573182391}
   m_Layer: 7
   m_Name: Nezuko
   m_TagString: Player
@@ -621,12 +621,38 @@ MonoBehaviour:
   m_GameObject: {fileID: 573182386}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3091566633e9b174da95e71f719bcca9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 3df92cfec34941b4f950b8bf4e32719d, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 573182392}
+        m_TargetAssemblyTypeName: NezukoController, Assembly-CSharp
+        m_MethodName: PlayerDeathResponse
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &573182392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573182386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a6b76340a3523944297118e0f7485a12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 140
-  maxSpeed: 10
-  upSpeed: 25
+  gameConstants: {fileID: 11400000, guid: 234dda25116717347ba60bd16be8c759, type: 2}
   onPlayerFast:
     m_PersistentCalls:
       m_Calls:
@@ -678,34 +704,6 @@ MonoBehaviour:
       - m_Target: {fileID: 11400000, guid: 751934261be69bc4491b8f0060e8ae89, type: 2}
         m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
         m_MethodName: Raise
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &573182392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 573182386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3091566633e9b174da95e71f719bcca9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 3df92cfec34941b4f950b8bf4e32719d, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 573182391}
-        m_TargetAssemblyTypeName: NezukoController, Assembly-CSharp
-        m_MethodName: PlayerDeathResponse
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
