@@ -36,8 +36,11 @@ public class CameraController : MonoBehaviour
     void Update()
     {
         //float desiredX = player.position.x + offset;
+        
+        Vector3 rightCam = Camera.main.ViewportToWorldPoint(new Vector3((float)1, (float)0.2, 0));
+        endLimit.position = rightCam;
+        
         float desiredX = Time.time + offset;
-        //print(Time.time);
         // check if desiredX is within startX and endX
         if (desiredX > startX && desiredX < endX)
         {
