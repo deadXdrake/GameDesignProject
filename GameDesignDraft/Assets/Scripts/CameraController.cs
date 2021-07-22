@@ -37,17 +37,14 @@ public class CameraController : MonoBehaviour
     {
         //float desiredX = player.position.x + offset;
         
-        Vector3 rightCam = Camera.main.ViewportToWorldPoint(new Vector3((float)1, (float)0.2, 0));
+        Vector3 rightCam = Camera.main.ViewportToWorldPoint(new Vector3((float)1, 0, 0));
         endLimit.position = rightCam;
         
         float desiredX = Time.time + offset;
+        //this.transform.position = new Vector3(desiredX, this.transform.position.y, this.transform.position.z);
         // check if desiredX is within startX and endX
-        if (desiredX > startX && desiredX < endX)
-        {
-            //print("if condition");
-            //this.transform.position = new Vector3(desiredX, this.transform.position.y, this.transform.position.z);
-            transform.Translate(Vector3.right * Time.deltaTime);
-        }
+        transform.Translate(Vector3.right * Time.deltaTime);
+        
     }
 
     public void PlayerDeathResponse()

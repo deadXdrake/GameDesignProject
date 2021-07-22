@@ -7,6 +7,8 @@ TagManager:
   - Ground
   - Spider
   - Enemy
+  - EdgeLimit
+  - Obstacles
   layers:
   - Default
   - TransparentFX
@@ -15,9 +17,9 @@ TagManager:
   - Water
   - UI
   - Background
-  - 
-  - 
-  - 
+  - Player
+  - Edge
+  - Obstacles
   - 
   - 
   - 

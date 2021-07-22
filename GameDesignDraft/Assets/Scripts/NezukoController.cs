@@ -117,7 +117,7 @@ public class NezukoController : MonoBehaviour
   //called when the cube hits the floor, resets ground state to true
   void OnCollisionEnter2D(Collision2D col)
   {
-    if (col.gameObject.CompareTag("Ground") && !onGroundState)
+    if ((col.gameObject.CompareTag("Ground") || col.gameObject.CompareTag("Obstacles")) && !onGroundState)
     {
       onGroundState = true;
       nezukoAnimator.SetBool("onGround", onGroundState);
@@ -129,10 +129,20 @@ public class NezukoController : MonoBehaviour
     }
   }
 
-  public float getNezukoSpeed() {
-    Debug.Log(nezukoBody.velocity.magnitude);
-    return nezukoBody.velocity.magnitude;
-  }
+    /*void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("EdgeLimit"))
+        {
+            Debug.Log("Collided with edge!");
+            nezukoBody.velocity = Vector2.zero;
+        }
+    }*/
+
+    public float getNezukoSpeed() 
+    {
+        Debug.Log(nezukoBody.velocity.magnitude);
+        return nezukoBody.velocity.magnitude;
+    }
 
   public void PlayerDeathResponse()
   {
