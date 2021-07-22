@@ -144,7 +144,7 @@ public class NezukoController : MonoBehaviour
     //Time.timeScale = 0;
     //GetComponent<Animator>().SetBool("playerIsDead", true); //play playerdead animation
 
-    GetComponent<Collider2D>().enabled = false;
+    // GetComponent<Collider2D>().enabled = false;
     //nezukoBody.AddForce(Vector2.up, ForceMode2D.Impulse); //how to stop adding force after awhile?
     //nezukoBody.gravityScale = 10;
 
