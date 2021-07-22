@@ -12,7 +12,6 @@ public class NezukoController : MonoBehaviour
   private bool onShrinkState = false;
   private bool faceRightState = true;
 
-  public Camera cam; // Camera's Transform
   private Vector3 leftCamera;
   private Vector3 middleCam;
 
@@ -127,16 +126,13 @@ public class NezukoController : MonoBehaviour
       // Debug.Log("Collided with enemy!");
       onObstaclesCollided.Invoke();
     }
-  }
 
-    /*void OnTriggerEnter2D(Collider2D other)
+    if (col.gameObject.CompareTag("EdgeLimit"))
     {
-        if (other.gameObject.CompareTag("EdgeLimit"))
-        {
-            Debug.Log("Collided with edge!");
-            nezukoBody.velocity = Vector2.zero;
-        }
-    }*/
+        Debug.Log("Collided with endlimit!");
+        //Camera.main.transform.Translate(Vector3.right * (Time.deltaTime * (float)2.5));
+    }
+  }
 
     public float getNezukoSpeed() 
     {

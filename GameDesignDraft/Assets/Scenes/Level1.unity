@@ -627,7 +627,6 @@ MonoBehaviour:
   speed: 140
   maxSpeed: 10
   upSpeed: 25
-  cam: {fileID: 0}
   onPlayerFast:
     m_PersistentCalls:
       m_Calls:
@@ -750,7 +749,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &947443400
 Transform:
   m_ObjectHideFlags: 0
@@ -1649,7 +1648,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4468187207412756776, guid: 21dec93cbb3674b46866fbe513c48ce7, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4468187207412756776, guid: 21dec93cbb3674b46866fbe513c48ce7, type: 3}
       propertyPath: m_TagString
@@ -1670,7 +1669,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7346041013034420258, guid: 78057b8e4724f0c4aa2bb3475e5992b9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7346041013034420258, guid: 78057b8e4724f0c4aa2bb3475e5992b9, type: 3}
       propertyPath: m_TagString
@@ -1739,7 +1738,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8121046430060015138, guid: c10c715ee7b11ad4f9055f01a64e4e66, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8121046430060015138, guid: c10c715ee7b11ad4f9055f01a64e4e66, type: 3}
       propertyPath: m_TagString
