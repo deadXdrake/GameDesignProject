@@ -10,7 +10,6 @@ public class NezukoController : MonoBehaviour
   public float upSpeed;
   private Rigidbody2D nezukoBody;
   private bool onGroundState = true;
-  public Camera cam; // Camera's Transform
   public UnityEvent onPlayerFast;
   public UnityEvent onPlayerDeath;
   public UnityEvent onLevelComplete;
@@ -22,7 +21,7 @@ public class NezukoController : MonoBehaviour
   {
     nezukoBody = GetComponent<Rigidbody2D>();
     nezukoSprite = GetComponent<SpriteRenderer>();
-    cam = Camera.main;
+   
   }
 
   void FixedUpdate()
@@ -90,8 +89,20 @@ public class NezukoController : MonoBehaviour
     public void PlayerDeathResponse()
     {
         //Death sequence
-        print("died");
-        Time.timeScale = 0;
+        
+        Debug.Log("Nezuko died!");
+        //Time.timeScale = 0;
+        //GetComponent<Animator>().SetBool("playerIsDead", true); //play playerdead animation
+
+        GetComponent<Collider2D>().enabled = false;
+        //nezukoBody.AddForce(Vector2.up, ForceMode2D.Impulse); //how to stop adding force after awhile?
+        //nezukoBody.gravityScale = 10;
+
+        //Game over, click, Transition to the menu, 
+        //Audio of nezuko dying
+        //Sprite of nezuko dying with animator transition, go back into box
+
+        //this.enabled = false;
     }
 
     
