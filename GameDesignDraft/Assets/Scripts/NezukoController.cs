@@ -12,7 +12,6 @@ public class NezukoController : MonoBehaviour
   private bool onShrinkState = false;
   private bool faceRightState = true;
 
-  public Camera cam; // Camera's Transform
   private Vector3 leftCamera;
   private Vector3 middleCam;
 
@@ -117,7 +116,7 @@ public class NezukoController : MonoBehaviour
   //called when the cube hits the floor, resets ground state to true
   void OnCollisionEnter2D(Collision2D col)
   {
-    if (col.gameObject.CompareTag("Ground") && !onGroundState)
+    if ((col.gameObject.CompareTag("Ground") || col.gameObject.CompareTag("Obstacles")) && !onGroundState)
     {
       onGroundState = true;
       nezukoAnimator.SetBool("onGround", onGroundState);
@@ -127,12 +126,19 @@ public class NezukoController : MonoBehaviour
       // Debug.Log("Collided with enemy!");
       onObstaclesCollided.Invoke();
     }
+
+    if (col.gameObject.CompareTag("EdgeLimit"))
+    {
+        Debug.Log("Collided with endlimit!");
+        //Camera.main.transform.Translate(Vector3.right * (Time.deltaTime * (float)2.5));
+    }
   }
 
-  public float getNezukoSpeed() {
-    Debug.Log(nezukoBody.velocity.magnitude);
-    return nezukoBody.velocity.magnitude;
-  }
+    public float getNezukoSpeed() 
+    {
+        Debug.Log(nezukoBody.velocity.magnitude);
+        return nezukoBody.velocity.magnitude;
+    }
 
   public void PlayerDeathResponse()
   {

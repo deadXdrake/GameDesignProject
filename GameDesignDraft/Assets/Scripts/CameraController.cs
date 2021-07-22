@@ -35,33 +35,30 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //float desiredX = player.position.x + offset;
-        float desiredX = Time.time + offset;
-        //print(Time.time);
+        //Right edge collider (EndLimit) moves with camera
+        Vector3 rightCam = Camera.main.ViewportToWorldPoint(new Vector3((float)1, 0, 0));
+        endLimit.position = rightCam;
+        
+        //float desiredX = Time.time + offset;
+        //this.transform.position = new Vector3(desiredX, this.transform.position.y, this.transform.position.z);
         // check if desiredX is within startX and endX
-        if (desiredX > startX && desiredX < endX)
-        {
-            //print("if condition");
-            //this.transform.position = new Vector3(desiredX, this.transform.position.y, this.transform.position.z);
-            transform.Translate(Vector3.right * Time.deltaTime);
-        }
+        transform.Translate(Vector3.right * Time.deltaTime);
+        
     }
 
     public void PlayerDeathResponse()
     {
         //transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
         this.enabled = false; //Stops camera movement
-        //Debug.Log("camera called");
     }
 
     public void PlayerFastResponse()
     {
     //Fast sequence
-    //print("onplayerfast");
         float nezukoSpeed = Mathf.Abs(nezukoBody.velocity[0]);
         if (nezukoSpeed >= 4 && nezukoSpeed < 5)
         {
-            Debug.Log("1");
+            //Debug.Log("1");
             float fastX = (Time.time + offset) * (float)1.5;
             transform.Translate(Vector3.right * (Time.deltaTime*(float)1.5));
             //this.transform.position = new Vector3(fastX, this.transform.position.y, this.transform.position.z);
@@ -69,7 +66,7 @@ public class CameraController : MonoBehaviour
 
         if (nezukoSpeed >= 5 && nezukoSpeed < 6)
         {
-            Debug.Log("2");
+            //Debug.Log("2");
             float fastX = (Time.time + offset) * (float)1.8;
             transform.Translate(Vector3.right * (Time.deltaTime * (float)2));
             //this.transform.position = new Vector3(fastX, this.transform.position.y, this.transform.position.z);
@@ -77,19 +74,11 @@ public class CameraController : MonoBehaviour
 
         if (nezukoSpeed >= 6)
         {
-            Debug.Log("3");
+            //Debug.Log("3");
             float fastX = (Time.time + offset) * (float)2;
             transform.Translate(Vector3.right * (Time.deltaTime * (float)2.5));
             //this.transform.position = new Vector3(fastX, this.transform.position.y, this.transform.position.z);
         }
         
-
-        //float fastX = (Time.time + offset) * (float)1.5; 
-            //(Mathf.Abs(nezukoBody.velocity[0]) / 10);
-        //when nezuko is on right, if nezuko speed in a certain range, move camera in certain speeed.
-   // print(Mathf.Abs(nezukoBody.velocity[0]));
-    //this.transform.position = Vector3.Slerp(this.transform.position, player.position, (float)0.5);
-    //this.transform.position = new Vector3(fastX, this.transform.position.y, this.transform.position.z);
-    //transform.Translate(new Vector3((float)1.5, 0, 0) * Time.deltaTime); //1.5x camera speed
     }
 }
