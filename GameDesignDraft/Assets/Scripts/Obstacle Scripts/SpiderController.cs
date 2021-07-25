@@ -26,7 +26,7 @@ public class SpiderController : MonoBehaviour, ObstacleInterface
   public void affectPlayer(GameObject player)
   {
     gameConstants.nezukoSpeedX -= 100;   //TODO: Hardcoded time. Put in scriptable constants? HOW TO STOP STACKING OR SET NEZUKO MIN SPEED.
-                                                            // Debug.Log("Player speed decreased!");
+    Debug.Log("Player speed decreased!");
     StartCoroutine(removeEffect(player));
   }
 
@@ -46,20 +46,13 @@ public class SpiderController : MonoBehaviour, ObstacleInterface
     enemyBody.MovePosition(enemyBody.position + velocity * Time.fixedDeltaTime);
   }
 
-
   // Update is called once per frame
   void Update()
   {
-    if (Mathf.Abs(enemyBody.position.x - originalX) < maxOffset)
-    {// move gomba
-      MoveSpider();
-    }
-    else
-    {
-      // change direction
-      moveRight *= -1;
-      ComputeVelocity();
-      MoveSpider();
-    }
+    // change direction
+    moveRight *= -1;
+    ComputeVelocity();
+    MoveSpider();
   }
+
 }
