@@ -147,10 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6b76340a3523944297118e0f7485a12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 140
-  maxSpeed: 10
-  upSpeed: 25
-  cam: {fileID: 0}
+  gameConstants: {fileID: 0}
   onPlayerFast:
     m_PersistentCalls:
       m_Calls:
