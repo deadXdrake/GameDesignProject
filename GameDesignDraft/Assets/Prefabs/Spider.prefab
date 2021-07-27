@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2288675464605397125}
   m_Layer: 8
   m_Name: Spider
-  m_TagString: Obstacles
+  m_TagString: Spider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -179,7 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3091566633e9b174da95e71f719bcca9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 751934261be69bc4491b8f0060e8ae89, type: 2}
+  Event: {fileID: 11400000, guid: 353cfd78788359b4dbd096662cb2500f, type: 2}
   Response:
     m_PersistentCalls:
       m_Calls:

@@ -19,7 +19,7 @@ public class NezukoController : MonoBehaviour
   public UnityEvent onPlayerFast;
   public UnityEvent onPlayerDeath;
   public UnityEvent onLevelComplete;
-  public UnityEvent onObstaclesCollided;
+  public UnityEvent onSpiderCollided;
 
   private Rigidbody2D nezukoBody;
   private SpriteRenderer nezukoSprite;
@@ -121,16 +121,16 @@ public class NezukoController : MonoBehaviour
   //called when the cube hits the floor, resets ground state to true
   void OnCollisionEnter2D(Collision2D col)
   {
-    if ((col.gameObject.CompareTag("Ground") || col.gameObject.CompareTag("Obstacles")) && !onGroundState)
+    if ((col.gameObject.CompareTag("Ground") || col.gameObject.CompareTag("Spider") || col.gameObject.CompareTag("Rock")) && !onGroundState)
     {
       onGroundState = true;
       nezukoAnimator.SetBool("onGround", onGroundState);
     }
 
-    if (col.gameObject.CompareTag("Obstacles"))
+    if (col.gameObject.CompareTag("Spider"))
     {
-      Debug.Log("Collided with enemy!");
-      onObstaclesCollided.Invoke();
+      Debug.Log("Collided with spider!");
+      onSpiderCollided.Invoke();
     }
 
     if (col.gameObject.CompareTag("EdgeLimit"))

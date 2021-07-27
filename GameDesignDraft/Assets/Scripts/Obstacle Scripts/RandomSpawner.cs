@@ -67,7 +67,7 @@ public class RandomSpawner : MonoBehaviour
             }
 
             GameObject obstacle = Instantiate( obstaclePrefabs[randObstacle], randomPosition, Quaternion.identity);
-            obstacle.tag = "Obstacles";
+            // obstacle.tag = "Spider";
             obstacle.layer = 9;
 
         }
@@ -90,7 +90,7 @@ public class RandomSpawner : MonoBehaviour
             }
 
             GameObject obstacle = Instantiate( obstaclePrefabs[randObstacle], randomPosition, Quaternion.identity);
-            obstacle.tag = "Obstacles";
+            // obstacle.tag = "Rock";
             obstacle.layer = 9;
         }
 
