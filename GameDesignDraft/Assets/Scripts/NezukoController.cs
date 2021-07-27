@@ -9,6 +9,7 @@ public class NezukoController : MonoBehaviour
   private float speed;
   private float maxSpeed;
   private float upSpeed;
+  // public FloatVariable NezukoSpeedX;
   private bool onGroundState = true;
   private bool onShrinkState = false;
   private bool faceRightState = true;
@@ -30,6 +31,8 @@ public class NezukoController : MonoBehaviour
   void Start()
   {
     speed = gameConstants.nezukoSpeedX;
+    // NezukoSpeedX.SetValue(gameConstants.nezukoSpeedX);
+    // Debug.Log(speed);
     maxSpeed = gameConstants.nezukoMaxSpeed;
     upSpeed = gameConstants.nezukoUpSpeed;
     // Application.targetFrameRate = 50;
@@ -46,7 +49,7 @@ public class NezukoController : MonoBehaviour
     {
       Vector2 movement = new Vector2(moveHorizontal, 0);
       if (nezukoBody.velocity.magnitude < maxSpeed)
-        nezukoBody.AddForce(movement * speed);
+        nezukoBody.AddForce(movement * gameConstants.nezukoSpeedX);
     }
 
   }
@@ -126,9 +129,9 @@ public class NezukoController : MonoBehaviour
       nezukoAnimator.SetBool("onGround", onGroundState);
     }
 
-    if (col.gameObject.CompareTag("Enemy"))
+    if (col.gameObject.CompareTag("Obstacles"))
     {
-      // Debug.Log("Collided with enemy!");
+      Debug.Log("Collided with enemy!");
       onObstaclesCollided.Invoke();
     }
 
@@ -136,6 +139,11 @@ public class NezukoController : MonoBehaviour
     {
       Debug.Log("Collided with endlimit!");
       //Camera.main.transform.Translate(Vector3.right * (Time.deltaTime * (float)2.5));
+    }
+
+    if (col.gameObject.CompareTag("Tanjiro")) {
+      Debug.Log("Successfully met Tanjiro!");
+      onLevelComplete.Invoke();
     }
   }
 

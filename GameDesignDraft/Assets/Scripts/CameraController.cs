@@ -49,7 +49,11 @@ public class CameraController : MonoBehaviour
     public void PlayerDeathResponse()
     {
         //transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
-        this.enabled = false; //Stops camera movement
+        this.enabled = false;   // Stops camera movement
+    }
+
+    public void PlayerWinResponse() {
+        this.enabled = false;   // Stops camera movement
     }
 
     public void PlayerFastResponse()
