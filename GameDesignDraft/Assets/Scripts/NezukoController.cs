@@ -6,10 +6,9 @@ using UnityEngine.Events;
 public class NezukoController : MonoBehaviour
 {
   public GameConstants gameConstants;
-  private float speed;
+  public FloatVariable nezukoSpeedX;
   private float maxSpeed;
   private float upSpeed;
-  // public FloatVariable NezukoSpeedX;
   private bool onGroundState = true;
   private bool onShrinkState = false;
   private bool faceRightState = true;
@@ -30,9 +29,8 @@ public class NezukoController : MonoBehaviour
   // Start is called before the first frame update
   void Start()
   {
-    speed = gameConstants.nezukoSpeedX;
-    // NezukoSpeedX.SetValue(gameConstants.nezukoSpeedX);
-    // Debug.Log(speed);
+    nezukoSpeedX.SetValue(gameConstants.nezukoSpeedX);
+    Debug.Log(nezukoSpeedX.Value);
     maxSpeed = gameConstants.nezukoMaxSpeed;
     upSpeed = gameConstants.nezukoUpSpeed;
     // Application.targetFrameRate = 50;
@@ -49,7 +47,7 @@ public class NezukoController : MonoBehaviour
     {
       Vector2 movement = new Vector2(moveHorizontal, 0);
       if (nezukoBody.velocity.magnitude < maxSpeed)
-        nezukoBody.AddForce(movement * gameConstants.nezukoSpeedX);
+        nezukoBody.AddForce(movement * nezukoSpeedX.Value);
     }
 
   }

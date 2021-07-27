@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpiderController : MonoBehaviour, ObstacleInterface
 {
   // Start is called before the first frame update
-  public GameConstants gameConstants;
+  // public GameConstants gameConstants;
   public FloatVariable nezukoSpeed;
   private float originalX;
   private float maxOffset = 5.0f;
@@ -27,13 +27,12 @@ public class SpiderController : MonoBehaviour, ObstacleInterface
 
   public void affectPlayer()
   {
-    if (gameConstants.nezukoSpeedX == 140f) {
-      Debug.Log(gameConstants.nezukoSpeedX);
+    if (nezukoSpeed.Value == 140f) {
+      Debug.Log(nezukoSpeed.Value);
 
-      gameConstants.nezukoSpeedX -= 100f;
+      nezukoSpeed.ApplyChange(-100f);
 
-      // nezukoSpeed.ApplyChange(-100f);   //TODO: Hardcoded time. Put in scriptable constants? HOW TO STOP STACKING OR SET NEZUKO MIN SPEED.
-      Debug.Log(gameConstants.nezukoSpeedX);
+      Debug.Log(nezukoSpeed.Value);
       Debug.Log("Player speed decreased!");
       StartCoroutine(removeEffect());
     }
@@ -42,7 +41,7 @@ public class SpiderController : MonoBehaviour, ObstacleInterface
   IEnumerator removeEffect()
   {
     yield return new WaitForSeconds(5.0f);  //TODO: Hardcoded time. Put in scriptable constants?
-    gameConstants.nezukoSpeedX += 100f;
+    nezukoSpeed.ApplyChange(100f);
     // nezukoSpeed.ApplyChange(100);
     Debug.Log("Player speed resumes!");
   }

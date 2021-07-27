@@ -12,6 +12,8 @@ public class CameraController : MonoBehaviour
     private float startX; // smallest x-coordinate of the Camera
     private float endX; // largest x-coordinate of the camera
     private float viewportHalfWidth;
+    // public GameConstants gameConstants;
+
     // Start is called before the first frame update
     void Start()
     {

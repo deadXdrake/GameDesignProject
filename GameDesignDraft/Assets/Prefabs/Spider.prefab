@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2288675464605397125}
   m_Layer: 8
   m_Name: Spider
-  m_TagString: Enemy
+  m_TagString: Obstacles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,7 +126,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caa305d603dab18429045b0d1b55756f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameConstants: {fileID: 11400000, guid: 234dda25116717347ba60bd16be8c759, type: 2}
   nezukoSpeed: {fileID: 11400000, guid: b979a27e14d78a443a480462e1ff9da6, type: 2}
 --- !u!95 &2288675464605397135
 Animator:

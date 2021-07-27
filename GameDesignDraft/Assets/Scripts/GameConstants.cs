@@ -9,5 +9,6 @@ public class GameConstants : ScriptableObject
   public float nezukoSpeedX = 140;
   public float nezukoMaxSpeed = 10;
   public float nezukoUpSpeed = 25;
+  public float cameraSpeed = 1.0f;
 
 }

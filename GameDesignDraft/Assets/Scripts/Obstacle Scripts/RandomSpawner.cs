@@ -52,17 +52,16 @@ public class RandomSpawner : MonoBehaviour
             int leftOrRightRandom = Random.Range(0, 1);
             Vector3 randomPosition;
             // Do left right random first
-
-            if (leftRange == 0) {
-                randomPosition = new Vector3(rightRange, -3.12f, 0);        //TODO: y-position hardcoded. Add to scriptableObj constants
-            } else if (rightRange == 0) {
-                randomPosition = new Vector3(leftRange, -3.12f, 0);
-            } else {
+            if (leftRange != 0 && rightRange != 0) {
                 if (leftOrRightRandom == 0) {   // Spawn on Left
                     randomPosition = new Vector3(leftRange, -3.12f, 0);
                 } else {
                     randomPosition = new Vector3(rightRange, -3.12f, 0);
                 }
+            } else if (leftRange == 0) {
+                randomPosition = new Vector3(rightRange, -3.12f, 0);        //TODO: y-position hardcoded. Add to scriptableObj constants
+            } else {
+                randomPosition = new Vector3(leftRange, -3.12f, 0);
             }
 
             GameObject obstacle = Instantiate( obstaclePrefabs[randObstacle], randomPosition, Quaternion.identity);
@@ -75,16 +74,17 @@ public class RandomSpawner : MonoBehaviour
             Debug.Log("Instantiating rock!");
             int leftOrRightRandom = Random.Range(0, 1);
             Vector3 randomPosition;
-            if (leftRange == 0) {
-                randomPosition = new Vector3(rightRange, -2.69f, 0);        //TODO: y-position hardcoded. Add to scriptableObj constants
-            } else if (rightRange == 0) {
-                randomPosition = new Vector3(leftRange, -2.69f, 0);
-            } else {
+            // Do left right random first
+            if (leftRange != 0 && rightRange != 0) {
                 if (leftOrRightRandom == 0) {   // Spawn on Left
                     randomPosition = new Vector3(leftRange, -2.69f, 0);
                 } else {
                     randomPosition = new Vector3(rightRange, -2.69f, 0);
                 }
+            } else if (leftRange == 0) {
+                randomPosition = new Vector3(rightRange, -2.69f, 0);        //TODO: y-position hardcoded. Add to scriptableObj constants
+            } else {
+                randomPosition = new Vector3(leftRange, -2.69f, 0);
             }
 
             GameObject obstacle = Instantiate( obstaclePrefabs[randObstacle], randomPosition, Quaternion.identity);
