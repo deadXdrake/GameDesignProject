@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class NezukoController : MonoBehaviour
 {
   public GameConstants gameConstants;
-  private float speed;
+  public FloatVariable nezukoSpeedX;
   private float maxSpeed;
   private float upSpeed;
   private bool onGroundState = true;
@@ -19,7 +19,7 @@ public class NezukoController : MonoBehaviour
   public UnityEvent onPlayerFast;
   public UnityEvent onPlayerDeath;
   public UnityEvent onLevelComplete;
-  public UnityEvent onObstaclesCollided;
+  public UnityEvent onSpiderCollided;
 
   private Rigidbody2D nezukoBody;
   private SpriteRenderer nezukoSprite;
@@ -30,7 +30,8 @@ public class NezukoController : MonoBehaviour
   // Start is called before the first frame update
   void Start()
   {
-    speed = gameConstants.nezukoSpeedX;
+    nezukoSpeedX.SetValue(gameConstants.nezukoSpeedX);
+    Debug.Log(nezukoSpeedX.Value);
     maxSpeed = gameConstants.nezukoMaxSpeed;
     upSpeed = gameConstants.nezukoUpSpeed;
     // Application.targetFrameRate = 50;
@@ -48,7 +49,7 @@ public class NezukoController : MonoBehaviour
     {
       Vector2 movement = new Vector2(moveHorizontal, 0);
       if (nezukoBody.velocity.magnitude < maxSpeed)
-        nezukoBody.AddForce(movement * speed);
+        nezukoBody.AddForce(movement * nezukoSpeedX.Value);
     }
 
   }
@@ -123,22 +124,28 @@ public class NezukoController : MonoBehaviour
   //called when the cube hits the floor, resets ground state to true
   void OnCollisionEnter2D(Collision2D col)
   {
-    if ((col.gameObject.CompareTag("Ground") || col.gameObject.CompareTag("Obstacles")) && !onGroundState)
+    if ((col.gameObject.CompareTag("Ground") || col.gameObject.CompareTag("Spider") || col.gameObject.CompareTag("Rock")) && !onGroundState)
     {
       onGroundState = true;
       nezukoAnimator.SetBool("onGround", onGroundState);
     }
 
-    if (col.gameObject.CompareTag("Enemy"))
+    if (col.gameObject.CompareTag("Spider"))
     {
-      // Debug.Log("Collided with enemy!");
-      onObstaclesCollided.Invoke();
+      Debug.Log("Collided with spider!");
+      onSpiderCollided.Invoke();
     }
 
     if (col.gameObject.CompareTag("EdgeLimit"))
     {
       Debug.Log("Collided with endlimit!");
       //Camera.main.transform.Translate(Vector3.right * (Time.deltaTime * (float)2.5));
+    }
+
+    if (col.gameObject.CompareTag("Tanjiro")) {
+      Debug.Log("Successfully met Tanjiro!");
+      onLevelComplete.Invoke();
+      nezukoBody.bodyType = RigidbodyType2D.Static;
     }
   }
 

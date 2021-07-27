@@ -147,7 +147,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6b76340a3523944297118e0f7485a12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameConstants: {fileID: 0}
+  gameConstants: {fileID: 11400000, guid: 234dda25116717347ba60bd16be8c759, type: 2}
+  nezukoSpeedX: {fileID: 11400000, guid: b979a27e14d78a443a480462e1ff9da6, type: 2}
   onPlayerFast:
     m_PersistentCalls:
       m_Calls:
@@ -193,10 +194,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  onObstaclesCollided:
+  onSpiderCollided:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 751934261be69bc4491b8f0060e8ae89, type: 2}
+      - m_Target: {fileID: 11400000, guid: 353cfd78788359b4dbd096662cb2500f, type: 2}
         m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
         m_MethodName: Raise
         m_Mode: 1

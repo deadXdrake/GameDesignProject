@@ -5,12 +5,14 @@ using UnityEngine;
 public class SpiderController : MonoBehaviour, ObstacleInterface
 {
   // Start is called before the first frame update
-  public GameConstants gameConstants;
+  // public GameConstants gameConstants;
+  public FloatVariable nezukoSpeed;
   private float originalX;
   private float maxOffset = 5.0f;
   private float enemyPatroltime = 2.0f;
   private int moveRight = -1;
   private Vector2 velocity;
+  private Vector2 screenBounds;
 
   private Rigidbody2D enemyBody;
   private SpriteRenderer enemySprite;
@@ -23,18 +25,25 @@ public class SpiderController : MonoBehaviour, ObstacleInterface
     ComputeVelocity();
   }
 
-  public void affectPlayer(GameObject player)
+  public void affectPlayer()
   {
-    gameConstants.nezukoSpeedX -= 100;   //TODO: Hardcoded time. Put in scriptable constants? HOW TO STOP STACKING OR SET NEZUKO MIN SPEED.
-    Debug.Log("Player speed decreased!");
-    StartCoroutine(removeEffect(player));
+    if (nezukoSpeed.Value == 140f) {
+      Debug.Log(nezukoSpeed.Value);
+
+      nezukoSpeed.ApplyChange(-100f);
+
+      Debug.Log(nezukoSpeed.Value);
+      Debug.Log("Player speed decreased!");
+      StartCoroutine(removeEffect());
+    }
   }
 
-  IEnumerator removeEffect(GameObject player)
+  IEnumerator removeEffect()
   {
     yield return new WaitForSeconds(5.0f);  //TODO: Hardcoded time. Put in scriptable constants?
-    gameConstants.nezukoSpeedX += 100;
-    // Debug.Log("Player speed resumes!");
+    nezukoSpeed.ApplyChange(100f);
+    // nezukoSpeed.ApplyChange(100);
+    Debug.Log("Player speed resumes!");
   }
 
   void ComputeVelocity()
@@ -49,10 +58,21 @@ public class SpiderController : MonoBehaviour, ObstacleInterface
   // Update is called once per frame
   void Update()
   {
-    // change direction
-    moveRight *= -1;
-    ComputeVelocity();
-    MoveSpider();
+    if (Mathf.Abs(enemyBody.position.x - originalX) < maxOffset)
+    {// move gomba
+      MoveSpider();
+    }
+    else {
+      // change direction
+      moveRight *= -1;
+      ComputeVelocity();
+      MoveSpider();
+    }
+
+    screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+    if (transform.position.x < screenBounds.x - (18 + 5)) {
+        Destroy(this.gameObject);
+    }
   }
 
 }

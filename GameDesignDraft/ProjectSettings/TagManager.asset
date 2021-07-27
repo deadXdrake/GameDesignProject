@@ -10,6 +10,7 @@ TagManager:
   - Rock
   - EdgeLimit
   - Obstacles
+  - Tanjiro
   layers:
   - Default
   - TransparentFX
@@ -22,11 +23,11 @@ TagManager:
   - Spider
   - Player
   - Edge
-  - Obstacles 
-  -
-  -
-  -
-  -
+  - Obstacles
+  - BG1
+  - BG2
+  - BG3
+  - BG4
   -
   -
   -
