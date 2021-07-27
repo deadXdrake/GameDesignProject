@@ -12,6 +12,8 @@ public class CameraController : MonoBehaviour
     private float startX; // smallest x-coordinate of the Camera
     private float endX; // largest x-coordinate of the camera
     private float viewportHalfWidth;
+
+    public Vector3 cameraPosition;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +45,8 @@ public class CameraController : MonoBehaviour
         //this.transform.position = new Vector3(desiredX, this.transform.position.y, this.transform.position.z);
         // check if desiredX is within startX and endX
         transform.Translate(Vector3.right * Time.deltaTime);
+
+        cameraPosition = this.transform.position;
         
     }
 
