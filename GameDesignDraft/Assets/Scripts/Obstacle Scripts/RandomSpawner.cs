@@ -13,22 +13,40 @@ public class RandomSpawner : MonoBehaviour
     public Transform rightBound;
     private CameraController cameraScript;
     public Camera mainCam;
+    private bool oneTime = false;
+    private Vector3 prevObstaclePos = Vector3.zero;
 
     // Start is called before the first frame update
     void Start()
     {
         // Inital spawn
-        GameObject treeObstacle = Instantiate( treePrefab, new Vector3(spawnPoint.position.x + Random.Range(-1.0f, 1.0f), 0.89f, 0), Quaternion.identity);
+        // GameObject treeObstacle = Instantiate( treePrefab, new Vector3(spawnPoint.position.x + Random.Range(-1.0f, 1.0f), 0.89f, 0), Quaternion.identity);
 
-        StartCoroutine(obstacleWave());
+        // StartCoroutine(obstacleWave());
         cameraScript = mainCam.GetComponent<CameraController>();
+    }
+    private void Update() {
+        float div = (Mathf.Floor(mainCam.transform.position.x) % respawnTime);
+        Debug.Log(Mathf.Floor(mainCam.transform.position.x) % respawnTime);
+
+        if (div == 0) {
+            if (!oneTime) {
+                // StartCoroutine(obstacleWave());
+                spawnObstacles();
+                oneTime = true;
+            }
+        } else {
+            oneTime = false;
+        }
     }
 
     private void spawnObstacles() {
         // int numberOfObstacles = Random.Range(1, spawnPoints.Length);
 
         // Spawn a tree at random position
+
         GameObject treeObstacle = Instantiate( treePrefab, new Vector3(spawnPoint.position.x + Random.Range(-1.0f, 1.0f), 0.89f, 0), Quaternion.identity);
+        // GameObject treeObstacle = Instantiate( treePrefab, new Vector3(prevObstaclePos.x + Random.Range(0.0f, 1.0f), 0.89f, 0), Quaternion.identity);
         // Then spawn others while checking the position of the tree
 
         // for (int j =  0; j  <  numberOfObstacles; j++) {
@@ -69,6 +87,7 @@ public class RandomSpawner : MonoBehaviour
             GameObject obstacle = Instantiate( obstaclePrefabs[randObstacle], randomPosition, Quaternion.identity);
             // obstacle.tag = "Spider";
             obstacle.layer = 9;
+            prevObstaclePos = obstacle.transform.position;
 
         }
 
@@ -92,20 +111,23 @@ public class RandomSpawner : MonoBehaviour
             GameObject obstacle = Instantiate( obstaclePrefabs[randObstacle], randomPosition, Quaternion.identity);
             // obstacle.tag = "Rock";
             obstacle.layer = 9;
+            prevObstaclePos = obstacle.transform.position;
         }
 
         // }
     }
 
     IEnumerator obstacleWave() {
-        while( true ) {
-            yield return new WaitForSeconds(respawnTime);
+        // while( true ) {
+            // yield return new WaitForSeconds(2.0f);
             //yield return new WaitForSeconds(Time.deltaTime);
-            float div = (Mathf.Floor(cameraScript.cameraPosition.x % respawnTime));
-            Debug.Log(div);
-            //yield return new WaitWhile(() => div == 0);
-            spawnObstacles();
-        }
+            // float div = (Mathf.Floor(mainCam.transform.position.x) % respawnTime);
+            // Debug.Log(Mathf.Floor(mainCam.transform.position.x));
+            // yield return new WaitWhile(() => div == 0);
+            Debug.Log("Spawning obstacle");
+            yield return null;
+            // spawnObstacles();
+        // }
     }
 
 }

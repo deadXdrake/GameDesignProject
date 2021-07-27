@@ -142,6 +142,7 @@ public class NezukoController : MonoBehaviour
     if (col.gameObject.CompareTag("Tanjiro")) {
       Debug.Log("Successfully met Tanjiro!");
       onLevelComplete.Invoke();
+      nezukoBody.bodyType = RigidbodyType2D.Static;
     }
   }
 

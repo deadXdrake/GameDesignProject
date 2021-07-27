@@ -370,6 +370,7 @@ GameObject:
   - component: {fileID: 519420034}
   - component: {fileID: 519420035}
   - component: {fileID: 519420036}
+  - component: {fileID: 519420037}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -644,6 +645,34 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &519420037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3091566633e9b174da95e71f719bcca9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 3fd63b74adff9934e94923ce2fba1dac, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 519420030}
+        m_TargetAssemblyTypeName: CameraController, Assembly-CSharp
+        m_MethodName: PlayerWinResponse
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &573182388 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5928906065997579426, guid: fecc8c3633676134f8136f28473acae4, type: 3}
@@ -1873,7 +1902,7 @@ MonoBehaviour:
   - {fileID: 2288675464605397133, guid: 78057b8e4724f0c4aa2bb3475e5992b9, type: 3}
   - {fileID: 4468187207412756776, guid: 21dec93cbb3674b46866fbe513c48ce7, type: 3}
   treePrefab: {fileID: 6713992762225866002, guid: d8864dabb7681c14ab20b12f0527766f, type: 3}
-  respawnTime: 5
+  respawnTime: 8
   leftBound: {fileID: 1611052217}
   rightBound: {fileID: 515653485}
   mainCam: {fileID: 519420031}
