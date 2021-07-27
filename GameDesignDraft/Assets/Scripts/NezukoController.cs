@@ -49,8 +49,6 @@ public class NezukoController : MonoBehaviour
       Vector2 movement = new Vector2(moveHorizontal, 0);
       if (nezukoBody.velocity.magnitude < maxSpeed)
         nezukoBody.AddForce(movement * speed);
-
-      nezukoCollider.size = nezukoSprite.sprite.bounds.size;
     }
 
   }
@@ -59,12 +57,12 @@ public class NezukoController : MonoBehaviour
   void Update()
   {
     nezukoAnimator.SetFloat("xSpeed", Mathf.Abs(nezukoBody.velocity.x));
+    nezukoCollider.size = nezukoSprite.sprite.bounds.size;
 
     //nezuko jumps when spacebar is presssed and she is on ground
     if (Input.GetKeyDown(KeyCode.Space) && onGroundState)
     {
       // print("space pressed");
-      nezukoCollider.size = nezukoSprite.sprite.bounds.size;
       nezukoBody.AddForce(Vector2.up * upSpeed, ForceMode2D.Impulse);
       onGroundState = false;
       nezukoAnimator.SetBool("onGround", onGroundState);
@@ -73,7 +71,6 @@ public class NezukoController : MonoBehaviour
     //stop, set velocity to zero when "a" or "d" is lifted up
     if (Input.GetKeyUp("a") || Input.GetKeyUp("d"))
     {
-      nezukoCollider.size = nezukoSprite.sprite.bounds.size;
       nezukoBody.velocity = Vector2.zero;
     }
 
@@ -82,7 +79,6 @@ public class NezukoController : MonoBehaviour
     {
       onShrinkState = true;
       nezukoAnimator.SetBool("onShrink", onShrinkState);
-      nezukoCollider.size = new Vector2(nezukoSprite.sprite.bounds.size.x,nezukoSprite.sprite.bounds.size.y-0.25f);
     }
 
     //return to original size when w is pressed
@@ -90,7 +86,6 @@ public class NezukoController : MonoBehaviour
     {
       onShrinkState = false;
       nezukoAnimator.SetBool("onShrink", onShrinkState);
-      nezukoCollider.size = nezukoSprite.sprite.bounds.size;
     }
 
     //nezuko face left when a is pressed
