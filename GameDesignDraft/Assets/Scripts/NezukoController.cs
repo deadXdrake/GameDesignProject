@@ -5,9 +5,10 @@ using UnityEngine.Events;
 
 public class NezukoController : MonoBehaviour
 {
-  public float speed;
-  public float maxSpeed = 10; //set the maximum speed
-  public float upSpeed;
+  public GameConstants gameConstants;
+  private float speed;
+  private float maxSpeed;
+  private float upSpeed;
   private bool onGroundState = true;
   private bool onShrinkState = false;
   private bool faceRightState = true;
@@ -28,6 +29,9 @@ public class NezukoController : MonoBehaviour
   // Start is called before the first frame update
   void Start()
   {
+    speed = gameConstants.nezukoSpeedX;
+    maxSpeed = gameConstants.nezukoMaxSpeed;
+    upSpeed = gameConstants.nezukoUpSpeed;
     // Application.targetFrameRate = 50;
     nezukoBody = GetComponent<Rigidbody2D>();
     nezukoSprite = GetComponent<SpriteRenderer>();
@@ -122,23 +126,24 @@ public class NezukoController : MonoBehaviour
       nezukoAnimator.SetBool("onGround", onGroundState);
     }
 
-    if (col.gameObject.CompareTag("Enemy")) {
+    if (col.gameObject.CompareTag("Enemy"))
+    {
       // Debug.Log("Collided with enemy!");
       onObstaclesCollided.Invoke();
     }
 
     if (col.gameObject.CompareTag("EdgeLimit"))
     {
-        Debug.Log("Collided with endlimit!");
-        //Camera.main.transform.Translate(Vector3.right * (Time.deltaTime * (float)2.5));
+      Debug.Log("Collided with endlimit!");
+      //Camera.main.transform.Translate(Vector3.right * (Time.deltaTime * (float)2.5));
     }
   }
 
-    public float getNezukoSpeed() 
-    {
-        Debug.Log(nezukoBody.velocity.magnitude);
-        return nezukoBody.velocity.magnitude;
-    }
+  public float getNezukoSpeed()
+  {
+    Debug.Log(nezukoBody.velocity.magnitude);
+    return nezukoBody.velocity.magnitude;
+  }
 
   public void PlayerDeathResponse()
   {
