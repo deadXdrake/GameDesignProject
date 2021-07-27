@@ -11,6 +11,8 @@ public class RandomSpawner : MonoBehaviour
     public float respawnTime;
     public Transform leftBound;
     public Transform rightBound;
+    private CameraController cameraScript;
+    public Camera mainCam;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +21,7 @@ public class RandomSpawner : MonoBehaviour
         GameObject treeObstacle = Instantiate( treePrefab, new Vector3(spawnPoint.position.x + Random.Range(-1.0f, 1.0f), 0.89f, 0), Quaternion.identity);
 
         StartCoroutine(obstacleWave());
-
+        cameraScript = mainCam.GetComponent<CameraController>();
     }
 
     private void spawnObstacles() {
@@ -48,7 +50,7 @@ public class RandomSpawner : MonoBehaviour
 
         if (obstaclePrefabs[randObstacle].name.Equals("Spider")) {
             Debug.Log("Instantiating spider!");
-            
+
             int leftOrRightRandom = Random.Range(0, 1);
             Vector3 randomPosition;
             // Do left right random first
@@ -67,7 +69,7 @@ public class RandomSpawner : MonoBehaviour
             GameObject obstacle = Instantiate( obstaclePrefabs[randObstacle], randomPosition, Quaternion.identity);
             obstacle.tag = "Obstacles";
             obstacle.layer = 9;
-            
+
         }
 
         if (obstaclePrefabs[randObstacle].name.Equals("Rock")) {
@@ -98,6 +100,10 @@ public class RandomSpawner : MonoBehaviour
     IEnumerator obstacleWave() {
         while( true ) {
             yield return new WaitForSeconds(respawnTime);
+            //yield return new WaitForSeconds(Time.deltaTime);
+            float div = (Mathf.Floor(cameraScript.cameraPosition.x % respawnTime));
+            Debug.Log(div);
+            //yield return new WaitWhile(() => div == 0);
             spawnObstacles();
         }
     }

@@ -12,15 +12,15 @@ public class CameraController : MonoBehaviour
     private float startX; // smallest x-coordinate of the Camera
     private float endX; // largest x-coordinate of the camera
     private float viewportHalfWidth;
-    // public GameConstants gameConstants;
 
+    public Vector3 cameraPosition;
     // Start is called before the first frame update
     void Start()
     {
 
         // get coordinate of the bottomleft of the viewport
         // z doesn't matter since the camera is orthographic
-    
+
 
         Vector3 bottomLeft = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0));
         viewportHalfWidth = Mathf.Abs(bottomLeft.x - this.transform.position.x);
@@ -40,12 +40,14 @@ public class CameraController : MonoBehaviour
         //Right edge collider (EndLimit) moves with camera
         Vector3 rightCam = Camera.main.ViewportToWorldPoint(new Vector3((float)1, 0, 0));
         endLimit.position = rightCam;
-        
+
         //float desiredX = Time.time + offset;
         //this.transform.position = new Vector3(desiredX, this.transform.position.y, this.transform.position.z);
         // check if desiredX is within startX and endX
         transform.Translate(Vector3.right * Time.deltaTime);
-        
+
+        cameraPosition = this.transform.position;
+
     }
 
     public void PlayerDeathResponse()
@@ -85,6 +87,6 @@ public class CameraController : MonoBehaviour
             transform.Translate(Vector3.right * (Time.deltaTime * (float)2.5));
             //this.transform.position = new Vector3(fastX, this.transform.position.y, this.transform.position.z);
         }
-        
+
     }
 }
