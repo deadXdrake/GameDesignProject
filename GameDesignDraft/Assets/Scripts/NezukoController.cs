@@ -16,7 +16,6 @@ public class NezukoController : MonoBehaviour
   private Vector3 leftCamera;
   private Vector3 middleCam;
 
-  public UnityEvent onPlayerFast;
   public UnityEvent onPlayerDeath;
   public UnityEvent onLevelComplete;
   public UnityEvent onSpiderCollided;
@@ -36,7 +35,7 @@ public class NezukoController : MonoBehaviour
     void Start()
   {
     nezukoSpeedX.SetValue(gameConstants.nezukoSpeedX);
-    Debug.Log(nezukoSpeedX.Value);
+    //Debug.Log(nezukoSpeedX.Value);
     maxSpeed = gameConstants.nezukoMaxSpeed;
     upSpeed = gameConstants.nezukoUpSpeed;
     // Application.targetFrameRate = 50;
@@ -128,10 +127,6 @@ public class NezukoController : MonoBehaviour
       onPlayerDeath.Invoke();
     }
 
-    if (this.transform.position.x >= middleCam.x) //If Nezuko is on right
-    {
-      onPlayerFast.Invoke();
-    }
   }
 
   //============================================================

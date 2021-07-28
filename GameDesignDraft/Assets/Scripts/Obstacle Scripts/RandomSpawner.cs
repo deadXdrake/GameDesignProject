@@ -27,7 +27,7 @@ public class RandomSpawner : MonoBehaviour
     }
     private void Update() {
         float div = (Mathf.Floor(mainCam.transform.position.x) % respawnTime);
-        Debug.Log(Mathf.Floor(mainCam.transform.position.x) % respawnTime);
+        //Debug.Log(Mathf.Floor(mainCam.transform.position.x) % respawnTime);
 
         if (div == 0) {
             if (!oneTime) {
