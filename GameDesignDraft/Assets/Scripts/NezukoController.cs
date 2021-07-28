@@ -7,7 +7,7 @@ public class NezukoController : MonoBehaviour
 {
   public GameConstants gameConstants;
   public FloatVariable nezukoSpeedX;
-  private float upSpeed;
+  public FloatVariable upSpeed;
   public BoolVariable isNezukoStuck;
   private float maxSpeed;
   private bool onGroundState = true;
@@ -21,6 +21,7 @@ public class NezukoController : MonoBehaviour
   public UnityEvent onLevelComplete;
   public UnityEvent onSpiderCollided;
   public UnityEvent onWebCollided;
+  public UnityEvent onFireCollided;
 
   private Rigidbody2D nezukoBody;
   private SpriteRenderer nezukoSprite;
@@ -37,10 +38,10 @@ public class NezukoController : MonoBehaviour
     void Start()
   {
     nezukoSpeedX.SetValue(gameConstants.nezukoSpeedX);
-    // upSpeed.SetValue(gameConstants.nezukoUpSpeed);
+    upSpeed.SetValue(gameConstants.nezukoUpSpeed);
     isNezukoStuck.SetValue(false);
     maxSpeed = gameConstants.nezukoMaxSpeed;
-    upSpeed = gameConstants.nezukoUpSpeed;
+    // upSpeed = gameConstants.nezukoUpSpeed;
     // Application.targetFrameRate = 50;
     nezukoBody = GetComponent<Rigidbody2D>();
     nezukoSprite = GetComponent<SpriteRenderer>();
@@ -85,7 +86,7 @@ public class NezukoController : MonoBehaviour
     if (Input.GetKeyDown(KeyCode.Space) && onGroundState)
     {
       // print("space pressed");
-      nezukoBody.AddForce(Vector2.up * upSpeed, ForceMode2D.Impulse);
+      nezukoBody.AddForce(Vector2.up * upSpeed.Value, ForceMode2D.Impulse);
       onGroundState = false;
       nezukoAnimator.SetBool("onGround", onGroundState);
       nezukoJump.Play();
@@ -149,6 +150,7 @@ public class NezukoController : MonoBehaviour
     || col.gameObject.CompareTag("Spider")
     || col.gameObject.CompareTag("Rock"))
     || col.gameObject.CompareTag("SpiderWeb")
+    || col.gameObject.CompareTag("Fire")
      && !onGroundState)
     {
       onGroundState = true;
@@ -176,6 +178,11 @@ public class NezukoController : MonoBehaviour
     if (col.gameObject.CompareTag("SpiderWeb")) {
       Debug.Log("Collided with spider web!");
       onWebCollided.Invoke();
+    }
+
+    if (col.gameObject.CompareTag("Fire")) {
+      Debug.Log("Colldied with fire!");
+      onFireCollided.Invoke();
     }
   }
 

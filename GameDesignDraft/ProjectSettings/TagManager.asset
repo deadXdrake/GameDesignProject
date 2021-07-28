@@ -11,41 +11,41 @@ TagManager:
   - EdgeLimit
   - Obstacles
   - Tanjiro
+  - SpiderWeb
+  - Fire
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  -
+  - 
   - Water
   - UI
-  - Background
-  - Rock
-  - Spider
-  - Player
-  - Edge
-  - Obstacles
-  - BG1
-  - BG2
-  - BG3
-  - BG4
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   m_SortingLayers:
   - name: Default
     uniqueID: 0
