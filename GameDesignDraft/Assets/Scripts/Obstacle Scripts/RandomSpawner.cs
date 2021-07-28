@@ -98,14 +98,14 @@ public class RandomSpawner : MonoBehaviour
             // Do left right random first
             if (leftRange != 0 && rightRange != 0) {
                 if (leftOrRightRandom == 0) {   // Spawn on Left
-                    randomPosition = new Vector3(leftRange, -2.69f, 0);
+                    randomPosition = new Vector3(leftRange, -2.85f, 0);
                 } else {
-                    randomPosition = new Vector3(rightRange, -2.69f, 0);
+                    randomPosition = new Vector3(rightRange, -2.85f, 0);
                 }
             } else if (leftRange == 0) {
-                randomPosition = new Vector3(rightRange, -2.69f, 0);        //TODO: y-position hardcoded. Add to scriptableObj constants
+                randomPosition = new Vector3(rightRange, -2.85f, 0);        //TODO: y-position hardcoded. Add to scriptableObj constants
             } else {
-                randomPosition = new Vector3(leftRange, -2.69f, 0);
+                randomPosition = new Vector3(leftRange, -2.85f, 0);
             }
 
             GameObject obstacle = Instantiate( obstaclePrefabs[randObstacle], randomPosition, Quaternion.identity);
