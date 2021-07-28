@@ -7,7 +7,7 @@ public class CameraController : MonoBehaviour
     public Transform player; // Nezuko's Transform
     public Rigidbody2D nezukoBody;
     public Transform endLimit; // GameObject that indicates end of map
-    public Transform startLimit; // GameObject that indicates end of map
+    public Transform endofScreen; // GameObject that indicates end of map
     private float endX; // largest x-coordinate of the camera
     private float viewportHalfWidth;
     public GameConstants gameConstants;
@@ -58,8 +58,15 @@ public class CameraController : MonoBehaviour
             transform.Translate(Vector3.right * (Time.deltaTime * 4.5f));
         }
 
-        //cameraPosition = this.transform.position;
+        if (endofScreen.transform.position.x <= rightCam.x) //Tanjiro seen on screen
+        {
+            Debug.Log("End of Map");
+            this.enabled = false;   // Stops camera movement
 
+        }
+
+        //cameraPosition = this.transform.position;
+        
     }
 
     public void PlayerDeathResponse()
