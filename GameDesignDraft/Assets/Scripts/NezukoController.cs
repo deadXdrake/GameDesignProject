@@ -7,8 +7,9 @@ public class NezukoController : MonoBehaviour
 {
   public GameConstants gameConstants;
   public FloatVariable nezukoSpeedX;
-  private float maxSpeed;
   private float upSpeed;
+  public BoolVariable isNezukoStuck;
+  private float maxSpeed;
   private bool onGroundState = true;
   private bool onShrinkState = false;
   private bool faceRightState = true;
@@ -20,6 +21,7 @@ public class NezukoController : MonoBehaviour
   public UnityEvent onPlayerDeath;
   public UnityEvent onLevelComplete;
   public UnityEvent onSpiderCollided;
+  public UnityEvent onWebCollided;
 
   private Rigidbody2D nezukoBody;
   private SpriteRenderer nezukoSprite;
@@ -31,7 +33,8 @@ public class NezukoController : MonoBehaviour
   void Start()
   {
     nezukoSpeedX.SetValue(gameConstants.nezukoSpeedX);
-    Debug.Log(nezukoSpeedX.Value);
+    // upSpeed.SetValue(gameConstants.nezukoUpSpeed);
+    isNezukoStuck.SetValue(false);
     maxSpeed = gameConstants.nezukoMaxSpeed;
     upSpeed = gameConstants.nezukoUpSpeed;
     // Application.targetFrameRate = 50;
@@ -59,6 +62,14 @@ public class NezukoController : MonoBehaviour
   {
     nezukoAnimator.SetFloat("xSpeed", Mathf.Abs(nezukoBody.velocity.x));
     nezukoCollider.size = nezukoSprite.sprite.bounds.size;
+    nezukoBody.gravityScale = 2.75f;
+
+    Debug.Log(isNezukoStuck.Value);
+    if (isNezukoStuck.Value) {
+      Debug.Log("Nezuko is stuck!");
+      nezukoBody.velocity = Vector3.zero;
+      nezukoBody.gravityScale = 0;
+    }
 
     //nezuko jumps when spacebar is presssed and she is on ground
     if (Input.GetKeyDown(KeyCode.Space) && onGroundState)
@@ -124,7 +135,12 @@ public class NezukoController : MonoBehaviour
   //called when the cube hits the floor, resets ground state to true
   void OnCollisionEnter2D(Collision2D col)
   {
-    if ((col.gameObject.CompareTag("Ground") || col.gameObject.CompareTag("Spider") || col.gameObject.CompareTag("Rock")) && !onGroundState)
+    // To jump on all obstacles
+    if ((col.gameObject.CompareTag("Ground")
+    || col.gameObject.CompareTag("Spider")
+    || col.gameObject.CompareTag("Rock"))
+    || col.gameObject.CompareTag("SpiderWeb")
+     && !onGroundState)
     {
       onGroundState = true;
       nezukoAnimator.SetBool("onGround", onGroundState);
@@ -146,6 +162,11 @@ public class NezukoController : MonoBehaviour
       Debug.Log("Successfully met Tanjiro!");
       onLevelComplete.Invoke();
       nezukoBody.bodyType = RigidbodyType2D.Static;
+    }
+
+    if (col.gameObject.CompareTag("SpiderWeb")) {
+      Debug.Log("Collided with spider web!");
+      onWebCollided.Invoke();
     }
   }
 

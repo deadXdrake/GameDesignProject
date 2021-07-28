@@ -9,13 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f69711425a50a042a26d7584ea5d96b, type: 3}
-  m_Name: GameConstants
+  m_Script: {fileID: 11500000, guid: 39cc096e3d71caf44844e5e525740d7d, type: 3}
+  m_Name: NezukoUpSpeed
   m_EditorClassIdentifier: 
-  nezukoSpeedX: 140
-  nezukoMaxSpeed: 10
-  nezukoUpSpeed: 25
-  cameraSpeedStandardEasy: 1.5
-  cameraSpeedSlow: 2
-  cameraSpeedMid: 3
-  cameraSpeedFast: 4
+  DeveloperDescription: 

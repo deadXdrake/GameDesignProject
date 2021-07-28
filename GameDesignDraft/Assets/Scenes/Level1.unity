@@ -455,7 +455,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 515653484}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 29.71, y: 0.75, z: 0}
+  m_LocalPosition: {x: 22.96, y: 0.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1846815634}
@@ -509,6 +509,7 @@ MonoBehaviour:
   nezukoBody: {fileID: 2131324892}
   endLimit: {fileID: 2113789275}
   startLimit: {fileID: 1624365328}
+  gameConstants: {fileID: 11400000, guid: 234dda25116717347ba60bd16be8c759, type: 2}
   cameraPosition: {x: 0, y: 0, z: 0}
 --- !u!20 &519420031
 Camera:
@@ -1890,7 +1891,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1611052216}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.23, y: 0.75, z: 0}
+  m_LocalPosition: {x: 11.98, y: 0.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1846815634}
@@ -2097,7 +2098,7 @@ MonoBehaviour:
   - {fileID: 2288675464605397133, guid: 78057b8e4724f0c4aa2bb3475e5992b9, type: 3}
   - {fileID: 4468187207412756776, guid: 21dec93cbb3674b46866fbe513c48ce7, type: 3}
   treePrefab: {fileID: 6713992762225866002, guid: d8864dabb7681c14ab20b12f0527766f, type: 3}
-  respawnTime: 8
+  respawnTime: 10
   leftBound: {fileID: 1611052217}
   rightBound: {fileID: 515653485}
   mainCam: {fileID: 519420031}

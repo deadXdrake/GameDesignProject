@@ -9,13 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f69711425a50a042a26d7584ea5d96b, type: 3}
-  m_Name: GameConstants
+  m_Script: {fileID: 11500000, guid: 5cf688af1ad088b41ad024e7a5256d04, type: 3}
+  m_Name: isNezukoStuck
   m_EditorClassIdentifier: 
-  nezukoSpeedX: 140
-  nezukoMaxSpeed: 10
-  nezukoUpSpeed: 25
-  cameraSpeedStandardEasy: 1.5
-  cameraSpeedSlow: 2
-  cameraSpeedMid: 3
-  cameraSpeedFast: 4
+  DeveloperDescription: Standard returns false. When stuck returns true.

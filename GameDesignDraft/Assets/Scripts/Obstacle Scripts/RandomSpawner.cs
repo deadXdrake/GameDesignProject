@@ -27,7 +27,7 @@ public class RandomSpawner : MonoBehaviour
     }
     private void Update() {
         float div = (Mathf.Floor(mainCam.transform.position.x) % respawnTime);
-        Debug.Log(Mathf.Floor(mainCam.transform.position.x) % respawnTime);
+        // Debug.Log(Mathf.Floor(mainCam.transform.position.x) % respawnTime);
 
         if (div == 0) {
             if (!oneTime) {
@@ -51,15 +51,15 @@ public class RandomSpawner : MonoBehaviour
 
         // for (int j =  0; j  <  numberOfObstacles; j++) {
         float leftRange;
-        if (treeObstacle.transform.position.x - 5.0f > leftBound.transform.position.x) {
-            leftRange = Random.Range(leftBound.transform.position.x, treeObstacle.transform.position.x - 5.0f);
+        if (treeObstacle.transform.position.x - 4.5f > leftBound.transform.position.x) {
+            leftRange = Random.Range(leftBound.transform.position.x, treeObstacle.transform.position.x - 4.5f);
         } else {
             leftRange = 0f;
         }
 
         float rightRange;
-        if (treeObstacle.transform.position.x + 5.0f < rightBound.transform.position.x) {
-            rightRange = Random.Range(treeObstacle.transform.position.x + 5.0f, rightBound.transform.position.x);
+        if (treeObstacle.transform.position.x + 3.0f < rightBound.transform.position.x) {
+            rightRange = Random.Range(treeObstacle.transform.position.x + 3.0f, rightBound.transform.position.x);
         } else {
             rightRange = 0f;
         }

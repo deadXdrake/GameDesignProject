@@ -12,6 +12,7 @@ public class CameraController : MonoBehaviour
     private float startX; // smallest x-coordinate of the Camera
     private float endX; // largest x-coordinate of the camera
     private float viewportHalfWidth;
+    public GameConstants gameConstants;
 
     public Vector3 cameraPosition;
     // Start is called before the first frame update
@@ -44,7 +45,7 @@ public class CameraController : MonoBehaviour
         //float desiredX = Time.time + offset;
         //this.transform.position = new Vector3(desiredX, this.transform.position.y, this.transform.position.z);
         // check if desiredX is within startX and endX
-        transform.Translate(Vector3.right * Time.deltaTime);
+        transform.Translate(Vector3.right * Time.deltaTime * gameConstants.cameraSpeedStandardEasy);
 
         cameraPosition = this.transform.position;
 
@@ -68,7 +69,7 @@ public class CameraController : MonoBehaviour
         {
             //Debug.Log("1");
             float fastX = (Time.time + offset) * (float)1.5;
-            transform.Translate(Vector3.right * (Time.deltaTime*(float)1.5));
+            transform.Translate(Vector3.right * (Time.deltaTime* gameConstants.cameraSpeedSlow ));
             //this.transform.position = new Vector3(fastX, this.transform.position.y, this.transform.position.z);
         }
 
@@ -76,7 +77,7 @@ public class CameraController : MonoBehaviour
         {
             //Debug.Log("2");
             float fastX = (Time.time + offset) * (float)1.8;
-            transform.Translate(Vector3.right * (Time.deltaTime * (float)2));
+            transform.Translate(Vector3.right * (Time.deltaTime * gameConstants.cameraSpeedMid));
             //this.transform.position = new Vector3(fastX, this.transform.position.y, this.transform.position.z);
         }
 
@@ -84,7 +85,7 @@ public class CameraController : MonoBehaviour
         {
             //Debug.Log("3");
             float fastX = (Time.time + offset) * (float)2;
-            transform.Translate(Vector3.right * (Time.deltaTime * (float)2.5));
+            transform.Translate(Vector3.right * (Time.deltaTime * gameConstants.cameraSpeedFast));
             //this.transform.position = new Vector3(fastX, this.transform.position.y, this.transform.position.z);
         }
 

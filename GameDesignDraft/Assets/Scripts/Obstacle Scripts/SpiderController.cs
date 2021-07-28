@@ -16,6 +16,7 @@ public class SpiderController : MonoBehaviour, ObstacleInterface
 
   private Rigidbody2D enemyBody;
   private SpriteRenderer enemySprite;
+  private Animator spiderAnimator;
   void Start()
   {
     enemyBody = GetComponent<Rigidbody2D>();
@@ -23,6 +24,7 @@ public class SpiderController : MonoBehaviour, ObstacleInterface
     // get the starting position
     originalX = transform.position.x;
     ComputeVelocity();
+    spiderAnimator = GetComponent<Animator>();
   }
 
   public void affectPlayer()
@@ -36,6 +38,10 @@ public class SpiderController : MonoBehaviour, ObstacleInterface
       Debug.Log("Player speed decreased!");
       StartCoroutine(removeEffect());
     }
+  }
+
+  public void playerLevelComplete() {
+    velocity = new Vector2(0, 0);
   }
 
   IEnumerator removeEffect()
@@ -68,6 +74,9 @@ public class SpiderController : MonoBehaviour, ObstacleInterface
       ComputeVelocity();
       MoveSpider();
     }
+
+    spiderAnimator.SetFloat("xSpeed", Mathf.Abs(velocity.x));
+    Debug.Log(Mathf.Abs(velocity.x));
 
     screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
     if (transform.position.x < screenBounds.x - (18 + 5)) {
