@@ -43,19 +43,19 @@ public class CameraController : MonoBehaviour
         if (nezukoPos < 10)
         {
             //Debug.Log("1st");
-            transform.Translate(Vector3.right * (Time.deltaTime * 1.0f));
+            transform.Translate(Vector3.right * (Time.deltaTime * 1.5f));
         }
 
         if (nezukoPos >= 10 && nezukoPos < 13.5)
         {
             //Debug.Log("2nd");
-            transform.Translate(Vector3.right * (Time.deltaTime * 2.0f));
+            transform.Translate(Vector3.right * (Time.deltaTime * 3.0f));
         }
 
         if (nezukoPos > 13.5)
         {
             //Debug.Log("3rd");
-            transform.Translate(Vector3.right * (Time.deltaTime * 3.0f));
+            transform.Translate(Vector3.right * (Time.deltaTime * 4.5f));
         }
 
         //cameraPosition = this.transform.position;
