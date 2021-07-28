@@ -4,40 +4,40 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 2987701009461435019
-    second: tanjiroHit1
+    second: tanjiroHit_1
   - first:
       213: -4217840866288775776
-    second: tanjiroHit2
+    second: tanjiroHit_2
   - first:
       213: -2222624077134850739
-    second: tanjirospritesheet_2
+    second: tanjiroHit_3
   - first:
       213: -7634943465474154671
-    second: tanjiroStand1
+    second: tanjiroStand_1
   - first:
       213: -2419819132393831047
-    second: tanjiroStand2
+    second: tanjiroStand_2
   - first:
       213: 5274693526501397349
-    second: tanjiroStand3
+    second: tanjiroStand_3
   - first:
       213: 1756470671927403175
-    second: tanjiroStand4
+    second: tanjiroStand_4
   - first:
       213: -1869341154899970055
-    second: tanjiroStand5
+    second: tanjiroStand_5
   - first:
       213: 2587777325802630260
-    second: tanjiroStand6
+    second: tanjiroStand_6
   - first:
       213: -2710561774115240089
-    second: tanjiroStand7
+    second: tanjiroStand_7
   - first:
       213: -4837273465048471739
-    second: tanjiroStand8
+    second: tanjiroStand_8
   - first:
       213: -7673501350889437593
-    second: tanjiroStand9
+    second: tanjiroStand_9
   - first:
       213: 4210838507810957363
     second: tanjiroRun_1
@@ -214,7 +214,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tanjiroHit1
+      name: tanjiroHit_1
       rect:
         serializedVersion: 2
         x: 12
@@ -235,7 +235,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tanjiroHit2
+      name: tanjiroHit_2
       rect:
         serializedVersion: 2
         x: 67
@@ -256,7 +256,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tanjirospritesheet_2
+      name: tanjiroHit_3
       rect:
         serializedVersion: 2
         x: 124
@@ -277,10 +277,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tanjiroStand1
+      name: tanjiroStand_1
       rect:
         serializedVersion: 2
-        x: 221
+        x: 220
         y: 355
         width: 22
         height: 52
@@ -298,7 +298,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tanjiroStand2
+      name: tanjiroStand_2
       rect:
         serializedVersion: 2
         x: 256
@@ -319,7 +319,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tanjiroStand3
+      name: tanjiroStand_3
       rect:
         serializedVersion: 2
         x: 286
@@ -340,7 +340,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tanjiroStand4
+      name: tanjiroStand_4
       rect:
         serializedVersion: 2
         x: 313
@@ -361,7 +361,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tanjiroStand5
+      name: tanjiroStand_5
       rect:
         serializedVersion: 2
         x: 359
@@ -382,7 +382,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tanjiroStand6
+      name: tanjiroStand_6
       rect:
         serializedVersion: 2
         x: 408
@@ -403,7 +403,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tanjiroStand7
+      name: tanjiroStand_7
       rect:
         serializedVersion: 2
         x: 470
@@ -424,7 +424,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tanjiroStand8
+      name: tanjiroStand_8
       rect:
         serializedVersion: 2
         x: 532
@@ -445,7 +445,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tanjiroStand9
+      name: tanjiroStand_9
       rect:
         serializedVersion: 2
         x: 595
@@ -469,7 +469,7 @@ TextureImporter:
       name: tanjiroRun_1
       rect:
         serializedVersion: 2
-        x: 29
+        x: 28
         y: 286
         width: 44
         height: 43
@@ -952,7 +952,7 @@ TextureImporter:
       name: tanjiroCrow_6
       rect:
         serializedVersion: 2
-        x: 269
+        x: 270
         y: 50
         width: 19
         height: 13
