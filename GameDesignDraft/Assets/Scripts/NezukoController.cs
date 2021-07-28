@@ -26,9 +26,14 @@ public class NezukoController : MonoBehaviour
   private Animator nezukoAnimator;
   private BoxCollider2D nezukoCollider;
 
+    private AudioSource nezukoJump;
+    private AudioSource nezukoUnShrink;
+    private AudioSource nezukoShrink;
+    private AudioSource gameOver;
 
-  // Start is called before the first frame update
-  void Start()
+
+    // Start is called before the first frame update
+    void Start()
   {
     nezukoSpeedX.SetValue(gameConstants.nezukoSpeedX);
     Debug.Log(nezukoSpeedX.Value);
@@ -39,7 +44,13 @@ public class NezukoController : MonoBehaviour
     nezukoSprite = GetComponent<SpriteRenderer>();
     nezukoAnimator = GetComponent<Animator>();
     nezukoCollider = GetComponent<BoxCollider2D>();
-  }
+
+    AudioSource[] allMyAudioSources = GetComponents<AudioSource>();
+    nezukoJump = allMyAudioSources[0];
+    nezukoUnShrink = allMyAudioSources[1];
+    nezukoShrink = allMyAudioSources[2];
+    gameOver = allMyAudioSources[3];
+    }
 
   void FixedUpdate()
   {
@@ -67,6 +78,7 @@ public class NezukoController : MonoBehaviour
       nezukoBody.AddForce(Vector2.up * upSpeed, ForceMode2D.Impulse);
       onGroundState = false;
       nezukoAnimator.SetBool("onGround", onGroundState);
+      nezukoJump.Play();
     }
 
     //stop, set velocity to zero when "a" or "d" is lifted up
@@ -80,6 +92,7 @@ public class NezukoController : MonoBehaviour
     {
       onShrinkState = true;
       nezukoAnimator.SetBool("onShrink", onShrinkState);
+      nezukoShrink.Play();
     }
 
     //return to original size when w is pressed
@@ -87,6 +100,7 @@ public class NezukoController : MonoBehaviour
     {
       onShrinkState = false;
       nezukoAnimator.SetBool("onShrink", onShrinkState);
+      nezukoUnShrink.Play();
     }
 
     //nezuko face left when a is pressed
@@ -160,8 +174,10 @@ public class NezukoController : MonoBehaviour
     //Death sequence
     nezukoAnimator.SetBool("isGameOver", true);
     transform.position = new Vector3(leftCamera.x + nezukoSprite.bounds.extents.x, transform.position.y, transform.position.z);
-
+    gameOver.Play();
     Debug.Log("Nezuko died!");
+
+
     //Time.timeScale = 0;
     //GetComponent<Animator>().SetBool("playerIsDead", true); //play playerdead animation
 
