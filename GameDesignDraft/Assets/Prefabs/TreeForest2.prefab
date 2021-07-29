@@ -140,6 +140,7 @@ GameObject:
   - component: {fileID: 5059607301907590049}
   - component: {fileID: 5717440833860236495}
   - component: {fileID: 4321999629108102767}
+  - component: {fileID: 2605850206199990862}
   m_Layer: 0
   m_Name: BranchForest
   m_TagString: Ground
@@ -224,9 +225,9 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.03446953}
+  m_Offset: {x: -0.03342843, y: 0.14869684}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -237,8 +238,27 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.25, y: 0.6975204}
+  m_Size: {x: 1.1831431, y: 0.16408908}
   m_EdgeRadius: 0
+--- !u!251 &2605850206199990862
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7058912622163513344}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &7428023642993162647
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,6 +270,7 @@ GameObject:
   - component: {fileID: 7428023642993162646}
   - component: {fileID: 7428023642993162648}
   - component: {fileID: 7428023642993162649}
+  - component: {fileID: 103917440482485704}
   m_Layer: 0
   m_Name: BranchForest (1)
   m_TagString: Ground
@@ -334,9 +355,9 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.03446953}
+  m_Offset: {x: 0.0334208, y: 0.16476387}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -347,5 +368,24 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.25, y: 0.6975204}
+  m_Size: {x: 1.1831584, y: 0.17051637}
   m_EdgeRadius: 0
+--- !u!251 &103917440482485704
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7428023642993162647}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1

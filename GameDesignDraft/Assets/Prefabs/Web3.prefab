@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 3098679943083597699}
   - component: {fileID: 2318853286171007464}
   - component: {fileID: 437354158164344844}
-  - component: {fileID: 8634785898733063181}
   - component: {fileID: 1570225122095763640}
+  - component: {fileID: 7549691525633124361}
   m_Layer: 0
   m_Name: Web3
   m_TagString: SpiderWeb
@@ -73,8 +73,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 2073373031
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 7484435973914369107, guid: 8da973297f28c8a44a4731669d8135cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -134,20 +134,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &8634785898733063181
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1634837486329373063}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50f22ad2d0634ec4fa49a22c191ec1c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nezukoSpeed: {fileID: 11400000, guid: b979a27e14d78a443a480462e1ff9da6, type: 2}
-  isNezukoStuck: {fileID: 11400000, guid: b71c3af14b5205447b020a984317c2bc, type: 2}
 --- !u!114 &1570225122095763640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,7 +150,7 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8634785898733063181}
+      - m_Target: {fileID: 7549691525633124361}
         m_TargetAssemblyTypeName: WebController, Assembly-CSharp
         m_MethodName: affectPlayer
         m_Mode: 1
@@ -176,3 +162,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7549691525633124361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1634837486329373063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50f22ad2d0634ec4fa49a22c191ec1c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nezukoSpeed: {fileID: 11400000, guid: b979a27e14d78a443a480462e1ff9da6, type: 2}
+  isNezukoStuck: {fileID: 11400000, guid: b71c3af14b5205447b020a984317c2bc, type: 2}
