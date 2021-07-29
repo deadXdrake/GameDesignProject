@@ -9,6 +9,8 @@ public class Timer : MonoBehaviour
 {
   public LevelsData LevelsData;
   public Text timerText;
+  public BoolVariable isPaused;
+
 
   private float timeValue;
   private bool isLevelDone = false;
@@ -25,18 +27,15 @@ public class Timer : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
-    if (timeValue > 0 & !isLevelDone)
+    if (!isPaused.Value)
     {
-      timeValue -= Time.deltaTime;
+      if (timeValue > 0 & !isLevelDone)
+      {
+        timeValue -= Time.deltaTime;
+      }
+      DisplayTime(timeValue);
     }
-    // else
-    // {
-    //   timeValue = 0;
-    //   onTimesUp.Invoke();
-    // }
 
-    // timerText.text = string.Format("Time left:\n{0:000} secs", timeValue);
-    DisplayTime(timeValue);
   }
 
   void DisplayTime(float timeToDisplay)
@@ -59,7 +58,7 @@ public class Timer : MonoBehaviour
     Debug.Log("Level complete");
   }
 
-  public void PlayerLoseResponse()
+  public void PlayerLostResponse()
   {
     isLevelDone = true;
     Debug.Log("game over");

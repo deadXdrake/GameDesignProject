@@ -10,6 +10,7 @@ public class NezukoController : MonoBehaviour
   public FloatVariable upSpeed;
   public BoolVariable isNezukoStuck;
   public BoolVariable FinishCountdown;
+  public BoolVariable isPaused;
   private float maxSpeed;
   private bool onGroundState = true;
   private bool onShrinkState = false;
@@ -60,7 +61,7 @@ public class NezukoController : MonoBehaviour
 
   void FixedUpdate()
   {
-    if (FinishCountdown.Value)
+    if (FinishCountdown.Value && !isPaused.Value)
     {
       //apply force to move horizontally when a/d pressed
       float moveHorizontal = Input.GetAxis("Horizontal");
@@ -78,7 +79,7 @@ public class NezukoController : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
-    if (FinishCountdown.Value)
+    if (FinishCountdown.Value && !isPaused.Value)
     {
       nezukoAnimator.SetFloat("xSpeed", Mathf.Abs(nezukoBody.velocity.x));
       nezukoCollider.size = nezukoSprite.sprite.bounds.size;

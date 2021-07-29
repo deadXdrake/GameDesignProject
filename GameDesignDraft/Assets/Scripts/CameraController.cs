@@ -13,6 +13,7 @@ public class CameraController : MonoBehaviour
   public GameConstants gameConstants;
   private AudioSource audioSource;
   public BoolVariable FinishCountdown;
+  public BoolVariable isPaused;
 
   public Vector3 cameraPosition;
   // Start is called before the first frame update
@@ -33,7 +34,7 @@ public class CameraController : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
-    if (FinishCountdown.Value)
+    if (FinishCountdown.Value && !isPaused.Value)
     {
       //Right edge collider (EndLimit) moves with camera
       Vector3 rightCam = Camera.main.ViewportToWorldPoint(new Vector3(1.0f, 0, 0));
