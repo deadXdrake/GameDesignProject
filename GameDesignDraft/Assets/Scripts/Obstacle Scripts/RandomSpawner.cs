@@ -69,22 +69,22 @@ public class RandomSpawner : MonoBehaviour
 
         int randObstacle = Random.Range(0, obstaclePrefabs.Length);
 
-        if (obstaclePrefabs[randObstacle].name.Equals("Spider")) {
-            Debug.Log("Instantiating spider!");
+        if (obstaclePrefabs[randObstacle].name.Equals("Snowball")) {
+            Debug.Log("Instantiating snowball!");
 
             int leftOrRightRandom = Random.Range(0, 1);
             Vector3 randomPosition;
             // Do left right random first
             if (leftRange != 0 && rightRange != 0) {
                 if (leftOrRightRandom == 0) {   // Spawn on Left
-                    randomPosition = new Vector3(leftRange, -3.12f, 0);
+                    randomPosition = new Vector3(leftRange, -2.83f, 0);
                 } else {
-                    randomPosition = new Vector3(rightRange, -3.12f, 0);
+                    randomPosition = new Vector3(rightRange, -2.83f, 0);
                 }
             } else if (leftRange == 0) {
-                randomPosition = new Vector3(rightRange, -3.12f, 0);        //TODO: y-position hardcoded. Add to scriptableObj constants
+                randomPosition = new Vector3(rightRange, -2.83f, 0);        //TODO: y-position hardcoded. Add to scriptableObj constants
             } else {
-                randomPosition = new Vector3(leftRange, -3.12f, 0);
+                randomPosition = new Vector3(leftRange, -2.83f, 0);
             }
 
             GameObject obstacle = Instantiate( obstaclePrefabs[randObstacle], randomPosition, Quaternion.identity);
