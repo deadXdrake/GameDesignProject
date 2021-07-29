@@ -2,18 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
+
 
 public class Timer : MonoBehaviour
 {
-  private float timeValue = 180;
+  public LevelsData LevelsData;
+  public Text timerText;
+
+  private float timeValue;
   private bool isLevelDone = false;
 
-  public Text timerText;
+  public UnityEvent onTimesUp;
+
 
   // Start is called before the first frame update
   void Start()
   {
-
+    timeValue = LevelsData.LV1_duration;
   }
 
   // Update is called once per frame
@@ -23,10 +29,11 @@ public class Timer : MonoBehaviour
     {
       timeValue -= Time.deltaTime;
     }
-    // else
-    // {
-    //   timeValue = 0;
-    // }
+    else
+    {
+      timeValue = 0;
+      onTimesUp.Invoke();
+    }
 
     // timerText.text = string.Format("Time left:\n{0:000} secs", timeValue);
     DisplayTime(timeValue);
@@ -42,12 +49,19 @@ public class Timer : MonoBehaviour
     float secs = Mathf.FloorToInt(timeToDisplay % 60);
     float msecs = timeToDisplay % 1 * 100;
 
-    timerText.text = string.Format("Time left:\n{0:00}:{1:00}.{2:00}", mins, secs, msecs);
+    timerText.text = string.Format("Time:\n{0:00}:{1:00}.{2:00}", mins, secs, msecs);
   }
 
-  public void StopTimeEvent()
+  public void PlayerWinResponse()
   {
     isLevelDone = true;
+    Debug.Log("Level complete");
+  }
+
+  public void PlayerLoseResponse()
+  {
+    isLevelDone = true;
+    Debug.Log("game over");
   }
 
 }

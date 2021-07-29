@@ -9,6 +9,7 @@ public class NezukoController : MonoBehaviour
   public FloatVariable nezukoSpeedX;
   public FloatVariable upSpeed;
   public BoolVariable isNezukoStuck;
+  public BoolVariable FinishCountdown;
   private float maxSpeed;
   private bool onGroundState = true;
   private bool onShrinkState = false;
@@ -28,14 +29,14 @@ public class NezukoController : MonoBehaviour
   private Animator nezukoAnimator;
   private BoxCollider2D nezukoCollider;
 
-    private AudioSource nezukoJump;
-    private AudioSource nezukoUnShrink;
-    private AudioSource nezukoShrink;
-    private AudioSource gameOver;
+  private AudioSource nezukoJump;
+  private AudioSource nezukoUnShrink;
+  private AudioSource nezukoShrink;
+  private AudioSource gameOver;
 
 
-    // Start is called before the first frame update
-    void Start()
+  // Start is called before the first frame update
+  void Start()
   {
     nezukoSpeedX.SetValue(gameConstants.nezukoSpeedX);
     upSpeed.SetValue(gameConstants.nezukoUpSpeed);
@@ -53,92 +54,100 @@ public class NezukoController : MonoBehaviour
     nezukoUnShrink = allMyAudioSources[1];
     nezukoShrink = allMyAudioSources[2];
     gameOver = allMyAudioSources[3];
-    }
+  }
 
   void FixedUpdate()
   {
-    //apply force to move horizontally when a/d pressed
-    float moveHorizontal = Input.GetAxis("Horizontal");
-    if (Mathf.Abs(moveHorizontal) > 0)
+    if (FinishCountdown.Value)
     {
-      Vector2 movement = new Vector2(moveHorizontal, 0);
-      if (nezukoBody.velocity.magnitude < maxSpeed)
-        nezukoBody.AddForce(movement * nezukoSpeedX.Value);
+      //apply force to move horizontally when a/d pressed
+      float moveHorizontal = Input.GetAxis("Horizontal");
+      if (Mathf.Abs(moveHorizontal) > 0)
+      {
+        Vector2 movement = new Vector2(moveHorizontal, 0);
+        if (nezukoBody.velocity.magnitude < maxSpeed)
+          nezukoBody.AddForce(movement * nezukoSpeedX.Value);
+      }
     }
+
 
   }
 
   // Update is called once per frame
   void Update()
   {
-    nezukoAnimator.SetFloat("xSpeed", Mathf.Abs(nezukoBody.velocity.x));
-    nezukoCollider.size = nezukoSprite.sprite.bounds.size;
-    nezukoBody.gravityScale = 2.75f;
-
-    Debug.Log(isNezukoStuck.Value);
-    if (isNezukoStuck.Value) {
-      Debug.Log("Nezuko is stuck!");
-      nezukoBody.velocity = Vector3.zero;
-      nezukoBody.gravityScale = 0;
-    }
-
-    //nezuko jumps when spacebar is presssed and she is on ground
-    if (Input.GetKeyDown(KeyCode.Space) && onGroundState)
+    if (FinishCountdown.Value)
     {
-      // print("space pressed");
-      nezukoBody.AddForce(Vector2.up * upSpeed.Value, ForceMode2D.Impulse);
-      onGroundState = false;
-      nezukoAnimator.SetBool("onGround", onGroundState);
-      nezukoJump.Play();
+      nezukoAnimator.SetFloat("xSpeed", Mathf.Abs(nezukoBody.velocity.x));
+      nezukoCollider.size = nezukoSprite.sprite.bounds.size;
+      nezukoBody.gravityScale = 2.75f;
+
+      Debug.Log(isNezukoStuck.Value);
+      if (isNezukoStuck.Value)
+      {
+        Debug.Log("Nezuko is stuck!");
+        nezukoBody.velocity = Vector3.zero;
+        nezukoBody.gravityScale = 0;
+      }
+
+      //nezuko jumps when spacebar is presssed and she is on ground
+      if (Input.GetKeyDown(KeyCode.Space) && onGroundState)
+      {
+        // print("space pressed");
+        nezukoBody.AddForce(Vector2.up * upSpeed.Value, ForceMode2D.Impulse);
+        onGroundState = false;
+        nezukoAnimator.SetBool("onGround", onGroundState);
+        nezukoJump.Play();
+      }
+
+      //stop, set velocity to zero when "a" or "d" is lifted up
+      if (Input.GetKeyUp("a") || Input.GetKeyUp("d"))
+      {
+        nezukoBody.velocity = Vector2.zero;
+      }
+
+      //shrink when s is pressed
+      if (Input.GetKeyDown("s") && !onShrinkState)
+      {
+        onShrinkState = true;
+        nezukoAnimator.SetBool("onShrink", onShrinkState);
+        nezukoShrink.Play();
+      }
+
+      //return to original size when w is pressed
+      if (Input.GetKeyDown("w") && onShrinkState)
+      {
+        onShrinkState = false;
+        nezukoAnimator.SetBool("onShrink", onShrinkState);
+        nezukoUnShrink.Play();
+      }
+
+      //nezuko face left when a is pressed
+      if (Input.GetKeyDown("a") && faceRightState)
+      {
+        faceRightState = false;
+        nezukoSprite.flipX = true; //flip to face left
+      }
+
+      //nezuko face right when d is pressed
+      if (Input.GetKeyDown("d") && !faceRightState)
+      {
+        faceRightState = true;
+        nezukoSprite.flipX = false; //flip to face right
+      }
+
+      //x of the left edge of the camera
+      leftCamera = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0));
+      //print(leftCameraX);
+      middleCam = Camera.main.ViewportToWorldPoint(new Vector3((float)0.5, (float)0.5, 0));
+      //print(middleCam);
+
+      if (leftCamera.x >= this.transform.position.x) //If Nezuko hits or go past the left edge of camera
+      {
+        onPlayerDeath.Invoke();
+      }
+
     }
-
-    //stop, set velocity to zero when "a" or "d" is lifted up
-    if (Input.GetKeyUp("a") || Input.GetKeyUp("d"))
-    {
-      nezukoBody.velocity = Vector2.zero;
-    }
-
-    //shrink when s is pressed
-    if (Input.GetKeyDown("s") && !onShrinkState)
-    {
-      onShrinkState = true;
-      nezukoAnimator.SetBool("onShrink", onShrinkState);
-      nezukoShrink.Play();
-    }
-
-    //return to original size when w is pressed
-    if (Input.GetKeyDown("w") && onShrinkState)
-    {
-      onShrinkState = false;
-      nezukoAnimator.SetBool("onShrink", onShrinkState);
-      nezukoUnShrink.Play();
-    }
-
-    //nezuko face left when a is pressed
-    if (Input.GetKeyDown("a") && faceRightState)
-    {
-      faceRightState = false;
-      nezukoSprite.flipX = true; //flip to face left
-    }
-
-    //nezuko face right when d is pressed
-    if (Input.GetKeyDown("d") && !faceRightState)
-    {
-      faceRightState = true;
-      nezukoSprite.flipX = false; //flip to face right
-    }
-
-    //x of the left edge of the camera
-    leftCamera = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0));
-    //print(leftCameraX);
-    middleCam = Camera.main.ViewportToWorldPoint(new Vector3((float)0.5, (float)0.5, 0));
-    //print(middleCam);
-
-    if (leftCamera.x >= this.transform.position.x) //If Nezuko hits or go past the left edge of camera
-    {
-      onPlayerDeath.Invoke();
-    }
-
   }
 
   //============================================================
@@ -169,18 +178,21 @@ public class NezukoController : MonoBehaviour
       //Camera.main.transform.Translate(Vector3.right * (Time.deltaTime * (float)2.5));
     }
 
-    if (col.gameObject.CompareTag("Tanjiro")) {
+    if (col.gameObject.CompareTag("Tanjiro"))
+    {
       Debug.Log("Successfully met Tanjiro!");
       onLevelComplete.Invoke();
       nezukoBody.bodyType = RigidbodyType2D.Static;
     }
 
-    if (col.gameObject.CompareTag("SpiderWeb")) {
+    if (col.gameObject.CompareTag("SpiderWeb"))
+    {
       Debug.Log("Collided with spider web!");
       onWebCollided.Invoke();
     }
 
-    if (col.gameObject.CompareTag("Fire")) {
+    if (col.gameObject.CompareTag("Fire"))
+    {
       Debug.Log("Colldied with fire!");
       onFireCollided.Invoke();
     }
