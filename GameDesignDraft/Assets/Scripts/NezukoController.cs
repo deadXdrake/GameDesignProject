@@ -33,6 +33,7 @@ public class NezukoController : MonoBehaviour
   private AudioSource nezukoUnShrink;
   private AudioSource nezukoShrink;
   private AudioSource gameOver;
+  private AudioSource gameWin;
 
 
   // Start is called before the first frame update
@@ -54,6 +55,7 @@ public class NezukoController : MonoBehaviour
     nezukoUnShrink = allMyAudioSources[1];
     nezukoShrink = allMyAudioSources[2];
     gameOver = allMyAudioSources[3];
+    gameWin = allMyAudioSources[4];
   }
 
   void FixedUpdate()
@@ -82,7 +84,7 @@ public class NezukoController : MonoBehaviour
       nezukoCollider.size = nezukoSprite.sprite.bounds.size;
       nezukoBody.gravityScale = 2.75f;
 
-      Debug.Log(isNezukoStuck.Value);
+      // Debug.Log(isNezukoStuck.Value);
       if (isNezukoStuck.Value)
       {
         Debug.Log("Nezuko is stuck!");
@@ -183,6 +185,7 @@ public class NezukoController : MonoBehaviour
       Debug.Log("Successfully met Tanjiro!");
       onLevelComplete.Invoke();
       nezukoBody.bodyType = RigidbodyType2D.Static;
+      gameWin.Play();
     }
 
     if (col.gameObject.CompareTag("SpiderWeb"))

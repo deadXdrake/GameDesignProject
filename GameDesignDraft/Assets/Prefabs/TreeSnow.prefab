@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6713992762225866001}
   - component: {fileID: 3742653495883276046}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TreeSnow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6713992762457422891}
   - component: {fileID: 6713992762457422890}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TrunkSnow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,8 +114,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 229229995
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -461540880998031192, guid: 8da973297f28c8a44a4731669d8135cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 6713992762619642483}
   - component: {fileID: 6713992762619642482}
   - component: {fileID: 6713992762619642481}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BranchSnow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,8 +199,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -2108454703
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -285289009875834525, guid: 8da973297f28c8a44a4731669d8135cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

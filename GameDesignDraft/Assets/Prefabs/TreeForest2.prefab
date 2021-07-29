@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1142221986012064547}
   - component: {fileID: 3331006055483518868}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TrunkForest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,8 +69,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 229229995
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 3760614269722484773, guid: 8da973297f28c8a44a4731669d8135cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -93,7 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3229532349018045474}
   - component: {fileID: 1608956529508063748}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TreeForest2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,7 +140,8 @@ GameObject:
   - component: {fileID: 5059607301907590049}
   - component: {fileID: 5717440833860236495}
   - component: {fileID: 4321999629108102767}
-  m_Layer: 0
+  - component: {fileID: 2605850206199990862}
+  m_Layer: 8
   m_Name: BranchForest
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -199,8 +200,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -2108454703
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -246168133878400715, guid: 8da973297f28c8a44a4731669d8135cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -224,9 +225,9 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.03446953}
+  m_Offset: {x: -0.03342843, y: 0.14869684}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -237,8 +238,27 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.25, y: 0.6975204}
+  m_Size: {x: 1.1831431, y: 0.16408908}
   m_EdgeRadius: 0
+--- !u!251 &2605850206199990862
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7058912622163513344}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &7428023642993162647
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,7 +270,8 @@ GameObject:
   - component: {fileID: 7428023642993162646}
   - component: {fileID: 7428023642993162648}
   - component: {fileID: 7428023642993162649}
-  m_Layer: 0
+  - component: {fileID: 103917440482485704}
+  m_Layer: 8
   m_Name: BranchForest (1)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -309,8 +330,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -2108454703
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -246168133878400715, guid: 8da973297f28c8a44a4731669d8135cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -334,9 +355,9 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.03446953}
+  m_Offset: {x: 0.0334208, y: 0.16476387}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -347,5 +368,24 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.25, y: 0.6975204}
+  m_Size: {x: 1.1831584, y: 0.17051637}
   m_EdgeRadius: 0
+--- !u!251 &103917440482485704
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7428023642993162647}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1

@@ -29,11 +29,11 @@ public class Timer : MonoBehaviour
     {
       timeValue -= Time.deltaTime;
     }
-    else
-    {
-      timeValue = 0;
-      onTimesUp.Invoke();
-    }
+    // else
+    // {
+    //   timeValue = 0;
+    //   onTimesUp.Invoke();
+    // }
 
     // timerText.text = string.Format("Time left:\n{0:000} secs", timeValue);
     DisplayTime(timeValue);
@@ -44,6 +44,7 @@ public class Timer : MonoBehaviour
     if (timeToDisplay < 0)
     {
       timeToDisplay = 0;
+      onTimesUp.Invoke();
     }
     float mins = Mathf.FloorToInt(timeToDisplay / 60);
     float secs = Mathf.FloorToInt(timeToDisplay % 60);

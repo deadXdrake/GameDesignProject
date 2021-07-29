@@ -29,7 +29,8 @@ public class SpiderController : MonoBehaviour, ObstacleInterface
 
   public void affectPlayer()
   {
-    if (nezukoSpeed.Value == 140f) {
+    if (nezukoSpeed.Value == 140f)
+    {
       Debug.Log(nezukoSpeed.Value);
 
       nezukoSpeed.ApplyChange(-100f);
@@ -40,7 +41,8 @@ public class SpiderController : MonoBehaviour, ObstacleInterface
     }
   }
 
-  public void playerLevelComplete() {
+  public void playerLevelComplete()
+  {
     velocity = new Vector2(0, 0);
   }
 
@@ -68,7 +70,8 @@ public class SpiderController : MonoBehaviour, ObstacleInterface
     {// move gomba
       MoveSpider();
     }
-    else {
+    else
+    {
       // change direction
       moveRight *= -1;
       ComputeVelocity();
@@ -76,11 +79,12 @@ public class SpiderController : MonoBehaviour, ObstacleInterface
     }
 
     spiderAnimator.SetFloat("xSpeed", Mathf.Abs(velocity.x));
-    Debug.Log(Mathf.Abs(velocity.x));
+    // Debug.Log(Mathf.Abs(velocity.x));
 
     screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
-    if (transform.position.x < screenBounds.x - (18 + 5)) {
-        Destroy(this.gameObject);
+    if (transform.position.x < screenBounds.x - (18 + 5))
+    {
+      Destroy(this.gameObject);
     }
   }
 
