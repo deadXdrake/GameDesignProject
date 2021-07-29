@@ -20,7 +20,7 @@ TagManager:
   - 
   - Water
   - UI
-  - Background
+  - 
   - 
   - 
   - 
@@ -47,12 +47,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Parallax
-    uniqueID: 2032534335
-    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Player
-    uniqueID: 2073373031
+  - name: Background
+    uniqueID: 1136630111
+    locked: 0
+  - name: Obstacles_Back
+    uniqueID: 2186512593
+    locked: 0
+  - name: Obstacles_Front
+    uniqueID: 229229995
+    locked: 0
+  - name: Players
+    uniqueID: 3992398141
     locked: 0

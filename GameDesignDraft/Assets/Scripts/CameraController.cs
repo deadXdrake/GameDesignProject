@@ -11,6 +11,8 @@ public class CameraController : MonoBehaviour
     private float endX; // largest x-coordinate of the camera
     private float viewportHalfWidth;
     public GameConstants gameConstants;
+    private AudioSource audioSource;
+
 
     public Vector3 cameraPosition;
     // Start is called before the first frame update
@@ -22,7 +24,7 @@ public class CameraController : MonoBehaviour
         Vector3 bottomLeft = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0));
         viewportHalfWidth = Mathf.Abs(bottomLeft.x - this.transform.position.x);
         endX = endLimit.transform.position.x - viewportHalfWidth;
-
+        audioSource = GetComponent<AudioSource>();
         //this.transform.position = new Vector3
 
 
@@ -73,11 +75,14 @@ public class CameraController : MonoBehaviour
     {
         //transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
         this.enabled = false;   // Stops camera movement
+        audioSource.Stop();
     }
 
     public void PlayerWinResponse() {
         this.enabled = false;   // Stops camera movement
+        audioSource.Stop();
+
     }
 
-  
+
 }
