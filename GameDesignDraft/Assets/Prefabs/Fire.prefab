@@ -75,8 +75,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1041600109
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -7855173150382947058, guid: 5115b1ed5990d694d8981c49f41bd85f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -146,8 +146,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d62af107d04eb8b408d3c4e0dc4d1859, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   nezukoSpeed: {fileID: 11400000, guid: b979a27e14d78a443a480462e1ff9da6, type: 2}
   nezukoUpSpeed: {fileID: 11400000, guid: fc02a95eb68564d42827afecb60632c6, type: 2}
 --- !u!61 &3377608256800150344
@@ -191,7 +191,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
-  m_WarningMessage:
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
@@ -205,8 +205,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3091566633e9b174da95e71f719bcca9, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   Event: {fileID: 11400000, guid: fc2d32b1278837f4ab5c541458f09d41, type: 2}
   Response:
     m_PersistentCalls:
@@ -220,6 +220,6 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument:
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
