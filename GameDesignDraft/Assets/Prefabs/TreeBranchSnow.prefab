@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8121046430060015141}
   - component: {fileID: 8121046430060015140}
   - component: {fileID: 8121046430060015139}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TreeBranchSnow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1041600109
-  m_SortingLayer: 2
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3f1a8d7e19ec4ed469d2379e6e841c13, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

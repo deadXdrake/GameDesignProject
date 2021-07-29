@@ -20,9 +20,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Player
+  - edgeLimit
+  - Obstacles
   - 
   - 
   - 
@@ -56,8 +56,11 @@ TagManager:
   - name: Obstacles_Back
     uniqueID: 2186512593
     locked: 0
-  - name: Obstacles_Front
+  - name: Obstacles_Mid
     uniqueID: 229229995
+    locked: 0
+  - name: Obstacles_Front
+    uniqueID: 4283240551
     locked: 0
   - name: Players
     uniqueID: 3992398141

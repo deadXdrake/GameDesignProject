@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 746680288820726573}
   - component: {fileID: 746680288820726561}
   - component: {fileID: 672615932295672730}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Nezuko
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -302569155
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 7522926296993474119, guid: c044defdd80372a44a45e98c450bce41, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

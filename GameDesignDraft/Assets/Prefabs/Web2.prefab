@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1134670812428298266}
   - component: {fileID: 2797696998463626336}
   - component: {fileID: 7091044823397565115}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Web2
   m_TagString: SpiderWeb
   m_Icon: {fileID: 0}
@@ -73,8 +73,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 229229995
-  m_SortingLayer: 3
+  m_SortingLayerID: -11726745
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 7096395431704927205, guid: 8da973297f28c8a44a4731669d8135cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

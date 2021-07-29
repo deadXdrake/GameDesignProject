@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2127302723860514671}
   - component: {fileID: 4352256308545291224}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: TrunkForest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,8 +69,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 229229995
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 3760614269722484773, guid: 8da973297f28c8a44a4731669d8135cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -93,7 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4507492833868173422}
   - component: {fileID: 290595589472728648}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TreeForest1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 6702517824348477571}
   - component: {fileID: 3001259468317354531}
   - component: {fileID: 6559266636742106816}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BranchForest
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -199,8 +199,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -2108454703
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -246168133878400715, guid: 8da973297f28c8a44a4731669d8135cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
