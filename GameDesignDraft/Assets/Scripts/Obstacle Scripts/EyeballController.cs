@@ -12,6 +12,12 @@ public class EyeballController : MonoBehaviour, ObstacleInterface
     public BoolVariable isNezukoStuck;
     private bool eyeballEnabled = true;
     private Vector2 screenBounds;
+    private float originalX;
+    private float maxOffset = 5.0f;
+    private float enemyPatroltime = 2.0f;
+    private int moveRight = -1;
+    private Vector2 velocity;
+    private bool faceRightState = true;
     
     // Start is called before the first frame update
     void Start()
@@ -21,6 +27,9 @@ public class EyeballController : MonoBehaviour, ObstacleInterface
         eyeballAnimator = GetComponent<Animator>();
         eyeballCollder = GetComponent<CircleCollider2D>();
         eyeballCollder.enabled = true;
+
+        originalX = transform.position.x;
+        ComputeVelocity();
 
         StartCoroutine(openDemonEyes());
     }
@@ -62,9 +71,29 @@ public class EyeballController : MonoBehaviour, ObstacleInterface
             eyeballAnimator.SetTrigger("EyeOpen");
         }
     }
+    void ComputeVelocity()
+    {
+        velocity = new Vector2((moveRight) * maxOffset / enemyPatroltime, 0);
+    }
+
+    void MoveEyeball()
+    {
+        eyeballBody.MovePosition(eyeballBody.position + velocity * Time.fixedDeltaTime);
+    }
 
     void Update()
     {
+        if (Mathf.Abs(eyeballBody.position.x - originalX) < maxOffset) {
+            Debug.Log("Moving eyeball~");
+            MoveEyeball();
+        } else {
+            Debug.Log("Changing direction~");
+            moveRight *= -1;
+            ComputeVelocity();
+            MoveEyeball();
+            faceRightState = !faceRightState;
+            eyeballSprite.flipX = faceRightState;
+        }
 
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
         if (transform.position.x < screenBounds.x - (18 + 5)) {
