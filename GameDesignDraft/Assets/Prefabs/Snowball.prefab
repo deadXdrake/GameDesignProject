@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3482144993098124222}
   - component: {fileID: 4103546437764059831}
   - component: {fileID: 5231282573375380527}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Snowball
   m_TagString: Snowball
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 100
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 2.75

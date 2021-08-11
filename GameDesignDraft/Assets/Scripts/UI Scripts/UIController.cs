@@ -102,13 +102,17 @@ public class UIController : MonoBehaviour
     
     public void NextLevelButtonClicked()
     {
+        Debug.Log("Hello bij button clockee");
+
         if (SceneManager.GetActiveScene().name == "Level1")
         {
+            Debug.Log("Level 1 complete. Next button clicked!");
             SceneManager.LoadScene("Level2");
         }
 
         if (SceneManager.GetActiveScene().name == "Level2")
         {
+            Debug.Log("Level 2 complete. Next button clicked!");
             SceneManager.LoadScene("Level3");
         }
 

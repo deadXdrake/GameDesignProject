@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5264430817386470825}
   m_Layer: 8
   m_Name: BranchSnow (2)
-  m_TagString: Ground
+  m_TagString: Obstacles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 5264430817776020828}
   m_Layer: 8
   m_Name: BranchSnow (1)
-  m_TagString: Ground
+  m_TagString: Obstacles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -378,7 +378,7 @@ GameObject:
   - component: {fileID: 7161184636322284820}
   m_Layer: 8
   m_Name: TreeSnow3
-  m_TagString: Untagged
+  m_TagString: Obstacles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -428,7 +428,7 @@ GameObject:
   - component: {fileID: 7161184636847734934}
   m_Layer: 8
   m_Name: BranchSnow
-  m_TagString: Ground
+  m_TagString: Obstacles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

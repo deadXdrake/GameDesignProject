@@ -167,6 +167,7 @@ public class NezukoController : MonoBehaviour
     || col.gameObject.CompareTag("Fire")
     || col.gameObject.CompareTag("Seat")
     || col.gameObject.CompareTag("Snowball")
+    || col.gameObject.CompareTag("Obstacles")
      && !onGroundState)
     {
       onGroundState = true;
