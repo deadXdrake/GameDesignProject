@@ -94,4 +94,24 @@ public class UIController : MonoBehaviour
   {
     SceneManager.LoadScene("Menu");
   }
+
+    public void RetryButtonClicked()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    
+    public void NextLevelButtonClicked()
+    {
+        if (SceneManager.GetActiveScene().name == "Level1")
+        {
+            SceneManager.LoadScene("Level2");
+        }
+
+        if (SceneManager.GetActiveScene().name == "Level2")
+        {
+            SceneManager.LoadScene("Level3");
+        }
+
+    }
+
 }

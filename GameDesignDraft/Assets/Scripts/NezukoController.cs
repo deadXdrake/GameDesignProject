@@ -24,6 +24,7 @@ public class NezukoController : MonoBehaviour
   public UnityEvent onSpiderCollided;
   public UnityEvent onWebCollided;
   public UnityEvent onFireCollided;
+  public UnityEvent onEyeballCollided;
 
   private Rigidbody2D nezukoBody;
   private SpriteRenderer nezukoSprite;
@@ -164,6 +165,8 @@ public class NezukoController : MonoBehaviour
     || col.gameObject.CompareTag("Rock"))
     || col.gameObject.CompareTag("SpiderWeb")
     || col.gameObject.CompareTag("Fire")
+    || col.gameObject.CompareTag("Seat")
+    || col.gameObject.CompareTag("Snowball")
      && !onGroundState)
     {
       onGroundState = true;
@@ -204,6 +207,11 @@ public class NezukoController : MonoBehaviour
     {
       Debug.Log("Colldied with fire!");
       onFireCollided.Invoke();
+    }
+
+    if (col.gameObject.CompareTag("Eyeball")) {
+      Debug.Log("Collided with eyeball!");
+      onEyeballCollided.Invoke();
     }
   }
 
