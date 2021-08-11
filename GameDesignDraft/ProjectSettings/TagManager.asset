@@ -13,6 +13,9 @@ TagManager:
   - Tanjiro
   - SpiderWeb
   - Fire
+  - Seat
+  - Eyeball
+  - Snowball
   layers:
   - Default
   - TransparentFX
