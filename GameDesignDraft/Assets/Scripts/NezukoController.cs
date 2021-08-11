@@ -79,6 +79,7 @@ public class NezukoController : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
+    // only start running after the countdown screen and when is not paused
     if (FinishCountdown.Value && !isPaused.Value)
     {
       nezukoAnimator.SetFloat("xSpeed", Mathf.Abs(nezukoBody.velocity.x));
@@ -173,6 +174,8 @@ public class NezukoController : MonoBehaviour
     {
       Debug.Log("Collided with spider!");
       onSpiderCollided.Invoke();
+      nezukoAnimator.speed = 0.2f;
+      StartCoroutine(removeSlowEffect());
     }
 
     if (col.gameObject.CompareTag("EdgeLimit"))
@@ -193,6 +196,8 @@ public class NezukoController : MonoBehaviour
     {
       Debug.Log("Collided with spider web!");
       onWebCollided.Invoke();
+      nezukoAnimator.SetBool("isStuck", true);
+      StartCoroutine(removeStuckEffect());
     }
 
     if (col.gameObject.CompareTag("Fire"))
@@ -200,6 +205,18 @@ public class NezukoController : MonoBehaviour
       Debug.Log("Colldied with fire!");
       onFireCollided.Invoke();
     }
+  }
+
+  IEnumerator removeSlowEffect()
+  {
+    yield return new WaitForSeconds(5.0f);  //TODO: Hardcoded time. Put in scriptable constants?
+    nezukoAnimator.speed = 1;
+  }
+
+  IEnumerator removeStuckEffect()
+  {
+    yield return new WaitForSeconds(4.0f);  //TODO: Hardcoded time. Put in scriptable constants?
+    nezukoAnimator.SetBool("isStuck", false);
   }
 
   public float getNezukoSpeed()
