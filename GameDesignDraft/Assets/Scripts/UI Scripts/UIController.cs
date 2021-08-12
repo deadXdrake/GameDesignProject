@@ -7,6 +7,8 @@ public class UIController : MonoBehaviour
 {
   public BoolVariable FinishCountdown;
   public BoolVariable isPaused;
+  public LevelsData levelsData;
+
   // Start is called before the first frame update
   void Start()
   {
@@ -49,10 +51,31 @@ public class UIController : MonoBehaviour
       if (eachChild.name == "LevelComplete" || eachChild.name == "Timer")
       {
         eachChild.gameObject.SetActive(true);
+
+        // show number of stars accordingly
+        if (eachChild.name == "LevelComplete")
+        {
+          GameObject stars = eachChild.transform.Find("Stars").gameObject;
+          StartCoroutine(DisplayStars(stars));
+        }
       }
       else
       {
         eachChild.gameObject.SetActive(false);
+      }
+    }
+  }
+
+  IEnumerator DisplayStars(GameObject stars)
+  {
+    yield return new WaitForEndOfFrame();
+    int i = 0;
+    foreach (Transform starImage in stars.transform)
+    {
+      if (i < levelsData.LVStars)
+      {
+        starImage.gameObject.SetActive(true);
+        i += 1;
       }
     }
   }
