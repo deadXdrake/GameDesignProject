@@ -5220,6 +5220,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 9085524358195649835, guid: b6237c52cc25ab749a671b1bc49be19c, type: 3}
+      propertyPath: LevelsData
+      value: 
+      objectReference: {fileID: 11400000, guid: 2acdff026681e2e419dbf6500b695c5e, type: 2}
     - target: {fileID: 9085524358374373216, guid: b6237c52cc25ab749a671b1bc49be19c, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -5304,13 +5308,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9085524358374373220, guid: b6237c52cc25ab749a671b1bc49be19c, type: 3}
+      propertyPath: nextLevel
+      value: 
+      objectReference: {fileID: 11400000, guid: 8d3fd56b7b775684e9eca9c56016bb54, type: 2}
+    - target: {fileID: 9085524358374373220, guid: b6237c52cc25ab749a671b1bc49be19c, type: 3}
+      propertyPath: levelsData
+      value: 
+      objectReference: {fileID: 11400000, guid: 2acdff026681e2e419dbf6500b695c5e, type: 2}
     - target: {fileID: 9085524358374373240, guid: b6237c52cc25ab749a671b1bc49be19c, type: 3}
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
     - target: {fileID: 9085524358374373240, guid: b6237c52cc25ab749a671b1bc49be19c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6237c52cc25ab749a671b1bc49be19c, type: 3}

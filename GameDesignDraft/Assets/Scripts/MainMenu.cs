@@ -5,10 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public LevelsData level1Data;
     // Start is called before the first frame update
     void Start()
     {
-        
+        level1Data.unlockLevel = true;
     }
 
     // Update is called once per frame

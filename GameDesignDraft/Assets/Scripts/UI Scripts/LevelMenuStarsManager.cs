@@ -14,15 +14,15 @@ public class LevelMenuStarsManager : MonoBehaviour
     void Start()
     {
         for (int i = 0; i < levelsData.LVStars; i++) {
-            Debug.Log("Hello stars");
-            // starIcons[i].SetActive(true);
+            // Debug.Log("Hello stars");
+            starIcons[i].GetComponent<Image>().color = new Color32(255, 255, 255, 255);
         }
 
         // for (int i = 0; i < levelStars; i++) {
         //     starIcons[i].GetComponent<Image>().color = new Color32(255, 255, 255, 255);
         // }
 
-        if (levelsData.isLevelUnlocked != true) {
+        if (levelsData.unlockLevel != true) {
             this.GetComponent<Image>().material = material;
             this.GetComponent<Button>().interactable = false;
         } else {

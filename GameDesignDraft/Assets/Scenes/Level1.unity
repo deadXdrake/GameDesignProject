@@ -347,6 +347,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9085524358374373220, guid: b6237c52cc25ab749a671b1bc49be19c, type: 3}
+      propertyPath: nextLevel
+      value: 
+      objectReference: {fileID: 11400000, guid: 2acdff026681e2e419dbf6500b695c5e, type: 2}
+    - target: {fileID: 9085524358374373220, guid: b6237c52cc25ab749a671b1bc49be19c, type: 3}
       propertyPath: levelsData
       value: 
       objectReference: {fileID: 11400000, guid: 122824f631174ea4bae0774de0c4aa12, type: 2}
@@ -2095,6 +2099,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3638652459804808335, guid: fecc8c3633676134f8136f28473acae4, type: 3}
+      propertyPath: LvlAudio
+      value: 
+      objectReference: {fileID: 1825750569}
     - target: {fileID: 3638652459804808335, guid: fecc8c3633676134f8136f28473acae4, type: 3}
       propertyPath: snowball
       value: 

@@ -8,6 +8,7 @@ public class UIController : MonoBehaviour
   public BoolVariable FinishCountdown;
   public BoolVariable isPaused;
   public LevelsData levelsData;
+  public LevelsData nextLevel;
 
   // Start is called before the first frame update
   void Start()
@@ -48,6 +49,9 @@ public class UIController : MonoBehaviour
   {
     foreach (Transform eachChild in transform)
     {
+      // Set next level unlocked to true
+      nextLevel.unlockLevel = true;
+
       if (eachChild.name == "LevelComplete" || eachChild.name == "Timer")
       {
         eachChild.gameObject.SetActive(true);

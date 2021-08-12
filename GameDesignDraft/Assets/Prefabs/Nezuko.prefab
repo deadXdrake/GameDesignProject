@@ -161,8 +161,8 @@ MonoBehaviour:
   isNezukoStuck: {fileID: 11400000, guid: b71c3af14b5205447b020a984317c2bc, type: 2}
   FinishCountdown: {fileID: 11400000, guid: 69b125fff96cbd2418f2ae697116da1f, type: 2}
   isPaused: {fileID: 11400000, guid: 748bb97e505c713468ee1426bde8266b, type: 2}
-  effectText: {fileID: 0}
-  TextHolder: {fileID: 0}
+  effectText: {fileID: 3588763569334268869}
+  TextHolder: {fileID: 816142241432980662}
   onPlayerDeath:
     m_PersistentCalls:
       m_Calls:
@@ -254,9 +254,9 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   LvlAudio: {fileID: 0}
-  snowball: {fileID: 0}
-  stuck: {fileID: 0}
-  slowed: {fileID: 0}
+  snowball: {fileID: 8300000, guid: 884a2d4ff3f04a842969db87a6a93470, type: 3}
+  stuck: {fileID: 8300000, guid: 228ad6d4eaaa4b749a532e5dc46eadfa, type: 3}
+  slowed: {fileID: 8300000, guid: 6426e2dfa1bef2a44b3a4375f2b8fe50, type: 3}
 --- !u!114 &5192815630482181425
 MonoBehaviour:
   m_ObjectHideFlags: 0

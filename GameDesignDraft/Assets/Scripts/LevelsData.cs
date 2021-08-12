@@ -17,7 +17,15 @@ public class LevelsData : ScriptableObject
 
   private float LVTimeRecord = 0;
   private int LVStarsRecord = 0;
-  public bool isLevelUnlocked;
+  private bool isLevelUnlocked = false;
+  public bool unlockLevel {
+    get {
+      return isLevelUnlocked;
+    }
+    set {
+      isLevelUnlocked = value;
+    }
+  }
 
   public float LVTiming
   {
