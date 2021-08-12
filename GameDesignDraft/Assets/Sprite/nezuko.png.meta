@@ -71,6 +71,18 @@ TextureImporter:
   - first:
       213: -5043044691802703554
     second: nezuko_smalljump
+  - first:
+      213: 6515678692319439293
+    second: nezuko_smallsleep1
+  - first:
+      213: -1563570967664862624
+    second: nezuko_smallsleep2
+  - first:
+      213: -2362087565013132151
+    second: nezuko_sleep1
+  - first:
+      213: -6819822253128653539
+    second: nezuko_sleep2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -683,6 +695,90 @@ TextureImporter:
       bones: []
       spriteID: 779ba263e4a866380800000000000000
       internalID: -8978336738595653257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nezuko_smallsleep1
+      rect:
+        serializedVersion: 2
+        x: 905
+        y: 1423
+        width: 64
+        height: 92
+      alignment: 9
+      pivot: {x: 0.54965305, y: 0.48832503}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db92846cf375c6a50800000000000000
+      internalID: 6515678692319439293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nezuko_smallsleep2
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 1422
+        width: 64
+        height: 96
+      alignment: 9
+      pivot: {x: 0.5470333, y: 0.4682808}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06ad8333d741d4ae0800000000000000
+      internalID: -1563570967664862624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nezuko_sleep1
+      rect:
+        serializedVersion: 2
+        x: 1279
+        y: 1414
+        width: 60
+        height: 122
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98c560fdfdd283fd0800000000000000
+      internalID: -2362087565013132151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nezuko_sleep2
+      rect:
+        serializedVersion: 2
+        x: 1411
+        y: 1414
+        width: 58
+        height: 122
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1566f23bcf1b51a0800000000000000
+      internalID: -6819822253128653539
       vertices: []
       indices: 
       edges: []

@@ -11,39 +11,43 @@ public class LevelsData : ScriptableObject
 #endif
 
 
-  public float LV1_duration = 180;
-  private float LV1TimeRecord;
-  private int LV1StarsRecord;
+  public float LV_duration = 180;
+  public float multp_3Stars = 0.5f;
+  public float multp_2Stars = 0.25f;
 
-  public float LV1Timing
+  private float LVTimeRecord;
+  private int LVStarsRecord;
+
+  public float LVTiming
   {
     get
     {
-      return LV1TimeRecord;
+      return LVTimeRecord;
     }
     set
     {
-      LV1TimeRecord = value;
-      if (LV1TimeRecord >= 0.5 * LV1_duration)
+      LVTimeRecord = value;
+      if (LVTimeRecord >= multp_3Stars * LV_duration)
       {
-        LV1StarsRecord = 3;
+        LVStarsRecord = 3;
       }
-      else if (LV1TimeRecord >= 0.25 * LV1_duration)
+      else if (LVTimeRecord >= multp_2Stars * LV_duration)
       {
-        LV1StarsRecord = 2;
+        LVStarsRecord = 2;
       }
       else
       {
-        LV1StarsRecord = 1;
+        LVStarsRecord = 1;
       }
+      Debug.Log("Level's timing set, stars = " + LVStarsRecord);
     }
   }
 
-  public int LV1Stars
+  public int LVStars
   {
     get
     {
-      return LV1StarsRecord;
+      return LVStarsRecord;
     }
   }
 

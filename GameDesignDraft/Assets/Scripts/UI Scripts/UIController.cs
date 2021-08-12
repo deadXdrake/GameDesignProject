@@ -46,7 +46,7 @@ public class UIController : MonoBehaviour
   {
     foreach (Transform eachChild in transform)
     {
-      if (eachChild.name == "LevelComplete")
+      if (eachChild.name == "LevelComplete" || eachChild.name == "Timer")
       {
         eachChild.gameObject.SetActive(true);
       }
@@ -95,27 +95,27 @@ public class UIController : MonoBehaviour
     SceneManager.LoadScene("Menu");
   }
 
-    public void RetryButtonClicked()
+  public void RetryButtonClicked()
+  {
+    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+  }
+
+  public void NextLevelButtonClicked()
+  {
+    Debug.Log("Hello bij button clockee");
+
+    if (SceneManager.GetActiveScene().name == "Level1")
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+      Debug.Log("Level 1 complete. Next button clicked!");
+      SceneManager.LoadScene("Level2");
     }
-    
-    public void NextLevelButtonClicked()
+
+    if (SceneManager.GetActiveScene().name == "Level2")
     {
-        Debug.Log("Hello bij button clockee");
-
-        if (SceneManager.GetActiveScene().name == "Level1")
-        {
-            Debug.Log("Level 1 complete. Next button clicked!");
-            SceneManager.LoadScene("Level2");
-        }
-
-        if (SceneManager.GetActiveScene().name == "Level2")
-        {
-            Debug.Log("Level 2 complete. Next button clicked!");
-            SceneManager.LoadScene("Level3");
-        }
-
+      Debug.Log("Level 2 complete. Next button clicked!");
+      SceneManager.LoadScene("Level3");
     }
+
+  }
 
 }

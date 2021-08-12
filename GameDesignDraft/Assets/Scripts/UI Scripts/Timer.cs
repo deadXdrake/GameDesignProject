@@ -21,7 +21,7 @@ public class Timer : MonoBehaviour
   // Start is called before the first frame update
   void Start()
   {
-    timeValue = LevelsData.LV1_duration;
+    timeValue = LevelsData.LV_duration;
   }
 
   // Update is called once per frame
@@ -56,6 +56,8 @@ public class Timer : MonoBehaviour
   {
     isLevelDone = true;
     Debug.Log("Level complete");
+    LevelsData.LVTiming = timeValue;
+    Debug.Log("Timing: " + LevelsData.LVTiming);
   }
 
   public void PlayerLostResponse()

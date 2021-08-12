@@ -15,6 +15,7 @@ public class NezukoController : MonoBehaviour
   private bool onGroundState = true;
   private bool onShrinkState = false;
   private bool faceRightState = true;
+  private bool onFire = false;
 
   private Vector3 leftCamera;
   private Vector3 middleCam;
@@ -86,6 +87,11 @@ public class NezukoController : MonoBehaviour
       nezukoAnimator.SetFloat("xSpeed", Mathf.Abs(nezukoBody.velocity.x));
       nezukoCollider.size = nezukoSprite.sprite.bounds.size;
       nezukoBody.gravityScale = 2.75f;
+
+      if (onFire)
+      {
+        gameObject.transform.Find("Fire").gameObject.transform.localScale = new Vector3(nezukoSprite.sprite.bounds.size.x * 4.2f, nezukoSprite.sprite.bounds.size.y * 2.5f, 0);
+      }
 
       // Debug.Log(isNezukoStuck.Value);
       if (isNezukoStuck.Value)
@@ -208,11 +214,18 @@ public class NezukoController : MonoBehaviour
     {
       Debug.Log("Colldied with fire!");
       onFireCollided.Invoke();
+      gameObject.transform.Find("Fire").gameObject.SetActive(true);
+      onFire = true;
+      nezukoAnimator.speed = 0.2f;
+      StartCoroutine(removeFireEffect());
     }
 
-    if (col.gameObject.CompareTag("Eyeball")) {
+    if (col.gameObject.CompareTag("Eyeball"))
+    {
       Debug.Log("Collided with eyeball!");
       onEyeballCollided.Invoke();
+      nezukoAnimator.SetBool("isSleeping", true);
+      StartCoroutine(removeSleepEffect());
     }
   }
 
@@ -222,12 +235,25 @@ public class NezukoController : MonoBehaviour
     nezukoAnimator.speed = 1;
   }
 
+  IEnumerator removeFireEffect()
+  {
+    yield return new WaitForSeconds(5.0f);  //TODO: Hardcoded time. Put in scriptable constants?
+    nezukoAnimator.speed = 1;
+    gameObject.transform.Find("Fire").gameObject.SetActive(false);
+    onFire = false;
+  }
+
   IEnumerator removeStuckEffect()
   {
     yield return new WaitForSeconds(4.0f);  //TODO: Hardcoded time. Put in scriptable constants?
     nezukoAnimator.SetBool("isStuck", false);
   }
 
+  IEnumerator removeSleepEffect()
+  {
+    yield return new WaitForSeconds(4.0f);  //TODO: Hardcoded time. Put in scriptable constants?
+    nezukoAnimator.SetBool("isSleeping", false);
+  }
   public float getNezukoSpeed()
   {
     Debug.Log(nezukoBody.velocity.magnitude);
