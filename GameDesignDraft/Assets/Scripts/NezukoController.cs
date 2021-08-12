@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class NezukoController : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class NezukoController : MonoBehaviour
   public BoolVariable FinishCountdown;
   public BoolVariable isPaused;
   public Text effectText;
+    public Transform TextHolder;
 
   private float maxSpeed;
   private bool onGroundState = true;
@@ -87,8 +89,8 @@ public class NezukoController : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
-        Vector3 effectTextPos = Camera.main.WorldToScreenPoint(this.transform.position);
-        transform.position = effectTextPos;
+        Vector3 effectTextPos = Camera.main.WorldToScreenPoint(TextHolder.position);
+        effectText.transform.position = effectTextPos;
 
         // only start running after the countdown screen and when is not paused
         if (FinishCountdown.Value && !isPaused.Value)
