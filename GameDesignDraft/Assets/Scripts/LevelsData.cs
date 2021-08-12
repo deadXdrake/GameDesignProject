@@ -15,8 +15,9 @@ public class LevelsData : ScriptableObject
   public float multp_3Stars = 0.5f;
   public float multp_2Stars = 0.25f;
 
-  private float LVTimeRecord;
-  private int LVStarsRecord;
+  private float LVTimeRecord = 0;
+  private int LVStarsRecord = 0;
+  public bool isLevelUnlocked;
 
   public float LVTiming
   {
