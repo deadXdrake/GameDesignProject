@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class NezukoController : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class NezukoController : MonoBehaviour
   public BoolVariable isNezukoStuck;
   public BoolVariable FinishCountdown;
   public BoolVariable isPaused;
+  public Text effectText;
+    public Transform TextHolder;
+
   private float maxSpeed;
   private bool onGroundState = true;
   private bool onShrinkState = false;
@@ -37,10 +41,14 @@ public class NezukoController : MonoBehaviour
   private AudioSource nezukoShrink;
   private AudioSource gameOver;
   private AudioSource gameWin;
+  public AudioSource LvlAudio;
+  public AudioClip snowball;
+    public AudioClip stuck;
+    public AudioClip slowed;
 
 
-  // Start is called before the first frame update
-  void Start()
+    // Start is called before the first frame update
+    void Start()
   {
     nezukoSpeedX.SetValue(gameConstants.nezukoSpeedX);
     upSpeed.SetValue(gameConstants.nezukoUpSpeed);
@@ -81,8 +89,11 @@ public class NezukoController : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
-    // only start running after the countdown screen and when is not paused
-    if (FinishCountdown.Value && !isPaused.Value)
+        Vector3 effectTextPos = Camera.main.WorldToScreenPoint(TextHolder.position);
+        effectText.transform.position = effectTextPos;
+
+        // only start running after the countdown screen and when is not paused
+        if (FinishCountdown.Value && !isPaused.Value)
     {
       nezukoAnimator.SetFloat("xSpeed", Mathf.Abs(nezukoBody.velocity.x));
       nezukoCollider.size = nezukoSprite.sprite.bounds.size;
@@ -186,6 +197,7 @@ public class NezukoController : MonoBehaviour
       onSpiderCollided.Invoke();
       nezukoAnimator.speed = 0.2f;
       StartCoroutine(removeSlowEffect());
+      LvlAudio.PlayOneShot(slowed);
     }
 
     if (col.gameObject.CompareTag("EdgeLimit"))
@@ -208,6 +220,7 @@ public class NezukoController : MonoBehaviour
       onWebCollided.Invoke();
       nezukoAnimator.SetBool("isStuck", true);
       StartCoroutine(removeStuckEffect());
+      LvlAudio.PlayOneShot(stuck);
     }
 
     if (col.gameObject.CompareTag("Fire"))
@@ -227,6 +240,13 @@ public class NezukoController : MonoBehaviour
       nezukoAnimator.SetBool("isSleeping", true);
       StartCoroutine(removeSleepEffect());
     }
+
+    if (col.gameObject.CompareTag("Snowball"))
+    {
+      Debug.Log("Collided with snowball!");
+      LvlAudio.PlayOneShot(snowball);
+    }
+
   }
 
   IEnumerator removeSlowEffect()
