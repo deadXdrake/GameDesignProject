@@ -1061,6 +1061,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Nezuko
       objectReference: {fileID: 0}
+    - target: {fileID: 6395926025649716646, guid: fecc8c3633676134f8136f28473acae4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076757890386838024, guid: fecc8c3633676134f8136f28473acae4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fecc8c3633676134f8136f28473acae4, type: 3}
 --- !u!1 &527619643
@@ -1513,6 +1521,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FinishCountdown: {fileID: 11400000, guid: 69b125fff96cbd2418f2ae697116da1f, type: 2}
   isPaused: {fileID: 11400000, guid: 748bb97e505c713468ee1426bde8266b, type: 2}
+  levelsData: {fileID: 0}
 --- !u!114 &878236498
 MonoBehaviour:
   m_ObjectHideFlags: 0

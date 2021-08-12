@@ -67,7 +67,9 @@ public class NezukoController : MonoBehaviour
     nezukoShrink = allMyAudioSources[2];
     gameOver = allMyAudioSources[3];
     gameWin = allMyAudioSources[4];
-  }
+
+        effectText.enabled = false;
+    }
 
   void FixedUpdate()
   {

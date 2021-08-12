@@ -161,8 +161,8 @@ MonoBehaviour:
   isNezukoStuck: {fileID: 11400000, guid: b71c3af14b5205447b020a984317c2bc, type: 2}
   FinishCountdown: {fileID: 11400000, guid: 69b125fff96cbd2418f2ae697116da1f, type: 2}
   isPaused: {fileID: 11400000, guid: 748bb97e505c713468ee1426bde8266b, type: 2}
-  effectText: {fileID: 0}
-  TextHolder: {fileID: 0}
+  effectText: {fileID: 3588763569334268869}
+  TextHolder: {fileID: 816142241432980662}
   onPlayerDeath:
     m_PersistentCalls:
       m_Calls:
@@ -5662,8 +5662,8 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
+    m_Alignment: 4
+    m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
@@ -5680,7 +5680,7 @@ GameObject:
   - component: {fileID: 816142241432980662}
   - component: {fileID: 3258841277400702541}
   m_Layer: 6
-  m_Name: Circle
+  m_Name: TextHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5707,7 +5707,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7076757890386838024}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
