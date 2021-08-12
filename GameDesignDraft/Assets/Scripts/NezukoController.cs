@@ -37,10 +37,14 @@ public class NezukoController : MonoBehaviour
   private AudioSource nezukoShrink;
   private AudioSource gameOver;
   private AudioSource gameWin;
+  public AudioSource LvlAudio;
+  public AudioClip snowball;
+    public AudioClip stuck;
+    public AudioClip slowed;
 
 
-  // Start is called before the first frame update
-  void Start()
+    // Start is called before the first frame update
+    void Start()
   {
     nezukoSpeedX.SetValue(gameConstants.nezukoSpeedX);
     upSpeed.SetValue(gameConstants.nezukoUpSpeed);
@@ -186,6 +190,7 @@ public class NezukoController : MonoBehaviour
       onSpiderCollided.Invoke();
       nezukoAnimator.speed = 0.2f;
       StartCoroutine(removeSlowEffect());
+      LvlAudio.PlayOneShot(slowed);
     }
 
     if (col.gameObject.CompareTag("EdgeLimit"))
@@ -208,6 +213,7 @@ public class NezukoController : MonoBehaviour
       onWebCollided.Invoke();
       nezukoAnimator.SetBool("isStuck", true);
       StartCoroutine(removeStuckEffect());
+      LvlAudio.PlayOneShot(stuck);
     }
 
     if (col.gameObject.CompareTag("Fire"))
@@ -227,6 +233,13 @@ public class NezukoController : MonoBehaviour
       nezukoAnimator.SetBool("isSleeping", true);
       StartCoroutine(removeSleepEffect());
     }
+
+    if (col.gameObject.CompareTag("Snowball"))
+    {
+      Debug.Log("Collided with snowball!");
+      LvlAudio.PlayOneShot(snowball);
+    }
+
   }
 
   IEnumerator removeSlowEffect()
