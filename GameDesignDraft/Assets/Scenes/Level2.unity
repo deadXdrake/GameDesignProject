@@ -5072,6 +5072,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3588763569334268869, guid: fecc8c3633676134f8136f28473acae4, type: 3}
+      propertyPath: m_Text
+      value: Effect
+      objectReference: {fileID: 0}
+    - target: {fileID: 3588763569334268869, guid: fecc8c3633676134f8136f28473acae4, type: 3}
       propertyPath: m_FontData.m_Alignment
       value: 4
       objectReference: {fileID: 0}
@@ -5191,6 +5195,10 @@ PrefabInstance:
       propertyPath: m_FontData.m_FontStyle
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6395926025649716646, guid: fecc8c3633676134f8136f28473acae4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6885943016532822033, guid: fecc8c3633676134f8136f28473acae4, type: 3}
       propertyPath: m_SizeDelta.x
       value: 42.6545
@@ -5210,6 +5218,10 @@ PrefabInstance:
     - target: {fileID: 7076757890386838024, guid: fecc8c3633676134f8136f28473acae4, type: 3}
       propertyPath: m_Name
       value: TextHolder
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076757890386838024, guid: fecc8c3633676134f8136f28473acae4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fecc8c3633676134f8136f28473acae4, type: 3}

@@ -67,7 +67,9 @@ public class NezukoController : MonoBehaviour
     nezukoShrink = allMyAudioSources[2];
     gameOver = allMyAudioSources[3];
     gameWin = allMyAudioSources[4];
-  }
+
+        effectText.enabled = false;
+    }
 
   void FixedUpdate()
   {
@@ -196,7 +198,9 @@ public class NezukoController : MonoBehaviour
       Debug.Log("Collided with spider!");
       onSpiderCollided.Invoke();
       nezukoAnimator.speed = 0.2f;
-      StartCoroutine(removeSlowEffect());
+        effectText.enabled = true;
+        effectText.text = "Slowed!!";
+        StartCoroutine(removeSlowEffect());
       LvlAudio.PlayOneShot(slowed);
     }
 
@@ -219,8 +223,11 @@ public class NezukoController : MonoBehaviour
       Debug.Log("Collided with spider web!");
       onWebCollided.Invoke();
       nezukoAnimator.SetBool("isStuck", true);
+        effectText.enabled = true; 
+        effectText.text = "Stuck!"; 
       StartCoroutine(removeStuckEffect());
       LvlAudio.PlayOneShot(stuck);
+      
     }
 
     if (col.gameObject.CompareTag("Fire"))
@@ -230,7 +237,9 @@ public class NezukoController : MonoBehaviour
       gameObject.transform.Find("Fire").gameObject.SetActive(true);
       onFire = true;
       nezukoAnimator.speed = 0.2f;
-      StartCoroutine(removeFireEffect());
+        effectText.enabled = true;
+        effectText.text = "Burnt!";
+        StartCoroutine(removeFireEffect());
     }
 
     if (col.gameObject.CompareTag("Eyeball"))
@@ -238,7 +247,9 @@ public class NezukoController : MonoBehaviour
       Debug.Log("Collided with eyeball!");
       onEyeballCollided.Invoke();
       nezukoAnimator.SetBool("isSleeping", true);
-      StartCoroutine(removeSleepEffect());
+        effectText.enabled = true;
+        effectText.text = "Stuck!!";
+        StartCoroutine(removeSleepEffect());
     }
 
     if (col.gameObject.CompareTag("Snowball"))
@@ -252,13 +263,15 @@ public class NezukoController : MonoBehaviour
   IEnumerator removeSlowEffect()
   {
     yield return new WaitForSeconds(5.0f);  //TODO: Hardcoded time. Put in scriptable constants?
-    nezukoAnimator.speed = 1;
+        effectText.enabled = false;
+        nezukoAnimator.speed = 1;
   }
 
   IEnumerator removeFireEffect()
   {
     yield return new WaitForSeconds(5.0f);  //TODO: Hardcoded time. Put in scriptable constants?
-    nezukoAnimator.speed = 1;
+        effectText.enabled = false;
+        nezukoAnimator.speed = 1;
     gameObject.transform.Find("Fire").gameObject.SetActive(false);
     onFire = false;
   }
@@ -266,13 +279,15 @@ public class NezukoController : MonoBehaviour
   IEnumerator removeStuckEffect()
   {
     yield return new WaitForSeconds(4.0f);  //TODO: Hardcoded time. Put in scriptable constants?
-    nezukoAnimator.SetBool("isStuck", false);
+        effectText.enabled = false;
+        nezukoAnimator.SetBool("isStuck", false);
   }
 
   IEnumerator removeSleepEffect()
   {
     yield return new WaitForSeconds(4.0f);  //TODO: Hardcoded time. Put in scriptable constants?
-    nezukoAnimator.SetBool("isSleeping", false);
+        effectText.enabled = false;
+        nezukoAnimator.SetBool("isSleeping", false);
   }
   public float getNezukoSpeed()
   {
