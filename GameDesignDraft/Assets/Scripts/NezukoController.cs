@@ -11,6 +11,8 @@ public class NezukoController : MonoBehaviour
   public BoolVariable isNezukoStuck;
   public BoolVariable FinishCountdown;
   public BoolVariable isPaused;
+  public Text effectText;
+
   private float maxSpeed;
   private bool onGroundState = true;
   private bool onShrinkState = false;
@@ -85,8 +87,11 @@ public class NezukoController : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
-    // only start running after the countdown screen and when is not paused
-    if (FinishCountdown.Value && !isPaused.Value)
+        Vector3 effectTextPos = Camera.main.WorldToScreenPoint(this.transform.position);
+        transform.position = effectTextPos;
+
+        // only start running after the countdown screen and when is not paused
+        if (FinishCountdown.Value && !isPaused.Value)
     {
       nezukoAnimator.SetFloat("xSpeed", Mathf.Abs(nezukoBody.velocity.x));
       nezukoCollider.size = nezukoSprite.sprite.bounds.size;
