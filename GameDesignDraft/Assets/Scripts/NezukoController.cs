@@ -256,7 +256,7 @@ public class NezukoController : MonoBehaviour
       onEyeballCollided.Invoke();
       nezukoAnimator.SetBool("isSleeping", true);
       effectText.enabled = true;
-      effectText.text = "Stuck!!";
+      effectText.text = "Sleep!!";
       StartCoroutine(removeSleepEffect());
     }
 
