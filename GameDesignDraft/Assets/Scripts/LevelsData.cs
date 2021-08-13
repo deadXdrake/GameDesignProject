@@ -15,14 +15,21 @@ public class LevelsData : ScriptableObject
   public float multp_3Stars = 0.5f;
   public float multp_2Stars = 0.25f;
 
+  [SerializeField]
   private float LVTimeRecord = 0;
+  [SerializeField]
   private int LVStarsRecord = 0;
+  [SerializeField]
   private bool isLevelUnlocked = false;
-  public bool unlockLevel {
-    get {
+
+  public bool unlockLevel
+  {
+    get
+    {
       return isLevelUnlocked;
     }
-    set {
+    set
+    {
       isLevelUnlocked = value;
     }
   }
@@ -60,6 +67,16 @@ public class LevelsData : ScriptableObject
     }
   }
 
+  public void Reset()
+  {
+    LVTimeRecord = 0;
+    LVStarsRecord = 0;
+    isLevelUnlocked = false;
+  }
 
+  private void OnEnable()
+  {
+    hideFlags = HideFlags.DontUnloadUnusedAsset;
+  }
 
 }

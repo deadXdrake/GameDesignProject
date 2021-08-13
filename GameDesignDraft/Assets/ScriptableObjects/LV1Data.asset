@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0f76e4a387637b499303e8c55957e8e, type: 3}
   m_Name: LV1Data
   m_EditorClassIdentifier: 
-  DeveloperDescription: Data container for Level 1
+  DeveloperDescription: Level 1 Data
   LV_duration: 180
   multp_3Stars: 0.5
   multp_2Stars: 0.25
-  isLevelUnlocked: 1
