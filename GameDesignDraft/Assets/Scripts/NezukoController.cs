@@ -189,8 +189,12 @@ public class NezukoController : MonoBehaviour
     || col.gameObject.CompareTag("Obstacles")
      && !onGroundState)
     {
-      onGroundState = true;
-      nezukoAnimator.SetBool("onGround", onGroundState);
+      float offset = (this.transform.position.y - col.transform.position.y);
+      Debug.Log(offset);
+      if (offset >= 0.75) {  // Make only single jumps possible
+        onGroundState = true;
+        nezukoAnimator.SetBool("onGround", onGroundState);
+      }
     }
 
     if (col.gameObject.CompareTag("Spider"))
