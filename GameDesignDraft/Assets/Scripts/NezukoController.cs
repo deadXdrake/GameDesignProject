@@ -136,6 +136,7 @@ public class NezukoController : MonoBehaviour
       {
         onShrinkState = true;
         nezukoAnimator.SetBool("onShrink", onShrinkState);
+        upSpeed.ApplyChange(-5f);
         nezukoShrink.Play();
       }
 
@@ -144,6 +145,7 @@ public class NezukoController : MonoBehaviour
       {
         onShrinkState = false;
         nezukoAnimator.SetBool("onShrink", onShrinkState);
+        upSpeed.ApplyChange(5f);
         nezukoUnShrink.Play();
       }
 
@@ -192,7 +194,8 @@ public class NezukoController : MonoBehaviour
     {
       float offset = (this.transform.position.y - col.transform.position.y);
       Debug.Log(offset);
-      if (offset >= 0.75) {  // Make only single jumps possible
+      if (offset >= 0.75)
+      {  // Make only single jumps possible
         onGroundState = true;
         nezukoAnimator.SetBool("onGround", onGroundState);
       }
