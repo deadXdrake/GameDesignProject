@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RandomSpawner : MonoBehaviour
 {
+    public BoolVariable isPaused;
+    public BoolVariable FinishCountdown;
     public Transform[] spawnPoints;
     public Transform spawnPoint;
     public GameObject[] obstaclePrefabs;
@@ -26,23 +28,27 @@ public class RandomSpawner : MonoBehaviour
         cameraScript = mainCam.GetComponent<CameraController>();
     }
     private void Update() {
-        float div = (Mathf.Floor(mainCam.transform.position.x) % respawnTime);
-        // Debug.Log(Mathf.Floor(mainCam.transform.position.x) % respawnTime);
 
-        if (div == 0) {
-            if (!oneTime) {
-                if (level == 1) {
-                    spawnObstaclesLevel1();
-                } else if (level == 2) {
-                    spawnObstaclesLevel2();
-                } else if (level == 3) {
-                    spawnObstaclesLevel3();
+        if (FinishCountdown.Value && !isPaused.Value) {
+            
+            float div = (Mathf.Floor(mainCam.transform.position.x) % respawnTime);
+
+            if (div == 0) {
+                if (!oneTime) {
+                    if (level == 1) {
+                        spawnObstaclesLevel1();
+                    } else if (level == 2) {
+                        spawnObstaclesLevel2();
+                    } else if (level == 3) {
+                        spawnObstaclesLevel3();
+                    }
+                    
+                    oneTime = true;
                 }
-                
-                oneTime = true;
+            } else {
+                oneTime = false;
             }
-        } else {
-            oneTime = false;
+
         }
     }
 
@@ -225,19 +231,6 @@ public class RandomSpawner : MonoBehaviour
 
 
         }
-    }
-
-    IEnumerator obstacleWave() {
-        // while( true ) {
-            // yield return new WaitForSeconds(2.0f);
-            //yield return new WaitForSeconds(Time.deltaTime);
-            // float div = (Mathf.Floor(mainCam.transform.position.x) % respawnTime);
-            // Debug.Log(Mathf.Floor(mainCam.transform.position.x));
-            // yield return new WaitWhile(() => div == 0);
-            Debug.Log("Spawning obstacle");
-            yield return null;
-            // spawnObstacles();
-        // }
     }
 
 }

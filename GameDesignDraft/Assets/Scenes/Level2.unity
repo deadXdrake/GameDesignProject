@@ -4980,6 +4980,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9049ae4dfadde034db50bd1d7235b307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPaused: {fileID: 11400000, guid: 748bb97e505c713468ee1426bde8266b, type: 2}
+  FinishCountdown: {fileID: 11400000, guid: 69b125fff96cbd2418f2ae697116da1f, type: 2}
   spawnPoints: []
   spawnPoint: {fileID: 1462284352}
   obstaclePrefabs:
