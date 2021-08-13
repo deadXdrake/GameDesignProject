@@ -35,10 +35,13 @@ public class FireController : MonoBehaviour, ObstacleInterface
   IEnumerator removeEffect()
   {
     yield return new WaitForSeconds(5.0f);  //TODO: Hardcoded time. Put in scriptable constants?
-    nezukoSpeed.ApplyChange(100f);
-    nezukoUpSpeed.ApplyChange(10f);
-    // nezukoSpeed.ApplyChange(100);
-    Debug.Log("Nezuko recovered from burn!");
+    
+    if (nezukoSpeed.Value != 0) {
+      nezukoSpeed.ApplyChange(100f);
+      nezukoUpSpeed.ApplyChange(10f);
+      // nezukoSpeed.ApplyChange(100);
+      Debug.Log("Nezuko recovered from burn!");
+    }
   }
 
   // Update is called once per frame

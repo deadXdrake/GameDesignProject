@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RandomSpawner : MonoBehaviour
 {
+    public BoolVariable isPaused;
+    public BoolVariable FinishCountdown;
     public Transform[] spawnPoints;
     public Transform spawnPoint;
     public GameObject[] obstaclePrefabs;
@@ -26,23 +28,27 @@ public class RandomSpawner : MonoBehaviour
         cameraScript = mainCam.GetComponent<CameraController>();
     }
     private void Update() {
-        float div = (Mathf.Floor(mainCam.transform.position.x) % respawnTime);
-        // Debug.Log(Mathf.Floor(mainCam.transform.position.x) % respawnTime);
 
-        if (div == 0) {
-            if (!oneTime) {
-                if (level == 1) {
-                    spawnObstaclesLevel1();
-                } else if (level == 2) {
-                    spawnObstaclesLevel2();
-                } else if (level == 3) {
-                    spawnObstaclesLevel3();
+        if (FinishCountdown.Value && !isPaused.Value) {
+            
+            float div = (Mathf.Floor(mainCam.transform.position.x) % respawnTime);
+
+            if (div == 0) {
+                if (!oneTime) {
+                    if (level == 1) {
+                        spawnObstaclesLevel1();
+                    } else if (level == 2) {
+                        spawnObstaclesLevel2();
+                    } else if (level == 3) {
+                        spawnObstaclesLevel3();
+                    }
+                    
+                    oneTime = true;
                 }
-                
-                oneTime = true;
+            } else {
+                oneTime = false;
             }
-        } else {
-            oneTime = false;
+
         }
     }
 
@@ -200,28 +206,31 @@ public class RandomSpawner : MonoBehaviour
                 Debug.Log("Instantiating fire!");
 
                 float randX = Random.Range(leftBound.transform.position.x, rightBound.transform.position.x);
-                // float randY = Random.Range(-3, 4);
-                // Vector3 randomPosition = new Vector3(randX, randY, 0);
-                Vector3 randomPosition = new Vector3(randX, -3.02f, 0);
+                int randUpDown = Random.Range(1, 3);
+
+                Vector3 randomPosition = new Vector3();
+                if (randUpDown == 1) {  // Spawn in the train
+                    randomPosition = new Vector3(randX, -3.02f, 0);
+                } else {  // Spawn on top of train
+                    randomPosition = new Vector3(randX, 1.08f, 0);
+                }
+                
 
                 GameObject obstacle = Instantiate( obstaclePrefabs[randObstacle], randomPosition, Quaternion.identity);
                 obstacle.layer = 9;
             }
 
-        }
-    }
+            if (obstaclePrefabs[randObstacle].name.Equals("MusclePlatform")) {
+                Debug.Log("Instantiating muscle platform!");
 
-    IEnumerator obstacleWave() {
-        // while( true ) {
-            // yield return new WaitForSeconds(2.0f);
-            //yield return new WaitForSeconds(Time.deltaTime);
-            // float div = (Mathf.Floor(mainCam.transform.position.x) % respawnTime);
-            // Debug.Log(Mathf.Floor(mainCam.transform.position.x));
-            // yield return new WaitWhile(() => div == 0);
-            Debug.Log("Spawning obstacle");
-            yield return null;
-            // spawnObstacles();
-        // }
+                Vector3 randomPosition = new Vector3( Random.Range(leftBound.transform.position.x, rightBound.transform.position.x), 0.36f, 0 );
+
+                GameObject obstacle = Instantiate( obstaclePrefabs[randObstacle], randomPosition, Quaternion.identity);
+                obstacle.layer = 9;
+            }
+
+
+        }
     }
 
 }

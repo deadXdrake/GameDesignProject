@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3039576062156852137
+--- !u!1 &6299128064811653539
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,13 +8,13 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3039576062156852140}
-  - component: {fileID: 3039576062156852143}
-  - component: {fileID: 3039576062156852142}
-  - component: {fileID: 3039576062156852147}
-  - component: {fileID: 3039576062156852146}
-  - component: {fileID: 3039576062156852141}
-  - component: {fileID: 3459222121546171339}
+  - component: {fileID: 3504676188353198684}
+  - component: {fileID: 4258519048792415618}
+  - component: {fileID: 930456229400077273}
+  - component: {fileID: 4142417756663915552}
+  - component: {fileID: 5816753720084929877}
+  - component: {fileID: 4621600819842850165}
+  - component: {fileID: 204174962200197041}
   m_Layer: 0
   m_Name: Eyeball
   m_TagString: Eyeball
@@ -22,27 +22,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3039576062156852140
+--- !u!4 &3504676188353198684
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3039576062156852137}
+  m_GameObject: {fileID: 6299128064811653539}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.01, y: -2.42, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &3039576062156852143
+--- !u!212 &4258519048792415618
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3039576062156852137}
+  m_GameObject: {fileID: 6299128064811653539}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -88,14 +88,14 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &3039576062156852142
+--- !u!95 &930456229400077273
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3039576062156852137}
+  m_GameObject: {fileID: 6299128064811653539}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 40703b2ae98d60b478e6985691089740, type: 2}
@@ -107,13 +107,13 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &3039576062156852147
+--- !u!114 &4142417756663915552
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3039576062156852137}
+  m_GameObject: {fileID: 6299128064811653539}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5993053faa492945a936893d1ef149d, type: 3}
@@ -121,13 +121,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nezukoSpeed: {fileID: 11400000, guid: b979a27e14d78a443a480462e1ff9da6, type: 2}
   isNezukoStuck: {fileID: 11400000, guid: b71c3af14b5205447b020a984317c2bc, type: 2}
---- !u!58 &3039576062156852146
+--- !u!58 &5816753720084929877
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3039576062156852137}
+  m_GameObject: {fileID: 6299128064811653539}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -137,14 +137,14 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.3
---- !u!50 &3039576062156852141
+--- !u!50 &4621600819842850165
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3039576062156852137}
+  m_GameObject: {fileID: 6299128064811653539}
   m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -158,13 +158,13 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &3459222121546171339
+--- !u!114 &204174962200197041
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3039576062156852137}
+  m_GameObject: {fileID: 6299128064811653539}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3091566633e9b174da95e71f719bcca9, type: 3}
@@ -174,7 +174,7 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3039576062156852147}
+      - m_Target: {fileID: 4142417756663915552}
         m_TargetAssemblyTypeName: EyeballController, Assembly-CSharp
         m_MethodName: affectPlayer
         m_Mode: 1
