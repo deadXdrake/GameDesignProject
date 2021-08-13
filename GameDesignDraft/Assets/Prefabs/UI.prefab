@@ -1309,6 +1309,8 @@ MonoBehaviour:
   LevelsData: {fileID: 11400000, guid: 122824f631174ea4bae0774de0c4aa12, type: 2}
   timerText: {fileID: 9085524358195649834}
   isPaused: {fileID: 11400000, guid: 748bb97e505c713468ee1426bde8266b, type: 2}
+  isPlayerWin: {fileID: 11400000, guid: 53cb658dbd526f54683c03a7575a2338, type: 2}
+  isPlayerLost: {fileID: 11400000, guid: 1bc9274424892d147b40cd0ccae7d206, type: 2}
   onTimesUp:
     m_PersistentCalls:
       m_Calls:
@@ -1692,6 +1694,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FinishCountdown: {fileID: 11400000, guid: 69b125fff96cbd2418f2ae697116da1f, type: 2}
   isPaused: {fileID: 11400000, guid: 748bb97e505c713468ee1426bde8266b, type: 2}
+  isPlayerWin: {fileID: 11400000, guid: 53cb658dbd526f54683c03a7575a2338, type: 2}
+  isPlayerLost: {fileID: 11400000, guid: 1bc9274424892d147b40cd0ccae7d206, type: 2}
   levelsData: {fileID: 0}
   nextLevel: {fileID: 0}
 --- !u!114 &9085524358374373221

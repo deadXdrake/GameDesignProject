@@ -10,6 +10,8 @@ public class UIController : MonoBehaviour
   public LevelsData levelsData;
   public LevelsData nextLevel;
 
+  private bool isLevelDone = false;
+
   // Start is called before the first frame update
   void Start()
   {
@@ -32,42 +34,52 @@ public class UIController : MonoBehaviour
 
   public void PlayerLost()
   {
-    foreach (Transform eachChild in transform)
+    if (!isLevelDone)
     {
-      if (eachChild.name == "GameOver")
+      isLevelDone = true;
+      foreach (Transform eachChild in transform)
       {
-        eachChild.gameObject.SetActive(true);
-      }
-      else
-      {
-        eachChild.gameObject.SetActive(false);
+        if (eachChild.name == "GameOver")
+        {
+          eachChild.gameObject.SetActive(true);
+        }
+        else
+        {
+          eachChild.gameObject.SetActive(false);
+        }
       }
     }
+
   }
 
   public void PlayerWon()
   {
-    foreach (Transform eachChild in transform)
+    if (!isLevelDone)
     {
-      // Set next level unlocked to true
-      nextLevel.unlockLevel = true;
-
-      if (eachChild.name == "LevelComplete" || eachChild.name == "Timer")
+      isLevelDone = true;
+      foreach (Transform eachChild in transform)
       {
-        eachChild.gameObject.SetActive(true);
+        // Set next level unlocked to true
+        nextLevel.unlockLevel = true;
 
-        // show number of stars accordingly
-        if (eachChild.name == "LevelComplete")
+        if (eachChild.name == "LevelComplete" || eachChild.name == "Timer")
         {
-          GameObject stars = eachChild.transform.Find("Stars").gameObject;
-          StartCoroutine(DisplayStars(stars));
+          eachChild.gameObject.SetActive(true);
+
+          // show number of stars accordingly
+          if (eachChild.name == "LevelComplete")
+          {
+            GameObject stars = eachChild.transform.Find("Stars").gameObject;
+            StartCoroutine(DisplayStars(stars));
+          }
+        }
+        else
+        {
+          eachChild.gameObject.SetActive(false);
         }
       }
-      else
-      {
-        eachChild.gameObject.SetActive(false);
-      }
     }
+
   }
 
   IEnumerator DisplayStars(GameObject stars)

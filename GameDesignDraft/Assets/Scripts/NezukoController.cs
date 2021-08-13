@@ -13,13 +13,14 @@ public class NezukoController : MonoBehaviour
   public BoolVariable FinishCountdown;
   public BoolVariable isPaused;
   public Text effectText;
-    public Transform TextHolder;
+  public Transform TextHolder;
 
   private float maxSpeed;
   private bool onGroundState = true;
   private bool onShrinkState = false;
   private bool faceRightState = true;
   private bool onFire = false;
+  private bool isLevelDone = false;
 
   private Vector3 leftCamera;
   private Vector3 middleCam;
@@ -43,12 +44,12 @@ public class NezukoController : MonoBehaviour
   private AudioSource gameWin;
   public AudioSource LvlAudio;
   public AudioClip snowball;
-    public AudioClip stuck;
-    public AudioClip slowed;
+  public AudioClip stuck;
+  public AudioClip slowed;
 
 
-    // Start is called before the first frame update
-    void Start()
+  // Start is called before the first frame update
+  void Start()
   {
     nezukoSpeedX.SetValue(gameConstants.nezukoSpeedX);
     upSpeed.SetValue(gameConstants.nezukoUpSpeed);
@@ -68,8 +69,8 @@ public class NezukoController : MonoBehaviour
     gameOver = allMyAudioSources[3];
     gameWin = allMyAudioSources[4];
 
-        effectText.enabled = false;
-    }
+    effectText.enabled = false;
+  }
 
   void FixedUpdate()
   {
@@ -91,11 +92,11 @@ public class NezukoController : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
-        Vector3 effectTextPos = Camera.main.WorldToScreenPoint(TextHolder.position);
-        effectText.transform.position = effectTextPos;
+    Vector3 effectTextPos = Camera.main.WorldToScreenPoint(TextHolder.position);
+    effectText.transform.position = effectTextPos;
 
-        // only start running after the countdown screen and when is not paused
-        if (FinishCountdown.Value && !isPaused.Value)
+    // only start running after the countdown screen and check when on paused
+    if (FinishCountdown.Value && !isPaused.Value)
     {
       nezukoAnimator.SetFloat("xSpeed", Mathf.Abs(nezukoBody.velocity.x));
       nezukoCollider.size = nezukoSprite.sprite.bounds.size;
@@ -198,9 +199,9 @@ public class NezukoController : MonoBehaviour
       Debug.Log("Collided with spider!");
       onSpiderCollided.Invoke();
       nezukoAnimator.speed = 0.2f;
-        effectText.enabled = true;
-        effectText.text = "Slowed!!";
-        StartCoroutine(removeSlowEffect());
+      effectText.enabled = true;
+      effectText.text = "Slowed!!";
+      StartCoroutine(removeSlowEffect());
       LvlAudio.PlayOneShot(slowed);
     }
 
@@ -210,7 +211,7 @@ public class NezukoController : MonoBehaviour
       //Camera.main.transform.Translate(Vector3.right * (Time.deltaTime * (float)2.5));
     }
 
-    if (col.gameObject.CompareTag("Tanjiro"))
+    if (col.gameObject.CompareTag("Tanjiro") && !isLevelDone)
     {
       Debug.Log("Successfully met Tanjiro!");
       onLevelComplete.Invoke();
@@ -223,11 +224,11 @@ public class NezukoController : MonoBehaviour
       Debug.Log("Collided with spider web!");
       onWebCollided.Invoke();
       nezukoAnimator.SetBool("isStuck", true);
-        effectText.enabled = true; 
-        effectText.text = "Stuck!"; 
+      effectText.enabled = true;
+      effectText.text = "Stuck!";
       StartCoroutine(removeStuckEffect());
       LvlAudio.PlayOneShot(stuck);
-      
+
     }
 
     if (col.gameObject.CompareTag("Fire"))
@@ -237,9 +238,9 @@ public class NezukoController : MonoBehaviour
       gameObject.transform.Find("Fire").gameObject.SetActive(true);
       onFire = true;
       nezukoAnimator.speed = 0.2f;
-        effectText.enabled = true;
-        effectText.text = "Burnt!";
-        StartCoroutine(removeFireEffect());
+      effectText.enabled = true;
+      effectText.text = "Burnt!";
+      StartCoroutine(removeFireEffect());
     }
 
     if (col.gameObject.CompareTag("Eyeball"))
@@ -247,9 +248,9 @@ public class NezukoController : MonoBehaviour
       Debug.Log("Collided with eyeball!");
       onEyeballCollided.Invoke();
       nezukoAnimator.SetBool("isSleeping", true);
-        effectText.enabled = true;
-        effectText.text = "Stuck!!";
-        StartCoroutine(removeSleepEffect());
+      effectText.enabled = true;
+      effectText.text = "Stuck!!";
+      StartCoroutine(removeSleepEffect());
     }
 
     if (col.gameObject.CompareTag("Snowball"))
@@ -263,15 +264,15 @@ public class NezukoController : MonoBehaviour
   IEnumerator removeSlowEffect()
   {
     yield return new WaitForSeconds(5.0f);  //TODO: Hardcoded time. Put in scriptable constants?
-        effectText.enabled = false;
-        nezukoAnimator.speed = 1;
+    effectText.enabled = false;
+    nezukoAnimator.speed = 1;
   }
 
   IEnumerator removeFireEffect()
   {
     yield return new WaitForSeconds(5.0f);  //TODO: Hardcoded time. Put in scriptable constants?
-        effectText.enabled = false;
-        nezukoAnimator.speed = 1;
+    effectText.enabled = false;
+    nezukoAnimator.speed = 1;
     gameObject.transform.Find("Fire").gameObject.SetActive(false);
     onFire = false;
   }
@@ -279,15 +280,15 @@ public class NezukoController : MonoBehaviour
   IEnumerator removeStuckEffect()
   {
     yield return new WaitForSeconds(4.0f);  //TODO: Hardcoded time. Put in scriptable constants?
-        effectText.enabled = false;
-        nezukoAnimator.SetBool("isStuck", false);
+    effectText.enabled = false;
+    nezukoAnimator.SetBool("isStuck", false);
   }
 
   IEnumerator removeSleepEffect()
   {
     yield return new WaitForSeconds(4.0f);  //TODO: Hardcoded time. Put in scriptable constants?
-        effectText.enabled = false;
-        nezukoAnimator.SetBool("isSleeping", false);
+    effectText.enabled = false;
+    nezukoAnimator.SetBool("isSleeping", false);
   }
   public float getNezukoSpeed()
   {
