@@ -479,7 +479,6 @@ MonoBehaviour:
   - {fileID: 5319332911642087043, guid: 5fb1f8ec952b13c469b98ddf0ce794cc, type: 3}
   - {fileID: 3377608256800150348, guid: e23da5dc29addfd45bfb973e4e0b5d01, type: 3}
   - {fileID: 3377608256800150348, guid: e23da5dc29addfd45bfb973e4e0b5d01, type: 3}
-  - {fileID: 3377608256800150348, guid: e23da5dc29addfd45bfb973e4e0b5d01, type: 3}
   - {fileID: 2079374511649436221, guid: 2d17e9886d92f9e47852db62e145586b, type: 3}
   - {fileID: 2079374511649436221, guid: 2d17e9886d92f9e47852db62e145586b, type: 3}
   treePrefabs:
@@ -1202,7 +1201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3921064044732680436, guid: 375fd9a27fa35ac4caeae9b8f64b0033, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 88.9
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 3921064044732680436, guid: 375fd9a27fa35ac4caeae9b8f64b0033, type: 3}
       propertyPath: m_LocalPosition.y

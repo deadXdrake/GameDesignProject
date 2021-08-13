@@ -38,7 +38,7 @@ public class FireController : MonoBehaviour, ObstacleInterface
     
     if (nezukoSpeed.Value != 0) {
       nezukoSpeed.ApplyChange(100f);
-      nezukoUpSpeed.ApplyChange(10f);
+      nezukoUpSpeed.ApplyChange(+10f);
       // nezukoSpeed.ApplyChange(100);
       Debug.Log("Nezuko recovered from burn!");
     }

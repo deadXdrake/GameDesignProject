@@ -193,7 +193,7 @@ public class NezukoController : MonoBehaviour
      && !onGroundState)
     {
       float offset = (this.transform.position.y - col.transform.position.y);
-      Debug.Log(offset);
+      // Debug.Log(offset);
       if (offset >= 0.75)
       {  // Make only single jumps possible
         onGroundState = true;
