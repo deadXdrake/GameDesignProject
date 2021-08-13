@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 7202203482305730561, guid: 0838f64acfc80fc428c5db0e18d9d044, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 7202203482305730561, guid: 0838f64acfc80fc428c5db0e18d9d044, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -253,7 +253,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 7202203482305730561, guid: 0838f64acfc80fc428c5db0e18d9d044, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -474,7 +474,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Back to Main Menu
+  m_Text: Main Menu
 --- !u!1 &9085524357703528800
 GameObject:
   m_ObjectHideFlags: 0
@@ -512,7 +512,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -117}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 200, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9085524357703528812
 CanvasRenderer:
@@ -1693,6 +1693,7 @@ MonoBehaviour:
   FinishCountdown: {fileID: 11400000, guid: 69b125fff96cbd2418f2ae697116da1f, type: 2}
   isPaused: {fileID: 11400000, guid: 748bb97e505c713468ee1426bde8266b, type: 2}
   levelsData: {fileID: 0}
+  nextLevel: {fileID: 0}
 --- !u!114 &9085524358374373221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1934,7 +1935,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Back to Main Menu
+  m_Text: Main Menu
 --- !u!1 &9085524358925354728
 GameObject:
   m_ObjectHideFlags: 0
@@ -2647,7 +2648,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: RetrY
+  m_Text: Retry
 --- !u!1 &9085524359172873984
 GameObject:
   m_ObjectHideFlags: 0

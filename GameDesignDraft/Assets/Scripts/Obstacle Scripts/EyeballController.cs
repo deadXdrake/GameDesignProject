@@ -50,6 +50,12 @@ public class EyeballController : MonoBehaviour, ObstacleInterface
             eyeballCollder.enabled = false;
             eyeballEnabled = false;
             Debug.Log("Web collider disabled!");
+            
+            // Destroy eyeball gameobject
+            moveRight = 0;
+            ComputeVelocity();
+            MoveEyeball();
+            StartCoroutine(destroyEyeball());
         }
     }
 
@@ -71,6 +77,12 @@ public class EyeballController : MonoBehaviour, ObstacleInterface
             eyeballAnimator.SetTrigger("EyeOpen");
         }
     }
+
+    IEnumerator destroyEyeball() {
+        yield return new WaitForSeconds(4.0f);
+        Destroy(this.gameObject);
+    }
+
     void ComputeVelocity()
     {
         velocity = new Vector2((moveRight) * maxOffset / enemyPatroltime, 0);

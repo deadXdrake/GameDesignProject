@@ -4,37 +4,37 @@ using UnityEngine;
 public class IntVariable : ScriptableObject
 {
 #if UNITY_EDITOR
-    [Multiline]
-    public string DeveloperDescription = "";
+  [Multiline]
+  public string DeveloperDescription = "";
 #endif
-    private int _value = 0;
-    public int Value
+  private int _value = 0;
+  public int Value
+  {
+    get
     {
-        get
-        {
-            return _value;
-        }
+      return _value;
     }
+  }
 
-    public void SetValue(int value)
-    {
-        _value = value;
-    }
+  public void SetValue(int value)
+  {
+    _value = value;
+  }
 
-    // overload
-    public void SetValue(IntVariable value)
-    {
-        _value = value._value;
-    }
+  // overload
+  public void SetValue(IntVariable value)
+  {
+    _value = value._value;
+  }
 
-    public void ApplyChange(int amount)
-    {
-        _value += amount;
-    }
+  public void ApplyChange(int amount)
+  {
+    _value += amount;
+  }
 
-    public void ApplyChange(IntVariable amount)
-    {
-        _value += amount._value;
-    }
+  public void ApplyChange(IntVariable amount)
+  {
+    _value += amount._value;
+  }
 }
 

@@ -46,12 +46,23 @@ public class SpiderController : MonoBehaviour, ObstacleInterface
     velocity = new Vector2(0, 0);
   }
 
+  private void OnCollisionEnter2D(Collision2D other) {
+    if (other.gameObject.CompareTag("Player")) {
+      Debug.Log("Direction changed!");
+      moveRight *= -1;
+      ComputeVelocity();
+      MoveSpider();
+    }
+  }
+
   IEnumerator removeEffect()
   {
     yield return new WaitForSeconds(5.0f);  //TODO: Hardcoded time. Put in scriptable constants?
-    nezukoSpeed.ApplyChange(100f);
-    // nezukoSpeed.ApplyChange(100);
-    Debug.Log("Player speed resumes!");
+    if (nezukoSpeed.Value != 0) {
+      nezukoSpeed.ApplyChange(100f);
+      // nezukoSpeed.ApplyChange(100);
+      Debug.Log("Player speed resumes!");
+    } 
   }
 
   void ComputeVelocity()

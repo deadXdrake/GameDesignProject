@@ -31,17 +31,11 @@ public class WebController : MonoBehaviour, ObstacleInterface
 
     public void affectPlayer()
     {
-        if (nezukoSpeed.Value == 140f) {
+        if (nezukoSpeed.Value != 0) {
         // Debug.Log(nezukoSpeed.Value);
 
             nezukoSpeed.SetValue(0f);
             isNezukoStuck.SetValue(true);
-
-            // onHit = true;
-            // Debug.Log("onHit true!");
-
-            // Debug.Log(nezukoSpeed.Value);
-            // Debug.Log("Nezuko caught in web!");
 
             StartCoroutine(removeEffect());
         }
