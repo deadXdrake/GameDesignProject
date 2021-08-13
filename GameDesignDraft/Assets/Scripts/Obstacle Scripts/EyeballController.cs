@@ -35,7 +35,7 @@ public class EyeballController : MonoBehaviour, ObstacleInterface
     }
     public void affectPlayer()
     {
-        if (nezukoSpeed.Value == 140f) {
+        if (nezukoSpeed.Value != 0f) {
         // Debug.Log(nezukoSpeed.Value);
 
             nezukoSpeed.SetValue(0f);

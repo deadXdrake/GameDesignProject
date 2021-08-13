@@ -200,13 +200,29 @@ public class RandomSpawner : MonoBehaviour
                 Debug.Log("Instantiating fire!");
 
                 float randX = Random.Range(leftBound.transform.position.x, rightBound.transform.position.x);
-                // float randY = Random.Range(-3, 4);
-                // Vector3 randomPosition = new Vector3(randX, randY, 0);
-                Vector3 randomPosition = new Vector3(randX, -3.02f, 0);
+                int randUpDown = Random.Range(1, 3);
+
+                Vector3 randomPosition = new Vector3();
+                if (randUpDown == 1) {  // Spawn in the train
+                    randomPosition = new Vector3(randX, -3.02f, 0);
+                } else {  // Spawn on top of train
+                    randomPosition = new Vector3(randX, 1.08f, 0);
+                }
+                
 
                 GameObject obstacle = Instantiate( obstaclePrefabs[randObstacle], randomPosition, Quaternion.identity);
                 obstacle.layer = 9;
             }
+
+            if (obstaclePrefabs[randObstacle].name.Equals("MusclePlatform")) {
+                Debug.Log("Instantiating muscle platform!");
+
+                Vector3 randomPosition = new Vector3( Random.Range(leftBound.transform.position.x, rightBound.transform.position.x), 0.36f, 0 );
+
+                GameObject obstacle = Instantiate( obstaclePrefabs[randObstacle], randomPosition, Quaternion.identity);
+                obstacle.layer = 9;
+            }
+
 
         }
     }
