@@ -136,6 +136,7 @@ MonoBehaviour:
   isNezukoStuck: {fileID: 11400000, guid: b71c3af14b5205447b020a984317c2bc, type: 2}
   FinishCountdown: {fileID: 11400000, guid: 69b125fff96cbd2418f2ae697116da1f, type: 2}
   isPaused: {fileID: 11400000, guid: 748bb97e505c713468ee1426bde8266b, type: 2}
+  onFire: {fileID: 11400000, guid: 9163343101ba3394b98f7708283a904a, type: 2}
   effectText: {fileID: 3588763569334268869}
   TextHolder: {fileID: 816142241432980662}
   onPlayerDeath:

@@ -262,6 +262,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 9085524358195649834, guid: b6237c52cc25ab749a671b1bc49be19c, type: 3}
+      propertyPath: m_Text
+      value: 'TIME:
+
+        --:--.--'
+      objectReference: {fileID: 0}
     - target: {fileID: 9085524358374373216, guid: b6237c52cc25ab749a671b1bc49be19c, type: 3}
       propertyPath: m_Pivot.x
       value: 0

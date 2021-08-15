@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!114 &11400000
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 32
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: LV2Data
   m_EditorClassIdentifier: 
   DeveloperDescription: Level 2 Data
-  LV_duration: 180
-  multp_3Stars: 0.5
-  multp_2Stars: 0.25
+  LV_duration: 80
+  multp_3Stars: 0.625
+  multp_2Stars: 0.8125
+  LVTimeRecord: 0
+  LVStarsRecord: 0
+  isLevelUnlocked: 1

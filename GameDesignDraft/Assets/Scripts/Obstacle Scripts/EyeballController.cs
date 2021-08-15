@@ -61,7 +61,7 @@ public class EyeballController : MonoBehaviour, ObstacleInterface
 
     IEnumerator removeEffect()
     {
-        yield return new WaitForSeconds(4.0f);  //TODO: Hardcoded time. Put in scriptable constants?
+        yield return new WaitForSeconds(3.0f);  //TODO: Hardcoded time. Put in scriptable constants?
         // nezukoSpeed.SetValue(140f);
         isNezukoStuck.SetValue(false);
         // Debug.Log("Nezuko broke free!");

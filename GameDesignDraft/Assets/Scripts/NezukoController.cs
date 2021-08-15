@@ -12,6 +12,7 @@ public class NezukoController : MonoBehaviour
   public BoolVariable isNezukoStuck;
   public BoolVariable FinishCountdown;
   public BoolVariable isPaused;
+  public BoolVariable onFire;
   public Text effectText;
   public Transform TextHolder;
 
@@ -19,7 +20,7 @@ public class NezukoController : MonoBehaviour
   private bool onGroundState = true;
   private bool onShrinkState = false;
   private bool faceRightState = true;
-  private bool onFire = false;
+  // private bool onFire = false;
   private bool isLevelDone = false;
 
   private Vector3 leftCamera;
@@ -70,6 +71,8 @@ public class NezukoController : MonoBehaviour
     gameWin = allMyAudioSources[4];
 
     effectText.enabled = false;
+
+    onFire.SetValue(false);
   }
 
   void FixedUpdate()
@@ -102,9 +105,12 @@ public class NezukoController : MonoBehaviour
       nezukoCollider.size = nezukoSprite.sprite.bounds.size;
       nezukoBody.gravityScale = 2.75f;
 
-      if (onFire)
+      if (onFire.Value)
       {
         gameObject.transform.Find("Fire").gameObject.transform.localScale = new Vector3(nezukoSprite.sprite.bounds.size.x * 4.2f, nezukoSprite.sprite.bounds.size.y * 2.5f, 0);
+        gameObject.transform.Find("Fire").gameObject.SetActive(true);
+      } else {
+        gameObject.transform.Find("Fire").gameObject.SetActive(false);
       }
 
       // Debug.Log(isNezukoStuck.Value);
@@ -258,30 +264,30 @@ public class NezukoController : MonoBehaviour
 
   IEnumerator removeSlowEffect()
   {
-    yield return new WaitForSeconds(5.0f);  //TODO: Hardcoded time. Put in scriptable constants?
+    yield return new WaitForSeconds(5.0f); 
     effectText.enabled = false;
     nezukoAnimator.speed = 1;
   }
 
   IEnumerator removeFireEffect()
   {
-    yield return new WaitForSeconds(5.0f);  //TODO: Hardcoded time. Put in scriptable constants?
+    yield return new WaitForSeconds(5.0f); 
     effectText.enabled = false;
     nezukoAnimator.speed = 1;
-    gameObject.transform.Find("Fire").gameObject.SetActive(false);
-    onFire = false;
+    // gameObject.transform.Find("Fire").gameObject.SetActive(false);
+    // onFire = false;
   }
 
   IEnumerator removeStuckEffect()
   {
-    yield return new WaitForSeconds(4.0f);  //TODO: Hardcoded time. Put in scriptable constants?
+    yield return new WaitForSeconds(4.0f);  
     effectText.enabled = false;
     nezukoAnimator.SetBool("isStuck", false);
   }
 
   IEnumerator removeSleepEffect()
   {
-    yield return new WaitForSeconds(4.0f);  //TODO: Hardcoded time. Put in scriptable constants?
+    yield return new WaitForSeconds(3.0f); 
     effectText.enabled = false;
     nezukoAnimator.SetBool("isSleeping", false);
   }
@@ -296,8 +302,8 @@ public class NezukoController : MonoBehaviour
     {
       // Debug.Log("Colldied with fire!");
       onFireCollided.Invoke();
-      gameObject.transform.Find("Fire").gameObject.SetActive(true);
-      onFire = true;
+      // gameObject.transform.Find("Fire").gameObject.SetActive(true);
+      // onFire = true;
       nezukoAnimator.speed = 0.2f;
       effectText.enabled = true;
       effectText.text = "Slowed + Weakened!";

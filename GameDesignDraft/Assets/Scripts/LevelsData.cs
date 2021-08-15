@@ -42,12 +42,13 @@ public class LevelsData : ScriptableObject
     }
     set
     {
-      LVTimeRecord = value;
-      if (LVTimeRecord >= multp_3Stars * LV_duration)
+      LVTimeRecord = LV_duration - value;
+      Debug.Log(LVTimeRecord);
+      if (LVTimeRecord <= multp_3Stars * LV_duration)
       {
         LVStarsRecord = 3;
       }
-      else if (LVTimeRecord >= multp_2Stars * LV_duration)
+      else if (LVTimeRecord <= multp_2Stars * LV_duration)
       {
         LVStarsRecord = 2;
       }

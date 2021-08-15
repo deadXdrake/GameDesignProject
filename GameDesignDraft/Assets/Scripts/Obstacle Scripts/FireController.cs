@@ -6,6 +6,7 @@ public class FireController : MonoBehaviour, ObstacleInterface
 {
   public FloatVariable nezukoSpeed;
   public FloatVariable nezukoUpSpeed;
+  public BoolVariable onFire;
   private Vector2 screenBounds;
   private Rigidbody2D fireBody;
   private SpriteRenderer fireSprite;
@@ -25,6 +26,7 @@ public class FireController : MonoBehaviour, ObstacleInterface
 
       nezukoSpeed.ApplyChange(-100f);
       nezukoUpSpeed.ApplyChange(-10f);
+      onFire.SetValue(true);
 
       // Debug.Log(nezukoSpeed.Value);
       // Debug.Log("Player burnt! Speed and upSpeed reduced.");
@@ -39,6 +41,7 @@ public class FireController : MonoBehaviour, ObstacleInterface
     if (nezukoSpeed.Value != 0) {
       nezukoSpeed.ApplyChange(100f);
       nezukoUpSpeed.ApplyChange(+10f);
+      onFire.SetValue(false);
       // nezukoSpeed.ApplyChange(100);
       // Debug.Log("Nezuko recovered from burn!");
     }
