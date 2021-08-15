@@ -35,7 +35,7 @@ public class NezukoController : MonoBehaviour
   private Rigidbody2D nezukoBody;
   private SpriteRenderer nezukoSprite;
   private Animator nezukoAnimator;
-  private BoxCollider2D nezukoCollider;
+  private CapsuleCollider2D nezukoCollider;
 
   private AudioSource nezukoJump;
   private AudioSource nezukoUnShrink;
@@ -60,7 +60,7 @@ public class NezukoController : MonoBehaviour
     nezukoBody = GetComponent<Rigidbody2D>();
     nezukoSprite = GetComponent<SpriteRenderer>();
     nezukoAnimator = GetComponent<Animator>();
-    nezukoCollider = GetComponent<BoxCollider2D>();
+    nezukoCollider = GetComponent<CapsuleCollider2D>();
 
     AudioSource[] allMyAudioSources = GetComponents<AudioSource>();
     nezukoJump = allMyAudioSources[0];
@@ -110,15 +110,16 @@ public class NezukoController : MonoBehaviour
       // Debug.Log(isNezukoStuck.Value);
       if (isNezukoStuck.Value)
       {
-        Debug.Log("Nezuko is stuck!");
-        nezukoBody.velocity = Vector3.zero;
-        nezukoBody.gravityScale = 0;
+        // Debug.Log("Nezuko is stuck!");
+        nezukoBody.bodyType = RigidbodyType2D.Static;
+      } else {
+        nezukoBody.bodyType = RigidbodyType2D.Dynamic;
       }
 
       //nezuko jumps when spacebar is presssed and she is on ground
       if (Input.GetKeyDown(KeyCode.Space) && onGroundState)
       {
-        // print("space pressed");
+        print(upSpeed.Value);
         nezukoBody.AddForce(Vector2.up * upSpeed.Value, ForceMode2D.Impulse);
         onGroundState = false;
         nezukoAnimator.SetBool("onGround", onGroundState);
@@ -186,7 +187,6 @@ public class NezukoController : MonoBehaviour
     || col.gameObject.CompareTag("Spider")
     || col.gameObject.CompareTag("Rock"))
     || col.gameObject.CompareTag("SpiderWeb")
-    || col.gameObject.CompareTag("Fire")
     || col.gameObject.CompareTag("Seat")
     || col.gameObject.CompareTag("Snowball")
     || col.gameObject.CompareTag("Obstacles")
@@ -194,7 +194,7 @@ public class NezukoController : MonoBehaviour
     {
       float offset = (this.transform.position.y - col.transform.position.y);
       // Debug.Log(offset);
-      if (offset >= 0.75)
+      if (offset > 0.4f)
       {  // Make only single jumps possible
         onGroundState = true;
         nezukoAnimator.SetBool("onGround", onGroundState);
@@ -203,7 +203,7 @@ public class NezukoController : MonoBehaviour
 
     if (col.gameObject.CompareTag("Spider"))
     {
-      Debug.Log("Collided with spider!");
+      // Debug.Log("Collided with spider!");
       onSpiderCollided.Invoke();
       nezukoAnimator.speed = 0.2f;
       effectText.enabled = true;
@@ -214,13 +214,13 @@ public class NezukoController : MonoBehaviour
 
     if (col.gameObject.CompareTag("EdgeLimit"))
     {
-      Debug.Log("Collided with endlimit!");
+      // Debug.Log("Collided with endlimit!");
       //Camera.main.transform.Translate(Vector3.right * (Time.deltaTime * (float)2.5));
     }
 
     if (col.gameObject.CompareTag("Tanjiro") && !isLevelDone)
     {
-      Debug.Log("Successfully met Tanjiro!");
+      // Debug.Log("Successfully met Tanjiro!");
       onLevelComplete.Invoke();
       nezukoBody.bodyType = RigidbodyType2D.Static;
       gameWin.Play();
@@ -228,7 +228,7 @@ public class NezukoController : MonoBehaviour
 
     if (col.gameObject.CompareTag("SpiderWeb"))
     {
-      Debug.Log("Collided with spider web!");
+      // Debug.Log("Collided with spider web!");
       onWebCollided.Invoke();
       nezukoAnimator.SetBool("isStuck", true);
       effectText.enabled = true;
@@ -238,21 +238,9 @@ public class NezukoController : MonoBehaviour
 
     }
 
-    if (col.gameObject.CompareTag("Fire"))
-    {
-      Debug.Log("Colldied with fire!");
-      onFireCollided.Invoke();
-      gameObject.transform.Find("Fire").gameObject.SetActive(true);
-      onFire = true;
-      nezukoAnimator.speed = 0.2f;
-      effectText.enabled = true;
-      effectText.text = "Burnt!";
-      StartCoroutine(removeFireEffect());
-    }
-
     if (col.gameObject.CompareTag("Eyeball"))
     {
-      Debug.Log("Collided with eyeball!");
+      // Debug.Log("Collided with eyeball!");
       onEyeballCollided.Invoke();
       nezukoAnimator.SetBool("isSleeping", true);
       effectText.enabled = true;
@@ -262,7 +250,7 @@ public class NezukoController : MonoBehaviour
 
     if (col.gameObject.CompareTag("Snowball"))
     {
-      Debug.Log("Collided with snowball!");
+      // Debug.Log("Collided with snowball!");
       LvlAudio.PlayOneShot(snowball);
     }
 
@@ -301,6 +289,20 @@ public class NezukoController : MonoBehaviour
   {
     Debug.Log(nezukoBody.velocity.magnitude);
     return nezukoBody.velocity.magnitude;
+  }
+
+  private void OnTriggerEnter2D(Collider2D other) {
+    if (other.gameObject.CompareTag("Fire"))
+    {
+      // Debug.Log("Colldied with fire!");
+      onFireCollided.Invoke();
+      gameObject.transform.Find("Fire").gameObject.SetActive(true);
+      onFire = true;
+      nezukoAnimator.speed = 0.2f;
+      effectText.enabled = true;
+      effectText.text = "Slowed + Weakened!";
+      StartCoroutine(removeFireEffect());
+    }
   }
 
   public void PlayerDeathResponse()

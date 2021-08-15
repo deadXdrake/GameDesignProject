@@ -363,6 +363,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1332979829119543834, guid: fecc8c3633676134f8136f28473acae4, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3638652459804808335, guid: fecc8c3633676134f8136f28473acae4, type: 3}
       propertyPath: FinishCountdown
       value: 

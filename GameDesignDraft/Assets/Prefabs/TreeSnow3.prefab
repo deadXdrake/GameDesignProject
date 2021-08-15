@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5264430817386470836}
   - component: {fileID: 5264430817386470839}
   - component: {fileID: 5264430817386470838}
-  - component: {fileID: 5264430817386470825}
+  - component: {fileID: 4606355666992678523}
   m_Layer: 8
   m_Name: BranchSnow (2)
   m_TagString: Obstacles
@@ -130,7 +130,7 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
---- !u!68 &5264430817386470825
+--- !u!68 &4606355666992678523
 EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,10 +146,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -0.33314112, y: 0.40699503}
-  - {x: -0.12820098, y: -0.017851498}
-  - {x: -0.24649005, y: -0.6353907}
-  - {x: -0.30878323, y: -1.0902536}
+  - {x: -0.34631425, y: 0.38485226}
+  - {x: 0.06941846, y: -0.31723207}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0

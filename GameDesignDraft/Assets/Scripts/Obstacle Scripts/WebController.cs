@@ -25,7 +25,7 @@ public class WebController : MonoBehaviour, ObstacleInterface
         if (other.gameObject.CompareTag("Player")) {
             // Disable collider
             webCollider.enabled = false;
-            Debug.Log("Web collider disabled!");
+            // Debug.Log("Web collider disabled!");
         }
     }
 
@@ -46,7 +46,7 @@ public class WebController : MonoBehaviour, ObstacleInterface
         yield return new WaitForSeconds(4.0f);  //TODO: Hardcoded time. Put in scriptable constants?
         nezukoSpeed.SetValue(140f);
         isNezukoStuck.SetValue(false);
-        Debug.Log("Nezuko broke free!");
+        // Debug.Log("Nezuko broke free!");
 
     }
 

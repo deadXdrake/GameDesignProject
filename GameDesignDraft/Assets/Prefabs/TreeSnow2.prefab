@@ -249,9 +249,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6211736630544985750}
   - component: {fileID: 6211736630544985746}
-  - component: {fileID: 6211736630544985749}
-  - component: {fileID: 6211736630544985748}
-  - component: {fileID: 6211736630544985751}
+  - component: {fileID: 3651574925904838733}
   m_Layer: 8
   m_Name: BranchSnow
   m_TagString: Obstacles
@@ -317,7 +315,7 @@ SpriteRenderer:
   m_Sprite: {fileID: -285289009875834525, guid: 8da973297f28c8a44a4731669d8135cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
-  m_FlipY: 1
+  m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1.05, y: 1.45}
   m_AdaptiveModeThreshold: 0.5
@@ -325,33 +323,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &6211736630544985749
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6211736630544985753}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.29500002, y: -0.5349253}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.05, y: 1.45}
-    newSize: {x: 1.05, y: 1.45}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.36001587, y: 0.21593297}
-  m_EdgeRadius: 0
---- !u!68 &6211736630544985748
+--- !u!68 &3651574925904838733
 EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -367,30 +339,9 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -0.46987745, y: -0.43485606}
-  - {x: -0.054944664, y: -0.2808047}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
---- !u!68 &6211736630544985751
-EdgeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6211736630544985753}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: -0.062474906, y: -0.26777762}
-  - {x: -0.19921684, y: 0.6755299}
+  - {x: -0.4687939, y: 0.6323194}
+  - {x: 0.10252785, y: 0.40348524}
+  - {x: 0.32125255, y: 0.17564425}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0

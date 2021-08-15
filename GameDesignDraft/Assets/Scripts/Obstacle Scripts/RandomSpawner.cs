@@ -79,17 +79,17 @@ public class RandomSpawner : MonoBehaviour
         int randObstacle = Random.Range(0, obstaclePrefabs.Length);
 
         if (obstaclePrefabs[randObstacle].name.Equals("Snowball")) {
-            Debug.Log("Instantiating snowball!");
+            // Debug.Log("Instantiating snowball!");
 
             Vector3 randomPosition = new Vector3( Random.Range(spawnPoint.position.x - 15.0f, spawnPoint.position.x - 10.0f), 6.5f, 0 );
 
             GameObject obstacle = Instantiate( obstaclePrefabs[randObstacle], randomPosition, Quaternion.identity);
-            obstacle.layer = 9;
+            obstacle.layer = 8;
 
         }
 
         if (obstaclePrefabs[randObstacle].name.Equals("Rock")) {
-            Debug.Log("Instantiating rock!");
+            // Debug.Log("Instantiating rock!");
             int leftOrRightRandom = Random.Range(0, 1);
             Vector3 randomPosition;
             // Do left right random first
@@ -106,7 +106,7 @@ public class RandomSpawner : MonoBehaviour
             }
 
             GameObject obstacle = Instantiate( obstaclePrefabs[randObstacle], randomPosition, Quaternion.identity);
-            obstacle.layer = 9;
+            obstacle.layer = 8;
         }
 
         }
@@ -140,31 +140,31 @@ public class RandomSpawner : MonoBehaviour
             int randObstacle = Random.Range(0, obstaclePrefabs.Length);
 
             if (obstaclePrefabs[randObstacle].name.Equals("Spider")) {
-                Debug.Log("Instantiating spider!");
+                // Debug.Log("Instantiating spider!");
 
                 float randX = Random.Range(leftBound.transform.position.x, rightBound.transform.position.x);
                 Vector3 randomPosition = new Vector3(randX, -3.12f, 0);
 
                 GameObject obstacle = Instantiate( obstaclePrefabs[randObstacle], randomPosition, Quaternion.identity);
-                obstacle.layer = 9;
+                obstacle.layer = 8;
             }
 
             if (obstaclePrefabs[randObstacle].name.Equals("Web1") || obstaclePrefabs[randObstacle].name.Equals("Web2") || obstaclePrefabs[randObstacle].name.Equals("Web3")) {
-                Debug.Log("Instantiating web!");
+                // Debug.Log("Instantiating web!");
 
                 float randX = Random.Range(leftBound.transform.position.x, rightBound.transform.position.x);
                 float randY = Random.Range(-3, 4);
                 Vector3 randomPosition = new Vector3(randX, randY, 0);
 
                 GameObject obstacle = Instantiate( obstaclePrefabs[randObstacle], randomPosition, Quaternion.identity);
-                obstacle.layer = 9;
+                obstacle.layer = 8;
             }
 
         }
     }
 
     private void spawnObstaclesLevel3() {
-        Debug.Log("Spawning level 3 obstacles!");
+        // Debug.Log("Spawning level 3 obstacles!");
         int randnNumberOfObstacles = Random.Range(1, obstaclePrefabs.Length);
 
         // Spawn a tree at random position
@@ -193,17 +193,17 @@ public class RandomSpawner : MonoBehaviour
             int randObstacle = Random.Range(0, obstaclePrefabs.Length);
 
             if (obstaclePrefabs[randObstacle].name.Equals("Seat")) {
-                Debug.Log("Instantiating train seat!");
+                // Debug.Log("Instantiating train seat!");
 
                 float randX = Random.Range(leftBound.transform.position.x, rightBound.transform.position.x);
                 Vector3 randomPosition = new Vector3(randX, -2.93f, 0);
 
                 GameObject obstacle = Instantiate( obstaclePrefabs[randObstacle], randomPosition, Quaternion.identity);
-                obstacle.layer = 9;
+                obstacle.layer = 8;
             }
 
             if (obstaclePrefabs[randObstacle].name.Equals("Fire")) {
-                Debug.Log("Instantiating fire!");
+                // Debug.Log("Instantiating fire!");
 
                 float randX = Random.Range(leftBound.transform.position.x, rightBound.transform.position.x);
                 int randUpDown = Random.Range(1, 3);
@@ -217,11 +217,11 @@ public class RandomSpawner : MonoBehaviour
                 
 
                 GameObject obstacle = Instantiate( obstaclePrefabs[randObstacle], randomPosition, Quaternion.identity);
-                obstacle.layer = 9;
+                obstacle.layer = 8;
             }
 
             if (obstaclePrefabs[randObstacle].name.Equals("MusclePlatform")) {
-                Debug.Log("Instantiating muscle platform!");
+                // Debug.Log("Instantiating muscle platform!");
                 int randUpDown = Random.Range(1, 3);
 
                 Vector3 randomPosition = new Vector3();
@@ -232,7 +232,7 @@ public class RandomSpawner : MonoBehaviour
                 }
 
                 GameObject obstacle = Instantiate( obstaclePrefabs[randObstacle], randomPosition, Quaternion.identity);
-                obstacle.layer = 9;
+                obstacle.layer = 8;
             }
 
 

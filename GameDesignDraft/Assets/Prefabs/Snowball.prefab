@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 7313292348709805649}
   - component: {fileID: 3482144993098124222}
   - component: {fileID: 4103546437764059831}
-  - component: {fileID: 5231282573375380527}
-  m_Layer: 9
+  - component: {fileID: 4488803041283176591}
+  m_Layer: 8
   m_Name: Snowball
   m_TagString: Snowball
   m_Icon: {fileID: 0}
@@ -139,8 +139,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &5231282573375380527
-BoxCollider2D:
+--- !u!58 &4488803041283176591
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -153,15 +153,5 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.81, y: 0.82}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.81, y: 0.82}
-  m_EdgeRadius: 0
+  m_Radius: 0.35

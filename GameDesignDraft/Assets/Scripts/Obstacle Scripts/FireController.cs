@@ -21,13 +21,13 @@ public class FireController : MonoBehaviour, ObstacleInterface
   {
     if (nezukoSpeed.Value == 140f)
     {
-      Debug.Log(nezukoSpeed.Value);
+      // Debug.Log(nezukoSpeed.Value);
 
       nezukoSpeed.ApplyChange(-100f);
       nezukoUpSpeed.ApplyChange(-10f);
 
-      Debug.Log(nezukoSpeed.Value);
-      Debug.Log("Player burnt! Speed and upSpeed reduced.");
+      // Debug.Log(nezukoSpeed.Value);
+      // Debug.Log("Player burnt! Speed and upSpeed reduced.");
       StartCoroutine(removeEffect());
     }
   }
@@ -40,7 +40,7 @@ public class FireController : MonoBehaviour, ObstacleInterface
       nezukoSpeed.ApplyChange(100f);
       nezukoUpSpeed.ApplyChange(+10f);
       // nezukoSpeed.ApplyChange(100);
-      Debug.Log("Nezuko recovered from burn!");
+      // Debug.Log("Nezuko recovered from burn!");
     }
   }
 

@@ -35,21 +35,21 @@ public class EyeballController : MonoBehaviour, ObstacleInterface
     }
     public void affectPlayer()
     {
-        if (nezukoSpeed.Value != 0f) {
+        // if (nezukoSpeed.Value != 0f) {
         // Debug.Log(nezukoSpeed.Value);
 
-            nezukoSpeed.SetValue(0f);
+            // nezukoSpeed.SetValue(0f);
             isNezukoStuck.SetValue(true);
 
             StartCoroutine(removeEffect());
-        }
+        // }
     }
     private void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.CompareTag("Player")) {
             // Disable collider
             eyeballCollder.enabled = false;
             eyeballEnabled = false;
-            Debug.Log("Web collider disabled!");
+            // Debug.Log("Web collider disabled!");
             
             // Destroy eyeball gameobject
             moveRight = 0;
@@ -62,9 +62,9 @@ public class EyeballController : MonoBehaviour, ObstacleInterface
     IEnumerator removeEffect()
     {
         yield return new WaitForSeconds(4.0f);  //TODO: Hardcoded time. Put in scriptable constants?
-        nezukoSpeed.SetValue(140f);
+        // nezukoSpeed.SetValue(140f);
         isNezukoStuck.SetValue(false);
-        Debug.Log("Nezuko broke free!");
+        // Debug.Log("Nezuko broke free!");
 
     }
 
@@ -96,10 +96,10 @@ public class EyeballController : MonoBehaviour, ObstacleInterface
     void Update()
     {
         if (Mathf.Abs(eyeballBody.position.x - originalX) < maxOffset) {
-            Debug.Log("Moving eyeball~");
+            // Debug.Log("Moving eyeball~");
             MoveEyeball();
         } else {
-            Debug.Log("Changing direction~");
+            // Debug.Log("Changing direction~");
             moveRight *= -1;
             ComputeVelocity();
             MoveEyeball();

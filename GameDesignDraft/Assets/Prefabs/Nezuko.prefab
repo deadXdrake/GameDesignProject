@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 746680288966798062}
   - component: {fileID: 3789359836931189633}
   - component: {fileID: 746680288108975238}
-  - component: {fileID: 6851389953079544006}
   - component: {fileID: 3638652459804808335}
   - component: {fileID: 5192815630482181425}
   - component: {fileID: 6084468425433614822}
@@ -20,6 +19,8 @@ GameObject:
   - component: {fileID: 746680288820726573}
   - component: {fileID: 746680288820726561}
   - component: {fileID: 672615932295672730}
+  - component: {fileID: 2778882872959318951}
+  - component: {fileID: 6444237643284431170}
   m_Layer: 6
   m_Name: Nezuko
   m_TagString: Player
@@ -117,32 +118,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &6851389953079544006
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 746680288820726574}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.0011888146, y: 0.002107054}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.4, y: 0.94}
-    newSize: {x: 0.2, y: 0.47}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.40036005, y: 0.9402632}
-  m_EdgeRadius: 0
 --- !u!114 &3638652459804808335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -784,6 +759,48 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!70 &2778882872959318951
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746680288820726574}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.4, y: 0.94}
+  m_Direction: 0
+--- !u!61 &6444237643284431170
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746680288820726574}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: f0b2e1b384164384985df3115eeba6b1, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.4, y: 0.94}
+    newSize: {x: 0.2, y: 0.47}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.41, y: 0.6}
+  m_EdgeRadius: 0
 --- !u!1 &2155000774373390584
 GameObject:
   m_ObjectHideFlags: 0
