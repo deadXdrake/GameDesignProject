@@ -77,7 +77,7 @@ public class NezukoController : MonoBehaviour
 
   void FixedUpdate()
   {
-    if (FinishCountdown.Value && !isPaused.Value)
+    if (FinishCountdown.Value && !isPaused.Value && !isLevelDone)
     {
       //apply force to move horizontally when a/d pressed
       float moveHorizontal = Input.GetAxis("Horizontal");
@@ -118,7 +118,9 @@ public class NezukoController : MonoBehaviour
       {
         // Debug.Log("Nezuko is stuck!");
         nezukoBody.bodyType = RigidbodyType2D.Static;
-      } else {
+      }
+      else
+      {
         nezukoBody.bodyType = RigidbodyType2D.Dynamic;
       }
 
@@ -227,8 +229,10 @@ public class NezukoController : MonoBehaviour
     if (col.gameObject.CompareTag("Tanjiro") && !isLevelDone)
     {
       // Debug.Log("Successfully met Tanjiro!");
+      isLevelDone = true;
       onLevelComplete.Invoke();
       nezukoBody.bodyType = RigidbodyType2D.Static;
+      nezukoAnimator.SetBool("isWin", true);
       gameWin.Play();
     }
 
@@ -297,7 +301,8 @@ public class NezukoController : MonoBehaviour
     return nezukoBody.velocity.magnitude;
   }
 
-  private void OnTriggerEnter2D(Collider2D other) {
+  private void OnTriggerEnter2D(Collider2D other)
+  {
     if (other.gameObject.CompareTag("Fire"))
     {
       // Debug.Log("Colldied with fire!");

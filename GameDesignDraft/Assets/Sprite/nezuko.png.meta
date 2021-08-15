@@ -83,6 +83,12 @@ TextureImporter:
   - first:
       213: -6819822253128653539
     second: nezuko_sleep2
+  - first:
+      213: 4157122680899371213
+    second: nezuko_win1
+  - first:
+      213: -5358968474562581810
+    second: nezuko_win2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -779,6 +785,48 @@ TextureImporter:
       bones: []
       spriteID: d1566f23bcf1b51a0800000000000000
       internalID: -6819822253128653539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nezuko_win1
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 1303
+        width: 42
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc00aba8d0111b930800000000000000
+      internalID: 4157122680899371213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nezuko_win2
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 1309
+        width: 46
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eca2e2fb09e11a5b0800000000000000
+      internalID: -5358968474562581810
       vertices: []
       indices: 
       edges: []

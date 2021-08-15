@@ -4,115 +4,169 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 2987701009461435019
-    second: tanjiroHit_1
+    second: tanjirospritesheet_0
   - first:
       213: -4217840866288775776
-    second: tanjiroHit_2
+    second: tanjirospritesheet_1
   - first:
       213: -2222624077134850739
-    second: tanjiroHit_3
+    second: tanjirospritesheet_2
   - first:
       213: -7634943465474154671
-    second: tanjiroStand_1
+    second: tanjirospritesheet_3
   - first:
       213: -2419819132393831047
-    second: tanjiroStand_2
+    second: tanjirospritesheet_4
   - first:
       213: 5274693526501397349
-    second: tanjiroStand_3
+    second: tanjirospritesheet_5
   - first:
       213: 1756470671927403175
-    second: tanjiroStand_4
+    second: tanjirospritesheet_6
   - first:
       213: -1869341154899970055
-    second: tanjiroStand_5
+    second: tanjirospritesheet_7
   - first:
       213: 2587777325802630260
-    second: tanjiroStand_6
+    second: tanjirospritesheet_8
   - first:
       213: -2710561774115240089
-    second: tanjiroStand_7
+    second: tanjirospritesheet_9
   - first:
       213: -4837273465048471739
-    second: tanjiroStand_8
+    second: tanjirospritesheet_10
   - first:
       213: -7673501350889437593
-    second: tanjiroStand_9
+    second: tanjirospritesheet_11
   - first:
       213: 4210838507810957363
-    second: tanjiroRun_1
+    second: tanjiro_win3
   - first:
       213: -5707400206881611514
-    second: tanjiroRun_2
+    second: tanjirospritesheet_13
   - first:
       213: 7878518631557196226
-    second: tanjiroRun_3
+    second: tanjirospritesheet_14
   - first:
       213: -868740292043506985
-    second: tanjiroRun_4
+    second: tanjirospritesheet_15
   - first:
       213: -3955677850589842126
-    second: tanjiroRun_5
+    second: tanjirospritesheet_16
   - first:
       213: 604766687315957384
-    second: tanjiroRun_6
+    second: tanjirospritesheet_17
   - first:
       213: -2639446567522380999
-    second: tanjiroRun_7
+    second: tanjirospritesheet_18
   - first:
       213: 7943230160111453923
-    second: tanjiroRun_8
+    second: tanjirospritesheet_19
   - first:
       213: -2809981888146974166
-    second: tanjiroJump_1
+    second: tanjirospritesheet_20
   - first:
       213: 7377743235653036158
-    second: tanjiroJump_2
+    second: tanjirospritesheet_21
   - first:
       213: 8815782670269712802
-    second: tanjiroJump_3
+    second: tanjirospritesheet_22
   - first:
       213: 4573150594452779095
     second: tanjirospritesheet_23
   - first:
       213: -3226724210690295298
-    second: tanjiroJump_4
+    second: tanjiro_win4
   - first:
       213: 1379646687980115560
-    second: tanjiroJump_5
+    second: tanjirospritesheet_25
   - first:
       213: -4238446636755513400
-    second: tanjiroSword_1
+    second: tanjirospritesheet_26
   - first:
       213: -6796132175812152381
-    second: tanjiroSword_2
+    second: tanjirospritesheet_27
   - first:
       213: 4115504703877357728
-    second: tanjiroSword_3
+    second: tanjirospritesheet_28
   - first:
       213: -3967546602702865622
-    second: tanjiroSword_4
+    second: tanjirospritesheet_29
   - first:
       213: 2183617340027214653
-    second: tanjiroSword_5
+    second: tanjirospritesheet_30
   - first:
       213: -3695329268531208891
-    second: tanjiroCrow_1
+    second: tanjirospritesheet_31
   - first:
       213: -6162073891836384795
-    second: tanjiroCrow_2
+    second: tanjirospritesheet_32
   - first:
       213: 7880629604379616715
-    second: tanjiroCrow_3
+    second: tanjirospritesheet_33
   - first:
       213: -292812256222242920
-    second: tanjiroCrow_4
+    second: tanjirospritesheet_34
   - first:
       213: 7564720594948259474
-    second: tanjiroCrow_5
+    second: tanjiro_pace1
   - first:
       213: -6462417941691813361
-    second: tanjiroCrow_6
+    second: tanjiro_pace1
+  - first:
+      213: -5291063399047109427
+    second: tanjiro_pace2
+  - first:
+      213: 7551414266730608202
+    second: tanjiro_pace2
+  - first:
+      213: -3402313295823488437
+    second: tanjiro_pace2
+  - first:
+      213: -1615506333320983646
+    second: tanjiro_pace3
+  - first:
+      213: -3009145544046593304
+    second: tanjiro_pace4
+  - first:
+      213: 8957701564677618551
+    second: tanjiro_pace4
+  - first:
+      213: -3191894556664244927
+    second: tanjirospritesheet_43
+  - first:
+      213: 9007576671952518457
+    second: tanjirospritesheet_44
+  - first:
+      213: 2243989861826549046
+    second: tanjiro_win1
+  - first:
+      213: 4441283431204351926
+    second: tanjirospritesheet_46
+  - first:
+      213: 5077853867548610644
+    second: tanjirospritesheet_47
+  - first:
+      213: -5485054852457104959
+    second: tanjiro_pace3
+  - first:
+      213: 8878669143173285853
+    second: tanjiro_pace4
+  - first:
+      213: -630164562506236141
+    second: tanjirospritesheet_50
+  - first:
+      213: -507708385482750090
+    second: tanjirospritesheet_51
+  - first:
+      213: -5196836822304097286
+    second: tanjirospritesheet_52
+  - first:
+      213: 8969043989290216494
+    second: tanjirospritesheet_53
+  - first:
+      213: -2943576419504276297
+    second: tanjiro_win2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -214,13 +268,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tanjiroHit_1
+      name: tanjirospritesheet_0
       rect:
         serializedVersion: 2
-        x: 12
-        y: 353
-        width: 54
-        height: 59
+        x: 28
+        y: 714
+        width: 99
+        height: 96
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -235,13 +289,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tanjiroHit_2
+      name: tanjirospritesheet_1
       rect:
         serializedVersion: 2
-        x: 67
-        y: 357
-        width: 50
-        height: 47
+        x: 134
+        y: 714
+        width: 100
+        height: 94
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -256,13 +310,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tanjiroHit_3
+      name: tanjirospritesheet_2
       rect:
         serializedVersion: 2
-        x: 124
-        y: 357
-        width: 50
-        height: 46
+        x: 248
+        y: 714
+        width: 100
+        height: 92
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -277,13 +331,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tanjiroStand_1
+      name: tanjirospritesheet_3
       rect:
         serializedVersion: 2
-        x: 220
-        y: 355
-        width: 22
-        height: 52
+        x: 442
+        y: 712
+        width: 44
+        height: 102
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -298,13 +352,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tanjiroStand_2
+      name: tanjirospritesheet_4
       rect:
         serializedVersion: 2
-        x: 256
-        y: 354
-        width: 22
-        height: 52
+        x: 512
+        y: 712
+        width: 44
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -319,13 +373,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tanjiroStand_3
+      name: tanjirospritesheet_5
       rect:
         serializedVersion: 2
-        x: 286
-        y: 356
-        width: 22
-        height: 49
+        x: 572
+        y: 712
+        width: 44
+        height: 98
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -340,13 +394,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tanjiroStand_4
+      name: tanjirospritesheet_6
       rect:
         serializedVersion: 2
-        x: 313
-        y: 356
-        width: 32
-        height: 48
+        x: 626
+        y: 712
+        width: 64
+        height: 96
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -361,13 +415,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tanjiroStand_5
+      name: tanjirospritesheet_7
       rect:
         serializedVersion: 2
-        x: 359
-        y: 359
-        width: 34
-        height: 39
+        x: 718
+        y: 718
+        width: 68
+        height: 78
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -382,13 +436,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tanjiroStand_6
+      name: tanjirospritesheet_8
       rect:
         serializedVersion: 2
-        x: 408
-        y: 359
-        width: 36
-        height: 49
+        x: 816
+        y: 718
+        width: 72
+        height: 98
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -403,13 +457,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tanjiroStand_7
+      name: tanjirospritesheet_9
       rect:
         serializedVersion: 2
-        x: 470
-        y: 358
-        width: 46
-        height: 49
+        x: 940
+        y: 716
+        width: 92
+        height: 98
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -424,13 +478,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tanjiroStand_8
+      name: tanjirospritesheet_10
       rect:
         serializedVersion: 2
-        x: 532
-        y: 358
-        width: 44
-        height: 35
+        x: 1064
+        y: 716
+        width: 88
+        height: 70
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -445,13 +499,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tanjiroStand_9
+      name: tanjirospritesheet_11
       rect:
         serializedVersion: 2
-        x: 595
-        y: 354
-        width: 35
-        height: 38
+        x: 1190
+        y: 708
+        width: 70
+        height: 76
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -466,34 +520,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tanjiroRun_1
+      name: tanjirospritesheet_13
       rect:
         serializedVersion: 2
-        x: 28
-        y: 286
-        width: 44
-        height: 43
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 338ab981057ef6a30800000000000000
-      internalID: 4210838507810957363
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tanjiroRun_2
-      rect:
-        serializedVersion: 2
-        x: 73
-        y: 286
-        width: 40
-        height: 41
+        x: 64
+        y: 576
+        width: 82
+        height: 82
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -508,13 +541,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tanjiroRun_3
+      name: tanjirospritesheet_14
       rect:
         serializedVersion: 2
-        x: 136
-        y: 286
-        width: 38
-        height: 43
+        x: 146
+        y: 572
+        width: 80
+        height: 82
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -529,13 +562,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tanjiroRun_4
+      name: tanjirospritesheet_15
       rect:
         serializedVersion: 2
-        x: 206
-        y: 286
-        width: 32
-        height: 41
+        x: 272
+        y: 572
+        width: 76
+        height: 86
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -550,13 +583,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tanjiroRun_5
+      name: tanjirospritesheet_16
       rect:
         serializedVersion: 2
-        x: 264
-        y: 286
-        width: 40
-        height: 40
+        x: 412
+        y: 572
+        width: 64
+        height: 82
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -571,13 +604,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tanjiroRun_6
+      name: tanjirospritesheet_17
       rect:
         serializedVersion: 2
-        x: 328
-        y: 286
-        width: 37
-        height: 42
+        x: 528
+        y: 572
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -592,13 +625,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tanjiroRun_7
+      name: tanjirospritesheet_18
       rect:
         serializedVersion: 2
-        x: 391
-        y: 286
-        width: 36
-        height: 43
+        x: 656
+        y: 572
+        width: 74
+        height: 84
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -613,13 +646,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tanjiroRun_8
+      name: tanjirospritesheet_19
       rect:
         serializedVersion: 2
-        x: 459
-        y: 286
-        width: 31
-        height: 40
+        x: 782
+        y: 572
+        width: 72
+        height: 86
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -634,13 +667,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tanjiroJump_1
+      name: tanjirospritesheet_20
       rect:
         serializedVersion: 2
-        x: 16
-        y: 196
-        width: 32
-        height: 39
+        x: 918
+        y: 572
+        width: 62
+        height: 80
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -655,13 +688,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tanjiroJump_2
+      name: tanjirospritesheet_21
       rect:
         serializedVersion: 2
-        x: 56
-        y: 196
-        width: 27
-        height: 51
+        x: 24
+        y: 392
+        width: 76
+        height: 78
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -676,13 +709,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tanjiroJump_3
+      name: tanjirospritesheet_22
       rect:
         serializedVersion: 2
-        x: 88
-        y: 196
-        width: 27
-        height: 51
+        x: 112
+        y: 392
+        width: 54
+        height: 102
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -697,34 +730,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tanjiroJump_4
+      name: tanjirospritesheet_25
       rect:
         serializedVersion: 2
-        x: 123
-        y: 196
-        width: 31
-        height: 36
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ef9f6a12d6f5833d0800000000000000
-      internalID: -3226724210690295298
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tanjiroJump_5
-      rect:
-        serializedVersion: 2
-        x: 166
-        y: 196
-        width: 31
-        height: 39
+        x: 246
+        y: 392
+        width: 62
+        height: 72
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -739,13 +751,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tanjiroSword_1
+      name: tanjirospritesheet_26
       rect:
         serializedVersion: 2
-        x: 25
-        y: 108
-        width: 28
-        height: 50
+        x: 332
+        y: 392
+        width: 62
+        height: 78
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -760,13 +772,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tanjiroSword_2
+      name: tanjirospritesheet_27
       rect:
         serializedVersion: 2
-        x: 81
-        y: 108
-        width: 33
-        height: 50
+        x: 670
+        y: 378
+        width: 44
+        height: 102
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -781,13 +793,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tanjiroSword_3
+      name: tanjirospritesheet_28
       rect:
         serializedVersion: 2
-        x: 126
-        y: 108
-        width: 32
-        height: 50
+        x: 778
+        y: 382
+        width: 44
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -802,13 +814,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tanjiroSword_4
+      name: tanjirospritesheet_29
       rect:
         serializedVersion: 2
-        x: 179
-        y: 106
-        width: 25
-        height: 50
+        x: 896
+        y: 384
+        width: 44
+        height: 98
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -823,13 +835,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tanjiroSword_5
+      name: tanjirospritesheet_30
       rect:
         serializedVersion: 2
-        x: 230
-        y: 106
-        width: 36
-        height: 50
+        x: 50
+        y: 216
+        width: 56
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -844,13 +856,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tanjiroCrow_1
+      name: tanjirospritesheet_31
       rect:
         serializedVersion: 2
-        x: 25
-        y: 22
-        width: 29
-        height: 51
+        x: 162
+        y: 216
+        width: 66
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -865,13 +877,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tanjiroCrow_2
+      name: tanjirospritesheet_32
       rect:
         serializedVersion: 2
-        x: 71
-        y: 24
-        width: 31
-        height: 51
+        x: 252
+        y: 216
+        width: 64
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -886,13 +898,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tanjiroCrow_3
+      name: tanjirospritesheet_33
       rect:
         serializedVersion: 2
-        x: 120
-        y: 22
-        width: 31
-        height: 51
+        x: 358
+        y: 212
+        width: 50
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -907,13 +919,118 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tanjiroCrow_4
+      name: tanjirospritesheet_23
       rect:
         serializedVersion: 2
-        x: 166
-        y: 24
-        width: 31
-        height: 51
+        x: 176
+        y: 392
+        width: 54
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75079be6c38177f30800000000000000
+      internalID: 4573150594452779095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tanjiro_pace4
+      rect:
+        serializedVersion: 2
+        x: 1102
+        y: 214
+        width: 80
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77bf196fc16205c70800000000000000
+      internalID: 8957701564677618551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tanjirospritesheet_43
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 48
+        width: 62
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1455685efcc14b3d0800000000000000
+      internalID: -3191894556664244927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tanjirospritesheet_44
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 48
+        width: 62
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93d33da4247510d70800000000000000
+      internalID: 9007576671952518457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tanjiro_win1
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 44
+        width: 80
+        height: 114
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4473684}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 635dfb1e3e0442f10800000000000000
+      internalID: 2243989861826549046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tanjirospritesheet_34
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 212
+        width: 72
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -928,34 +1045,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tanjiroCrow_5
+      name: tanjiro_pace1
       rect:
         serializedVersion: 2
-        x: 241
-        y: 47
-        width: 19
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 29ef8fe2d494bf860800000000000000
-      internalID: 7564720594948259474
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tanjiroCrow_6
-      rect:
-        serializedVersion: 2
-        x: 270
-        y: 50
-        width: 19
-        height: 13
+        x: 650
+        y: 214
+        width: 80
+        height: 102
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -965,6 +1061,195 @@ TextureImporter:
       bones: []
       spriteID: f0239531f11e056a0800000000000000
       internalID: -6462417941691813361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tanjiro_pace2
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 212
+        width: 80
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a467b4834430cc860800000000000000
+      internalID: 7551414266730608202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tanjiro_pace3
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 212
+        width: 80
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ab42069c819499e0800000000000000
+      internalID: -1615506333320983646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tanjirospritesheet_50
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 44
+        width: 58
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31fb6cd4ba43147f0800000000000000
+      internalID: -630164562506236141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tanjirospritesheet_51
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 44
+        width: 62
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67740d1d9e144f8f0800000000000000
+      internalID: -507708385482750090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tanjirospritesheet_52
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 94
+        width: 38
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afbf4e2b17021e7b0800000000000000
+      internalID: -5196836822304097286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tanjirospritesheet_53
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 100
+        width: 38
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2cee7cfcf1787c70800000000000000
+      internalID: 8969043989290216494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tanjiro_win2
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 44
+        width: 80
+        height: 114
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4473684}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bc3b3a97d05627d0800000000000000
+      internalID: -2943576419504276297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tanjiro_win3
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 44
+        width: 80
+        height: 114
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4473684}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 338ab981057ef6a30800000000000000
+      internalID: 4210838507810957363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tanjiro_win4
+      rect:
+        serializedVersion: 2
+        x: 1132
+        y: 44
+        width: 80
+        height: 114
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4473684}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef9f6a12d6f5833d0800000000000000
+      internalID: -3226724210690295298
       vertices: []
       indices: 
       edges: []
