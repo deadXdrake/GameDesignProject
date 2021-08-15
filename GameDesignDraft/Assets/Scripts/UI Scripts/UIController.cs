@@ -21,7 +21,7 @@ public class UIController : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
-    if (FinishCountdown.Value)
+    if (FinishCountdown.Value && !isLevelDone)
     {
       GameObject timer = gameObject.transform.Find("Timer").gameObject;
       GameObject pauseButton = gameObject.transform.Find("PauseButton").gameObject;
