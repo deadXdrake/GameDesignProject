@@ -50,6 +50,18 @@ public class Timer : MonoBehaviour
     float msecs = timeToDisplay % 1 * 100;
 
     timerText.text = string.Format("Time:\n{0:00}:{1:00}.{2:00}", mins, secs, msecs);
+    
+    float star3Time = LevelsData.LV_duration * LevelsData.multp_3Stars; // 18secs 60-18 = 42
+    float star2Time = LevelsData.LV_duration * LevelsData.multp_2Stars;
+
+    if (timeToDisplay > 60f - star3Time) {
+      // timerText.color = new Color(0, 0, 0, 1);
+      timerText.color = Color.green;
+    } else if (timeToDisplay > 60f - star2Time) {
+      timerText.color = Color.yellow;
+    } else {
+      timerText.color = Color.red;
+    }
   }
 
   public void PlayerWinResponse()
